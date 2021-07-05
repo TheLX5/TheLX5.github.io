@@ -1,0 +1,516 @@
+<head>
+    <title>PIXI's Misc Sprites documentation</title>
+    <style>
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: white;
+            color: black;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            /* Set the hr color */
+            color: #333; /* old IE */
+            background-color: #333; /* Modern Browsers */
+        }
+        table {
+            font-weight: normal;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid #cccccc;
+            text-align: left;
+            font-weight: normal;
+            padding: 3px;
+        }
+        th {
+            font-weight: bold;
+            background-color: #aaaaaa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        .path{
+            font-size: large;
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>PIXI's Misc Sprites documentation</h1>
+        <h2>Version 0.1, made by lx5</h2>
+        <p>Download the sprites featured in the docs here: <a href="misc_sprites_files/test_suite.zip">Test suite</a></p>
+    </div>
+    <hr>
+    <div class="contents">
+        <h1>Table of contents</h1>
+        <ul>
+            <li><a href="#bounce">Bounce Sprites</a></li>
+            <li><a href="#minorextended">Minor Extended Sprites</a></li>
+            <li><a href="#smoke">Smoke Sprites</a></li>
+            <li><a href="#score">Score Sprites</a></li>
+            <li><a href="#spinningcoin">Spinning Coin Sprites</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="bounce">
+        <h1 id="bounce">Bounce Sprites</h1>
+        <p>This kind of sprites are found exclusively whenever the player hits a block and there is a small image bouncing up and down at the block's position and might change the Map16 tile into another tile number.</p>
+        <h2 id="bounce-programming">Programming</h2>
+        <p>Programming a bounce sprite just requires a file inside of <code class="path">misc_sprites/bounce</code> folder, then you can start writing code inside of your ASM file.</p>
+        <p>Bounce sprites generally don't have a lot of code going on and you can just call a few routines and call it a day, this results in rather short sprite codes, which is great at keeping the insert size down.</p>
+        <p>Example of a bounce sprite:</p>
+        <pre class="codeblock"><code>    print "MAIN", pc
+        lda #$02                    ; yxppccct properties
+        sta !bounce_properties,x
+        lda #$2A                    ; tile number
+        %BounceGenericDraw()
+        lda $9D
+        bne not_done
+    init:
+        lda !bounce_init,x
+        bne no_init
+        inc !bounce_init,x
+        %EraseCoinAbove()
+        %InvisibleMap16()
+        %SetMarioSpeed()
+    no_init:
+        %UpdatePos()
+        %BounceSetSpeed()
+        lda !bounce_timer,x
+        bne not_done
+        %RevertMap16()
+        stz !bounce_num,x
+    not_done:
+        rtl</code></pre>
+        <p>This recreates the gray question mark block from the gif in the PIXI thread and as it was explained earlier, the code is rather short.</p>
+        <p>As any other sprite, bounce blocks require starting their code with the <code class="path">print "MAIN", pc</code> line, which is used by PIXI to determine where the code will start running. Also this code has the proper data bank set before being executed, so no need for any kind of wrapper.</p>
+        <p>Then it's up to you to know if you draw the sprite's graphics or wait until later, in the example above we're drawing them first, then executing the rest of the logic.</p>
+        <p>Bounce sprites can have init routines, but they're tied to a RAM address (<code class="path">!bounce_init</code>) which is used as a flag. In the init routine it's 100% expected that the bounce sprite <b>deletes the Map16 image</b>, <b>give mario proper bounce speeds depending on the direction on which the bounce sprite is going to move</b> and <b>erase coins above it if applicable</b>.</p>
+        <p>Out of the init routine and while the game is running normally (not paused), the bounce sprite should update its position and speed values and check if the sprite is done being processed.</p>
+        <p>When the sprite is done being processed, it must revert the Map16 tile it created to something else saved in its RAM or a constant value that's valid for $9C and set its sprite number to 0.</p>
+        <h2 id="bounce-routines">Routines</h2>
+        <p>There are several routines included here, in this table you'll find some info about them, more details in their respective files at the <code>routines</code> folder.</p>
+        <table style="width:100%">
+            <tr>
+                <th>Routine/Macro</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>%BounceGenericDraw()</code></td>
+                <td>Draws a single 16x16 tile at bounce sprite's coordinates.</td>
+            </tr>
+            <tr>
+                <td><code>%BounceGetDrawInfo()</code></td>
+                <td>Gets misc information of the bounce sprite to draw it on screen and handle offscreen situations.</td>
+            </tr>
+            <tr>
+                <td><code>%BounceChangeMap16()</code></td>
+                <td>Changes the Map16 tile the bounce sprite is currently touching. You're better off using either <code>%RevertMap16()</code> or <code>%InvisibleMap16()</code>.</td>
+            </tr>
+            <tr>
+                <td><code>%RevertMap16()</code></td>
+                <td>Calls <code>%BounceChangeMap16()</code>Changes the Map16 tile the bounce sprite is touching with whatever value is in <code>!bounce_map16_tile</code>.</td>
+            </tr>
+            <tr>
+                <td><code>%InvisibleMap16()</code></td>
+                <td>Calls <code>%BounceChangeMap16()</code>Changes the Map16 tile the bounce sprite is touching with an invisible solid block.</td>
+            </tr>
+            <tr>
+                <td><code>%SetSpeed()</code></td>
+                <td>Shortcut for <code>%BounceSetSpeed()</code>. Updates the speed values in the bounce sprite. Meant to be called every frame.</td>
+            </tr>
+            <tr>
+                <td><code>%SetMarioSpeed()</code></td>
+                <td>Shortcut for <code>%BounceSetMarioSpeed()</code>. Updates the player's speed values to reflect them touching the bounce sprite.</td>
+            </tr>
+            <tr>
+                <td><code>%UpdatePos()</code></td>
+                <td>Shortcut for <code>%BounceUpdatePos()</code>. Updates the bounce sprite's position based on its X and Y speed values.</td>
+            </tr>
+            <tr>
+                <td><code>%EraseCoinAbove()</code></td>
+                <td>Deletes a coin Map16 tile above the activated block. This isn't a routine per se, it's just a macro inside of <code>_header.asm</code></td>
+            </tr>
+            <tr>
+                <td><code>%SetupCoords()</code></td>
+                <td>Sets up the origin coordinates for the generic spawn routines. It's called automatically within other macros.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnExtendedAlt()</code></td>
+                <td>Calls <code>%SpawnExtendedGeneric()</code>. Generic routine to spawn a <b>Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnExtended()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSmokeAlt()</code></td>
+                <td>Calls <code>%SpawnSmokeGeneric()</code>. Generic routine to spawn a <b>Smoke Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnSmoke()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnCluster()</code></td>
+                <td><b>NOT IN PIXI YET</b>.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnMinorExtended()</code></td>
+                <td>Calls <code>%SpawnMinorExtendedGeneric()</code>. Generic routine to spawn a <b>Minor Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSpinningCoin()</code></td>
+                <td>Calls <code>%SpawnSpinningCoinGeneric()</code>. Generic routine to spawn a <b>Spinning Coin Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnScore()</code></td>
+                <td>Calls <code>%SpawnScoreGeneric()</code>. Generic routine to spawn a <b>Score Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class="minorextended">
+        <h1 id="minorextended">Minor Extended Sprites</h1>
+        <p>This sprite type is generally seen as the particle system of the game. They can be used to have certain minor effects on things to give them more impact or give feedback on what's happening, such as the Turn Block particles that are generated when the player is big and spin jumps on them.</p>
+        <h2 id="minorextended-programming">Programming</h2>
+        <p>Programming a minor extended sprite just requires a file inside of <code class="path">misc_sprites/minorextended</code> folder, then you can start writing code inside of your ASM file.</p>
+        <p>Minor extended sprites generally should have fairly simple codes to keep them as fast as possible, they also not require a very strict procedure on what should happen inside of them.</p>
+        <p>Example of a minor extended sprite:</p>
+        <pre><code>    print "MAIN",pc
+        lda $9D
+        bne .skip
+        lda $13
+        and #$03
+        beq .no_update_x
+        %SpeedXFast()
+    .no_update_x
+        %SpeedYFast()
+        lda $13
+        and #$03
+        bne .no_update_gravity
+        inc !minor_extended_y_speed,x
+    .no_update_gravity
+    .skip
+        %MinorExtendedGetDrawInfo()
+        bcc .end
+        lda $00
+        sta $0200|!addr,y
+        lda $01
+        sta $0201|!addr,y
+        lda #$40            ; force tile number
+        sta $0202|!addr,y
+        lda !minor_extended_timer,x
+        tax 
+        eor .props,x
+        ora #$02
+        ora $64
+        sta $0203|!addr,y
+        ldx $1698|!addr
+        tya 
+        lsr #2
+        tay 
+        lda #$02
+        ora $02
+        sta $0420|!addr,y
+    .end
+        rtl
+
+    .props
+        db $00,$00,$80,$80,$80,$C0,$40,$00</code></pre>
+        <p>This recreates the gray turn block particle from the gif at the thread, the code doesn't have a lot happening besides fairly standard stuff.</p>
+        <p>As any other sprite, bounce blocks require starting their code with the <code class="path">print "MAIN", pc</code> line, which is used by PIXI to determine where the code will start running. Also this code has the proper data bank set before being executed, so no need for any kind of wrapper.</p>
+        <p>Since minor extended sprites are just images moving around, you just need to take care of drawing them in place, most of the logic would probably be at your graphics routine to make their images a little bit more dynamic.</p>
+        <p>Minor extended sprites offer two ways of updating their X/Y position and handling their speed values, a fast and inaccurate version and a slow but accurate version. The fast speed handling treats speed values as <code class="path">1 speed value = 1 px per frame</code>, which means that for every unit in <code class="path">!minor_extended_x_speed</code> or <code class="path">!minor_extended_y_speed</code> will travel 1 pixel. The slow one treats its speed value the same way regular sprites treat theirs, <code class="path">1 speed value = 1/16th of a pixel per frame</code>, which results in fairly smooth trajectories but in slower code. It's up to you to decide which one fits the best on your sprites. Also, this sprite type doesn't have any gravity routines, so it's also up to you to handle that as well.</p>
+        <h2 id="minorextended-routines">Routines</h2>
+        <p>There are several routines included here, in this table you'll find some info about them, more details in their respective files at the <code class="path">routines</code> folder.</p>
+        <table style="width:100%">
+            <tr>
+                <th>Routine/Macro</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>%MinorExtendedGetDrawInfo()</code></td>
+                <td>Gets misc information of the minor extended sprite to draw it on screen and handle offscreen situations.</td>
+            </tr>
+            <tr>
+                <td><code>%SpeedX()</code></td>
+                <td>Calls <code>%MinorExtendedSpeed()</code>. Updates the <b>X position</b> of the sprite based on its speed using the <b>slow algorithm</b> (1 unit = 1/16th px/frame).</td>
+            </tr>
+            <tr>
+                <td><code>%SpeedXFast()</code></td>
+                <td>Calls <code>%MinorExtendedSpeed()</code>. Updates the <b>X position</b> of the sprite based on its speed using the <b>fast algorithm</b> (1 unit = 1 px/frame).</td>
+            </tr>
+            <tr>
+                <td><code>%SpeedY()</code></td>
+                <td>Calls <code>%MinorExtendedSpeed()</code>. Updates the <b>Y position</b> of the sprite based on its speed using the <b>slow algorithm</b> (1 unit = 1/16th px/frame).</td>
+            </tr>
+            <tr>
+                <td><code>%SpeedYFast()</code></td>
+                <td>Calls <code>%MinorExtendedSpeed()</code>. Updates the <b>Y position</b> of the sprite based on its speed using the <b>fast algorithm</b> (1 unit = 1 px/frame).</td>
+            </tr>
+            <tr>
+                <td><code>%SetupCoords()</code></td>
+                <td>Sets up the origin coordinates for the generic spawn routines. It's called automatically within other macros.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnExtendedAlt()</code></td>
+                <td>Calls <code>%SpawnExtendedGeneric()</code>. Generic routine to spawn a <b>Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnExtended()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSmokeAlt()</code></td>
+                <td>Calls <code>%SpawnSmokeGeneric()</code>. Generic routine to spawn a <b>Smoke Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnSmoke()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnCluster()</code></td>
+                <td><b>NOT IN PIXI YET</b>.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnMinorExtended()</code></td>
+                <td>Calls <code>%SpawnMinorExtendedGeneric()</code>. Generic routine to spawn a <b>Minor Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSpinningCoin()</code></td>
+                <td>Calls <code>%SpawnSpinningCoinGeneric()</code>. Generic routine to spawn a <b>Spinning Coin Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnScore()</code></td>
+                <td>Calls <code>%SpawnScoreGeneric()</code>. Generic routine to spawn a <b>Score Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class="smoke">
+        <h1 id="smoke">Smoke Sprites</h1>
+        <p>Smoke sprites are a minor sprite system that handles drawing sprite images over most of the sprite types in the game. They have a very limited amount of slots available, so you can't really spam them.</p>
+        <h2 id="smoke-programming">Programming</h2>
+        <p>Programming a smoke sprite just requires a file inside of <code class="path">misc_sprites/smoke</code> folder, then you can start writing code inside of your ASM file.</p>
+        <p>Smoke sprites are a super simple and quick sprite type, generally used for smoke particle effects. They have very limited RAM tables and usually they're static on the screen. They also don't have high bytes for their positions, so they can't handle offscreen situations very well.</p>
+        <p>Example of a smoke sprite:</p>
+        <pre><code>    print "MAIN", pc
+        main:
+            lda !smoke_timer,x
+            bne .process
+            stz !smoke_num,x
+            rtl
+
+        .process
+            ldy $9D
+            bne .no_update_timer
+            dec !smoke_timer,x
+        .no_update_timer
+
+        .draw
+            lda #$0E
+            sta $02
+            lda !smoke_timer,x
+            asl #5
+            and #$40
+            ora $64
+            sta $03
+            lda #$02
+            sta $04
+            %SmokeGenericDraw()
+        .return
+            rtl</code></pre>
+        <p>As any other sprite, smoke sprites require starting their code with the <code class="path">print "MAIN", pc</code> line, which is used by PIXI to determine where the code will start running. Also this code has the proper data bank set before being executed, so no need for any kind of wrapper.</p>
+        <h2 id="smoke-routines">Routines</h2>
+        <p>There are several routines included here, in this table you'll find some info about them, more details in their respective files at the <code class="path">routines</code> folder.</p>
+        <table style="width:100%">
+            <tr>
+                <th>Routine/Macro</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>%SetupCoords()</code></td>
+                <td>Sets up the origin coordinates for the generic spawn routines. It's called automatically within other macros.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnExtendedAlt()</code></td>
+                <td>Calls <code>%SpawnExtendedGeneric()</code>. Generic routine to spawn a <b>Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnExtended()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSmokeAlt()</code></td>
+                <td>Calls <code>%SpawnSmokeGeneric()</code>. Generic routine to spawn a <b>Smoke Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnSmoke()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnCluster()</code></td>
+                <td><b>NOT IN PIXI YET</b>.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnMinorExtended()</code></td>
+                <td>Calls <code>%SpawnMinorExtendedGeneric()</code>. Generic routine to spawn a <b>Minor Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSpinningCoin()</code></td>
+                <td>Calls <code>%SpawnSpinningCoinGeneric()</code>. Generic routine to spawn a <b>Spinning Coin Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnScore()</code></td>
+                <td>Calls <code>%SpawnScoreGeneric()</code>. Generic routine to spawn a <b>Score Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class="score">
+        <h1 id="score">Score Sprites</h1>
+        <h2 id="score-programming">Programming</h2>
+        <pre><code>    print "MAIN", pc
+        lda $9D
+        bne .draw
+        lda !score_y_speed,x
+        bne .alive
+        stz !score_num,x
+        rtl 
+    
+    .alive
+        dec !score_y_speed,x
+        cmp #$2A
+        bne .skip_reward
+    .give_reward
+        lda $0F48|!addr
+        clc 
+        adc.b #10
+        cmp.b #90
+        bcc .not_max
+        lda.b #99
+    .not_max
+        sta $0F48|!addr
+        lda #$01
+        sta $1DFC|!addr
+    .skip_reward
+    
+    .handle_movement
+        %UpdateYPos()
+    
+    .draw
+        lda #$44
+        sta $07
+        lda #$EF
+        sta $08
+        lda #$00
+        sta $09
+        lda #$08
+        sta $0A
+        %ScoreGenericDraw()
+        rtl</code></pre>
+        <p>As any other sprite, score sprites require starting their code with the <code class="path">print "MAIN", pc</code> line, which is used by PIXI to determine where the code will start running. Also this code has the proper data bank set before being executed, so no need for any kind of wrapper.</p>
+        <h2 id="score-routines">Routines</h2>
+        <p>There are several routines included here, in this table you'll find some info about them, more details in their respective files at the <code class="path">routines</code> folder.</p>
+        <table style="width:100%">
+            <tr>
+                <th>Routine/Macro</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>%SetupCoords()</code></td>
+                <td>Sets up the origin coordinates for the generic spawn routines. It's called automatically within other macros.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnExtendedAlt()</code></td>
+                <td>Calls <code>%SpawnExtendedGeneric()</code>. Generic routine to spawn a <b>Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnExtended()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSmokeAlt()</code></td>
+                <td>Calls <code>%SpawnSmokeGeneric()</code>. Generic routine to spawn a <b>Smoke Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnSmoke()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnCluster()</code></td>
+                <td><b>NOT IN PIXI YET</b>.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnMinorExtended()</code></td>
+                <td>Calls <code>%SpawnMinorExtendedGeneric()</code>. Generic routine to spawn a <b>Minor Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSpinningCoin()</code></td>
+                <td>Calls <code>%SpawnSpinningCoinGeneric()</code>. Generic routine to spawn a <b>Spinning Coin Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnScore()</code></td>
+                <td>Calls <code>%SpawnScoreGeneric()</code>. Generic routine to spawn a <b>Score Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class="spinningcoin">
+        <h1 id="spinningcoin">Spinning Coin Sprites</h1>
+        <h2 id="spinningcoin-programming">Programming</h2>
+        <pre><code>    print "MAIN", pc
+        lda $9D
+        bne .draw
+        %UpdateYPos()
+        lda !spinning_coin_y_speed,x
+        clc 
+        adc #$03
+        sta !spinning_coin_y_speed,x
+        cmp #$20
+        bmi .draw
+    .erase
+        stz $00
+        stz $01
+        lda.b #$00+!ScoreOffset
+        %SpawnScore()
+        lda !spinning_coin_layer,x
+        sta !score_layer,y 
+        
+        stz $00
+        stz $01
+        lda #$10
+        sta $02
+        lda !spinning_coin_layer,x
+        lsr 
+        php 
+        lda !spinning_coin_x_low,x
+        bcc .no_layer_2_x
+        sbc $26
+    .no_layer_2_x
+        sta $04
+        lda !spinning_coin_y_low,x
+        plp 
+        bcc .no_layer_2_y
+        sbc $28
+    .no_layer_2_y
+        sta $06
+        lda #$05
+        xba
+        %SpawnSmokeGeneric()
+        stz !spinning_coin_num,x
+        rtl
+        
+    .draw
+        ;draw routine ommited, check the actual file for it (too long)</code></pre>
+        <h2 id="spinningcoin-routines">Routines</h2>
+        <p>There are several routines included here, in this table you'll find some info about them, more details in their respective files at the <code class="path">routines</code> folder.</p>
+        <table style="width:100%">
+            <tr>
+                <th>Routine/Macro</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>%SetupCoords()</code></td>
+                <td>Sets up the origin coordinates for the generic spawn routines. It's called automatically within other macros.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnExtendedAlt()</code></td>
+                <td>Calls <code>%SpawnExtendedGeneric()</code>. Generic routine to spawn a <b>Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnExtended()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSmokeAlt()</code></td>
+                <td>Calls <code>%SpawnSmokeGeneric()</code>. Generic routine to spawn a <b>Smoke Sprite (ID given in A)</b> from the sprite's origin plus an offset. An alternative and generic version of <code>%SpawnSmoke()</code></td>
+            </tr>
+            <tr>
+                <td><code>%SpawnCluster()</code></td>
+                <td><b>NOT IN PIXI YET</b>.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnMinorExtended()</code></td>
+                <td>Calls <code>%SpawnMinorExtendedGeneric()</code>. Generic routine to spawn a <b>Minor Extended Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnSpinningCoin()</code></td>
+                <td>Calls <code>%SpawnSpinningCoinGeneric()</code>. Generic routine to spawn a <b>Spinning Coin Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+            <tr>
+                <td><code>%SpawnScore()</code></td>
+                <td>Calls <code>%SpawnScoreGeneric()</code>. Generic routine to spawn a <b>Score Sprite (ID given in A)</b> from the sprite's origin plus an offset.</td>
+            </tr>
+        </table>
+    </div>
+</body>
