@@ -1,0 +1,47 @@
+
+    body{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: rgb(29, 29, 29);
+        color: rgb(230, 230, 230);
+    }
+    .note{
+        color: rgb(255, 49, 49);
+    }
+    .link{
+        font-size: x-small;
+    }
+    path{
+        font-family: 'Consolas';
+        background-color: rgb(59, 55, 49);
+        border: 1px none;
+        border-radius: 8px;
+        padding: 1px 2px;
+    }
+    author{
+        color: #ffb184;
+    }
+    icode{
+        font-family: 'Consolas';
+        background-color: rgb(41, 51, 41);
+        border: 1px none;
+        border-radius: 8px;
+        padding: 1px 2px;
+    }
+
+    /* link stuff */
+    /* unvisited */
+    a:link {
+    color: #2ea1ff;
+    }
+    /* visited */
+    a:visited {
+    color: #3051bd;
+    }
+    /* mouse over */
+    a:hover {
+    color: #4fd6ff;
+    }
+    /* selected */
+    a:active {
+    color: #1919ca;
+    }

@@ -1,0 +1,91 @@
+<head>
+    <title>PIXI Documentation</title>
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="intro">
+        <h1>PIXI Documentation</h1>
+        <p>Created by JackTheSpades, further development support by various people.</p>
+        <p>Current tool version: <b>1.32</b></p>
+        <p>Current documentation version: <b>1.0</b></p>
+    </div>
+    <hr>
+    <div>
+        <h2>Documents</h2>
+        <p class="note">All of them lead to WIP pages. Only Changelog has content inside.</p>
+        <h3>For regular users</h3>
+        <ul>
+            <li><a href="basic_usage.html">Basic usage</a></li>
+            <li><a href="per_level.html">Per level sprites</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+        </ul>
+        <h3>For developers</h3>
+        <ul>
+            <li><a href="dev/sprites.html">Creating sprites</a></li>
+            <li><a href="dev/extended.html">Creating extended sprites</a></li>
+            <li><a href="dev/cluster.html">Creating cluster sprites</a></li>
+            <li><a href="dev/minor_extended.html">Creating minor extended sprites</a></li>
+            <li><a href="dev/bounce.html">Creating bounce sprites</a></li>
+            <li><a href="dev/smoke.html">Creating smoke sprites</a></li>
+            <li><a href="dev/score.html">Creating score sprites</a></li>
+            <li><a href="dev/spinning_coins.html">Creating spinning coin sprites</a></li>
+            <li><a href="dev/shared_routines.html">Creating shared routines</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div id="features">
+        <h2>Features <a href="#features" class="link">[Link]</a></h2>
+        <p class="note">Copy-pasted from PIXI's thread, requires checking/proofreading and maybe make it shorter or completely rewrite this part.</p>
+        <p>PIXI is a sprite insertion tool made to allow more dynamic sprite usage, space savings and more SA-1 compatibility. Despite this, it is almost fully compatible with sprites written for older SpriteTools, save for the fact that Asar is now used as the assembler.</p>
+        <ul>
+            <li><b>Softcoded</b><br>
+                The old sprite tool inserted its code as a preassembled byte array and then sets up the calls (hijacks) for it. Put simply, it was a nightmare to read and figure out what hijacks it applied. Here, the applied asm file is available for editing. The tool only generates the binary tables that are included by the asm. So you can basically look at the code and edit it (to some extent) as you like.</li>
+            <li><b>Dynamic SA-1 support</b><br>
+                Kinda goes hand-in-hand with the softcoded part. The tool doesn't really care if the ROM is SA-1 or not. HOWEVER, there is an asm file with all sa-1 defines that will be default included in every sprite, so you don't have to stick that annoying read1() check for sa-1 at the beginning of every sprite. For all sprite relevant addresses, there exists a define. More info on that is in the readme.
+            </li>
+            <li><b>GPS Interface</b><br>
+                I basically copied over the interface from p4plus2's GPS for 2 reasons:<br>
+                1. It's simple, easy and comfortable to use.<br>
+                2. It's a lot more comfortable to work with multiple tools if they all use the same interface.
+            </li>
+            <li><b>Shared Routines</b><br>
+                Again, kinda goes hand-in-hand with the GPS interface, so why not copy that over as well? I mean that quite literally, that is 99% the code from GPS copied over. As a friend of mine likes to say: "Why bother to reinvent the wheel".<br>
+                As such, I included a bunch of common routines you may need in sprites. Check out the included sprites to see how some are used.
+            </li>
+            <li><b>Asar Only</b><br>
+                So yeah, this is one thing that's probably gonna be a problem for many people. The tool only allows asar coded sprites... no more TRASM. That is again for 2 simple reasons. 1. TRASM sucks and 2. I'd have had to literally overthrow the way my entire code works to include this shitty assembler, so no thank you.
+            </li>
+            <li><b>Sprite Tool support</b><br>
+                The tool basically works the same as sprite tool and can be applied on top of a ROM that used sprite tool before. It will of course remove all the sprites though.
+            </li>
+            <li><b>Per Level Sprites</b><br>
+                So here it is, the real reason why I even got into this in the first place. My stupid crazy idea. I noticed we have a lot of things that run on a per level basis. With Vitor's uberASM tool now even NMI. So I thought to myself, "Why not sprites?" and with that, the idea was born.<br>
+                This tool "sacrifices" 16 global sprite slots and turns them into per level slots. Meaning, you can assign the same sprite number to different sprites depending on the level. Sprite B0 could be a thwomp in level 105 and a hammer bro in level 106 or a reverse boo in level 107.<br>
+                The 16 slots from B0-BF can be freely assigned across all $200 levels.<br>
+                Likewise, you can also have a shooter, that shoots sprite B0, which will spawn a sprite depending on the level.<br>
+                I figured this could be especially neat for collabs and such.</br>
+            </li>
+            <li><b>Poison Mushroom</b><br>
+                Sprite Tool had a needlessly complicated way to insert the poison mushroom with another preassembled code and then setting up hijacks, all wrapped in a cfg file that doesn't follow the same format as any other cfg file. So I just included a patch you can apply to enable the poison mushroom. It doesn't really have anything to do with the tool. Just grab asar, run the patch, done.
+            </li>
+            <li><b>New CFG Editor</b><br>
+                Because I fucking can!!!
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <h2>Credits</h2>
+        <p class="note">I have no idea how to sort this list</p>
+        <ul>
+            <li>JackTheSpades</li>
+            <li>Tattletale</li>
+            <li>Atari2.0</li>
+            <li>Akaginite</li>
+            <li>Alcaro</li>
+            <li>randomdude999</li>
+            <li>Sillymel</li>
+            <li>lx5</li>
+        </ul>
+    </div>
+</body>
