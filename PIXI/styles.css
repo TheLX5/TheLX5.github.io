@@ -1,7 +1,7 @@
 
     body{
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        background-color: rgb(29, 29, 29);
+        background-color: rgb(28, 28, 28);
         color: rgb(230, 230, 230);
     }
     .note{
@@ -12,13 +12,13 @@
     }
     path{
         font-family: 'Consolas';
-        background-color: rgb(59, 55, 49);
+        background-color: rgb(51, 48, 45);
         border: 1px none;
         border-radius: 8px;
         padding: 1px 2px;
     }
     author{
-        color: #ffb184;
+        color: #ffe884;
     }
     icode{
         font-family: 'Consolas';
@@ -31,17 +31,17 @@
     /* link stuff */
     /* unvisited */
     a:link {
-    color: #2ea1ff;
+        color: #2ea1ff;
     }
     /* visited */
     a:visited {
-    color: #3051bd;
+        color: #3051bd;
     }
     /* mouse over */
     a:hover {
-    color: #4fd6ff;
+        color: #4fd6ff;
     }
     /* selected */
     a:active {
-    color: #1919ca;
+        color: #1919ca;
     }

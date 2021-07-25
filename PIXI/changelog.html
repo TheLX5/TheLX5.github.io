@@ -6,15 +6,45 @@
     <div id="top">
         <h2>PIXI's changelog</h2>
         <ul>
-            <li><a href="#132">v1.32 (Jan 23, 2021)</a></li>
+            <li><a href="#132">v1.32 (January 23, 2021)</a></li>
             <li><a href="#131">v1.31 (November 4, 2020)</a></li>
             <li><a href="#13">v1.3 (September 19, 2020)</a></li>
             <li><a href="#1215">v1.2.15 (July 10, 2020)</a></li>
             <li><a href="#1214">v1.2.14 (March 02, 2020)</a></li>
+            <li><a href="#1213">v1.2.13 (January 09, 2020)</a></li>
+            <li><a href="#1212">v1.2.12 (October 28, 2019)</a></li>
+            <li><a href="#1211">v1.2.11 (August 26, 2019)</a></li>
+            <li><a href="#1210">v1.2.10 (July 6, 2019)</a></li>
+            <li><a href="#129">v1.2.9 (February 17, 2019)</a></li>
+            <li><a href="#128">v1.2.8 (January 20, 2019)</a></li>
+            <li><a href="#127">v1.2.7 (January 13, 2019)</a></li>
+            <li><a href="#126">v1.2.6 (December 30, 2018)</a></li>
+            <li><a href="#125">v1.2.5 (December 29, 2018)</a></li>
+            <li><a href="#124">v1.2.4 (December 25, 2018)</a></li>
+            <li><a href="#123">v1.2.3 (July 15, 2018)</a></li>
+            <li><a href="#122">v1.2.2 (June 10, 2018)</a></li>
+            <li><a href="#121">v1.2.1 (January 17, 2018)</a></li>
+            <li><a href="#121">v1.2 (December 3, 2017)</a></li>
+            <li><a href="#121">v1.1 (July 29, 2017)</a></li>
+            <li><a href="#10">v1.0 (Feb 16, 2017)</a></li>
         </ul>
     </div>
     <hr>
-    <div id=#132>
+    <!---
+    TEMPLATE FOR NEWER ENTRIES, PLS FOLLOW
+
+    <div id="">
+        <h3>v () <a href="#" class="link">[Link]</a></h3>
+        <ul>
+            <li><author></author>
+                
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    -->
+    <div id="132">
         <h3>v1.32 (Jan 23, 2021) <a href="#132" class="link">[Link]</a></h3>
         <ul>
             <li><author>Atari2.0</author>
@@ -60,7 +90,7 @@
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>
-    <div id=#131>
+    <div id="131">
         <h3>v1.31 (November 4, 2020) <a href="#131" class="link">[Link]</a></h3>
         <ul>
             <li><author>Atari2.0, randomdude999</author>
@@ -91,7 +121,7 @@
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>
-    <div id=#13>
+    <div id="13">
         <h3>v1.3 (September 19, 2020) <a href="#13" class="link">[Link]</a></h3>
         <ul>
             <li><author>Atari2.0</author>
@@ -140,7 +170,7 @@
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>
-    <div id=#1215>
+    <div id="1215">
         <h3>v1.2.15 (July 10, 2020) <a href="#1215" class="link">[Link]</a></h3>
         <ul>
             <li><author>Atari2.0</author>
@@ -162,7 +192,7 @@
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>
-    <div id=#1214>
+    <div id="1214">
         <h3>v1.2.14 (March 02, 2020) <a href="#1214" class="link">[Link]</a></h3>
         <ul>
             <li><author>Atari2.0</author>
@@ -205,16 +235,403 @@
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>
-    <!---
-    <div id=#>
-        <h3>v () <a href="#" class="link">[Link]</a></h3>
+    <div id="1213">
+        <h3>1.2.13 (January 09, 2020) <a href="#1213" class="link">[Link]</a></h3>
         <ul>
-            <li><author></author>
-                
+            <li><author>Tattletale</author>
+                Fixed a bug with sprite data displacement introduced in 1.2.10. LM3 cache would cover this up in most cases, except for reeeeeally tall levels.
+            </li>
+            <li><author>Tattletale</author>
+                Added a compatibility flag to disable 255 sprites per level support on fastROM <icode>-d255spl</icode>, check the readme for more info.
+            </li>
+            <li><author>Tattletale</author>
+                Removed <path>main_npl.asm</path>, now there's an optional config file included in <path>sa1def.asm</path> that's generated on every run. Eventually this file will actually become a config file. Special thanks to <author>randomdude999</author> for giving me the code to check for files in asar.
+            </li>
+            <li><author>Tattletale</author>
+                <icode>SubOffScreen</icode> edited to include a check for <icode>-d255spl</icode> flag.
+            </li>
+            <li><author>Tattletale</author>
+                <path>sa1def.asm</path> edited to include checks for <icode>-d255spl</icode> flag. All defines that were in <path>main.asm</path> before were moved to <path>sa1def.asm</path>.
             </li>
         </ul>
         <p><a href="#top">[Back to top]</a></p>
     </div>
-    -->
+    <hr>
+    <div id="1212">
+        <h3>v1.2.12 (October 28, 2019) <a href="#1212" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>dtothefourth</author>
+                Fixed the cfg editor to work properly with n extra bytes (actually only up to 12). Disclaimer, the cfg editor will be removed from pixi packaging starting from the next update! It will be submitted as a standalone resource.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="1211">
+        <h3>v1.2.11 (August 26, 2019) <a href="#1211" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Tattletale</author>
+                n extra byte support for both shooters and sprites. Goes up to 12 because LM only supports up to 12. Read the <path>readme.txt</path> for further info.
+            </li>
+            <li><author>Tattletale</author>
+                added two secret folders called <path>./asm/ExtraDefines</path> and <path>./asm/ExtraHijacks</path>. Now you can ship your own defines and hijacks along with your resources, just be very very careful with that. Read the readme for further info.
+            </li>
+            <li><author>Tattletale</author>
+                added Akaginite's MeiMei to pixi. This will sort out your sprite data when inserting or modifying sprites' extra byte configuration, when said sprites are already used in levels. Before this, you would just get a crash / corrupted sprite data. Special thanks to <author>Akaginite</author> (I would say 95% of the code is from MeiMei), <author>Vitor Vilela</author>, <author>Randomdude999</author>, <author>Alcaro</author>, they helped me deal with asar / sa1 address conversions. For further information read the readme - several flags were added as config for MeiMei, check the readme.
+            </li>
+            <li><author>Tattletale</author>
+                fixed a json related crash when the file name is invalid. The current message isn't any better but at least it won't crash. Messages will be reworked at some point.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="1210">
+        <h3>v1.2.10 (July 6, 2019) <a href="#1210" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Tattletale</author>
+                <path>sa1convert</path> officially removed from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>trashkas</path> officially removed from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>donutblk</path> gps block removed from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>poison.asm</path> patch removed from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>level_ender</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>donut_lift</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>piranha_sideways</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>roto_disc</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>thwomp_left</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>thwomp_right</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>base_bro</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>shell_bro</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>bomb_bro</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>boomerang</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>boomerang_bro</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>hammer_bro</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>clusterspawn</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>fishspawn</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>flowerspawn</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>rainspawn</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>sandstormspawn</path> sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>diag_down_bill</path> shooter remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>diag_up_bill</path> shooter remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>vertical_bill</path> shooter remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>fish</path> cluster sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>flowers</path> cluster sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>rain</path> cluster sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>sandstorm</path> cluster sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>boomerang</path> extended sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>hammer</path> extended sprite remove from pixi.
+            </li>
+            <li><author>Tattletale</author>
+                <path>src.zip</path> is not packed anymore. If you want the source, get it in github.
+            </li>
+            <li><author>Tattletale</author>
+                <path>Graphic for Included Sprites</path> has been removed.
+            </li>
+            <li><author>Tattletale</author>
+                Added a file called <path>removedResources.txt</path> so you can get back these resources from elsewhere.
+            </li>
+            <li><author>Tattletale</author>
+                Table <icode>1938</icode> has been moved to <icode>7FAF00</icode>, it also now uses 256 bytes. So <icode>7E1938</icode> is now free.
+            </li>
+            <li><author>Tattletale</author>
+                Added 3 extra bytes for shooters at <icode></icode>7FAC00|4000F1, <icode></icode>7FAC08|400030 and <icode></icode>7FAC10|400038 - 8 bytes each.
+            </li>
+            <li><author>Tattletale</author>
+                Added <icode>!addr</icode>, <icode>!dp</icode>, <icode>!bank</icode>, <icode>!sa1</icode>, <icode>!shooter_extra_byte_1</icode>, <icode>!shooter_extra_byte_2</icode>, <icode>!shooter_extra_byte_3</icode> and <icode>!7FAF00</icode> as defines. <icode>!1938</icode> is now the same as <icode>!7FAF00</icode>, so be careful, it's not 16bits anymore for fastROM.
+            </li>
+            <li><author>Tattletale</author>
+                <icode>SubOffScreen</icode> edited to explicitly use <icode>.L</icode> and the new table's macro.
+            </li>
+            <li><author>Tattletale</author>
+                Pixi now handles the sprite status table just like sa1 does (256 bytes). Now it's safe to disable LM's warning for sprite count when using fastROM. This is also technically a bug fix.
+            </li>
+            <li><author>Tattletale</author>
+                Some minor optimizations to <path>main.asm.</path>
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="129">
+        <h3>v1.2.9 (February 17, 2019) <a href="#129" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Tattletale</author>
+                Fixed a bug with the <path>Star.asm</path> routine (provided by <author>Blinddevil</author>, reported by <author>Darolac</author>).
+            </li>
+            <li><author>Tattletale</author>
+                Fixed a bug with <path>>ExtendedGetDrawInfo.asm</path (reported by <author>Darolac</author>, I think it was <author>Sonikku</author> who fixed this (?)).
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="128">
+        <h3>v1.2.8 (January 20, 2019) <a href="#128" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Tattletale</author>
+                Fixed a bug with sprite data in sa1 not being displaced correctly. This would cause random sprites to spawn when extension byte was used (didn't happen every time). Also added some doc/comments to <path>main.asm</path> while I was at it.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="127">
+        <h3>v1.2.7 (Jan 13, 2019) <a href="#127" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Tattletale</author>
+                Routines <icode>ChangeMap16</icode>, <icode>ExtendedHurt</icode>, <icode>SubVertPos</icode>, <icode>SubHorzPos</icode>, <icode>SpawnSprite</icode>, <icode>GetMap16</icode> and <icode>GetDrawInfo</icode> were updated so their top-most labels were removed and only sublabels are used within them to avoid issues with asar. Reported by <author>DigitalSine</author>.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="126">
+        <h3>v1.2.6 (December 30, 2018) <a href="#126" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Tattletale</author>
+                Fixed an issue with <icode>ChangeMap16</icode> in vertical levels.
+            </li>
+            <li><author>Tattletale</author>
+                Fixed an issue with <icode>GetMap16</icode> in vertical levels.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="125">
+        <h3>v1.2.5 (December 29, 2018) <a href="#125" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Tattletale</author>
+                Fixed an inconsistency I left in main.asm that would cause a half-state of the perlevel feature to be inserted. Without <icode>-npl</icode> this would cause the first shooter or generator to not spawn properly.
+            </li>
+            <li><author>Tattletale</author>
+                Perlevel sprite has been turned off by default.
+            </li>
+            <li><author>Tattletale</author>
+                <icode>-npl</icode> doesn't do anything anymore, but is still around so stuff don't break with it.
+            </li>
+            <li><author>Tattletale</author>
+                New flag <icode>-pl</icode> created so you can still use sprite perlevel feature.
+            </li>
+            <li><author>Tattletale</author>
+                Bugfix on the LM version detection code. Rude, rude mistake (didn't affect anyone unless you use lm 193 and 16x), unredeemable.
+            </li>
+            <li><author>Tattletale</author>
+                Fixed a bug in error handling for sprite per level below B0 or above BF.
+            </li>
+            <li><author>Tattletale</author>
+                CFG Editor now opens either cfg or json without changing file types in the menu (mask is <path>*.json</path>; <path>*.cfg</path>).
+            </li>
+            <li><author>Tattletale</author>
+                Fixed thwomp json mappings.
+            </li>
+            <li><author>Tattletale</author>
+                Donut Lift's code reverted. Now it should be working normally. I'm sorry I left a piece of test code there.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="124">
+        <h3>v1.2.4 (December 25, 2018) <a href="#124" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Tattletale</author>
+                Recompiled with new g++. Added namespace as a fix for the macro sublabel shenanigan.
+            </li>
+            <li><author>Tattletale</author>
+                Updated Asar dll to 1.61.
+            </li>
+            <li><author>Tattletale</author>
+                SA-1 16bit sprite data pointer support.
+            </li>
+            <li><author>Tattletale</author>
+                FastROM pagination sprite data pointer support.
+            </li>
+            <li><author>Tattletale</author>
+                <icode>GetMap16</icode> and <icode>ChangeMap16</icode> were replaced by Akaginite's implementation. Added support to new LM.
+            </li>
+            <li><author>Tattletale</author>
+                Sprite 7B is entirely reserved to LM, so nothing inserted in the 7B slot will work as a custom sprite.
+            </li>
+            <li><author>Tattletale</author>
+                <icode>SubOffScreen</icode> updated to consider new LM settings.
+            </li>
+            <li><author>Tattletale</author>
+                Fixed a bug with <icode>SubOffScreen</icode>, it would run all checks even when the sprite is on screen.
+            </li>
+            <li><author>Tattletale</author>
+                <icode>Aiming</icode> routine update to use <author>Akaginite</author>'s version.
+            </li>
+            <li><author>Tattletale</author>
+                All routines were updated to use <icode>?+</icode>/<icode>?-</icode> instead of <icode>+</icode>/<icode>-</icode> to avoid redefines outside the routine context.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="123">
+        <h3>v1.2.3 (July 15, 2018) <a href="#123" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Telinc1</author>
+                Updated to use Asar 1.60 DLL.
+            </li>
+            <li><author>Telinc1</author>
+                Fixed problems with the <icode>Aiming</icode>, <icode>ExtendedGetDrawInfo</icode> and <icode>Random</icode> routines.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="122">
+        <h3>v1.2.2 (June 10, 2018) <a href="#122" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>Blind Devil</author>
+                Fixed <path>Star.asm</path>, which didn't have a bank wrapper, thus not reading tables correctly.
+            </li>
+            <li><author>Blind Devil</author>
+                fixed <path>sa1def.asm</path>, uncommenting the <icode>!7FAB64</icode> define macro used for Extra Byte 4, and also correcting its default SA-1 address for <icode>!extra_byte_4</icode> define, used by the tool, which was wrong (default was <icode>$4000D8</icode> when the correct is meant to be <icode>$4000DB</icode>).
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="121">
+        <h3>v1.2.1 (December 3, 2017) <a href="#121" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>RPG Hacker</author>
+                Added a changelog so that we don't have to search all over the internet for things that have changed between versions.
+            </li>
+            <li><author>RPG Hacker</author>
+                Added missing command line arguments to Readme.
+            </li>
+            <li><author>Blind Devil</author>
+                Fixed <path>SubOffScren.asm</path>.
+            </li>
+            <li><author>lx5</author>
+                Fixed some extended sprites defines having wrong RAM addresses.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="12">
+        <h3>v1.2 (December 04, 2017) <a href="#12" class="link">[Link]</a></h3>
+        <p class="note">(Information on this version added post-released by RPG Hacker, may not be accurate, feel free to fix any mistakes and add any missing information)</p>
+        <ul>
+            <li><author>JackTheSpades</author>
+                Added support for JSON configuration file (with CFG files still supported for backwards-compatibility).
+            </li>
+        </ul>
+        <li><author>JackTheSpades</author>
+            Added functionality to generate <path>.ssc</path>, <path>.mwt</path>, <path>.mw2</path> and <path>.s16</path> files from information embedded into the JSON sprite configuration files. (Those files are used by Lunar Magic for displaying sprites more nicelys in the editor)
+        </li>
+        <li><author>JackTheSpades</author>
+            Updated the CFG Editor so that it actually lets you edit said embedded information in the JSON files via a more intuitive GUI, inspired by Lunar Magic's interface.
+        </li>
+        <li><author>JackTheSpades</author>
+            Added <icode>-npl</icode> option to disable per-level sprites. This is primarily intended as a workaround for Asar's <icode>freedata align</icode> freezing bug. NOTE: Do not use on ROMs with sprites already inserted into slots B0 to BF.
+        </li>
+        <li><author>JackTheSpades</author>
+            Added <icode>-a &lt;asm&gt;</icode> option to override the asm path PIXI uses.
+        </li>
+        <li><author>JackTheSpades</author>
+            Improved handling for when the ROM isn't in the same folder as PIXI by converting paths to either relative to the ROM or relative to the executable.
+        </li>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="11">
+        <h3>v1.1 (July 29, 2017) <a href="#11" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>JackTheSpades</author>
+                Added support for cluster sprites.
+            </li>
+            <li><author>JackTheSpades</author>
+                Added support for extended sprite.
+            </li>
+            <li><author>JackTheSpades</author>
+                Added support for up to 4 extra bytes per sprite that can be set via Lunar Magic.
+            </li>
+            <li><author>JackTheSpades</author>
+                Renamed and added new command line options for customizing the paths PIXI uses.
+            </li>
+            <li><author>JackTheSpades</author>
+                Updated CFG Editor, which now contains all the functionality of Tweaker.
+            </li>
+            <li><author>RPG Hacker</author>
+                Fixed a couple of bugs in different included ASM files, mainly in regards to SA-1 compatibility.
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="10">
+        <h3>v1.0 (Feb 16, 2017) <a href="#10" class="link">[Link]</a></h3>
+        <ul>
+            <li><author>JackTheSpades</author>
+                Initial release
+            </li>
+        </ul>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
     <p><a href="index.html">[Return to the main page]</a></p>
 </body>
