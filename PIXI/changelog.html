@@ -579,22 +579,22 @@
             <li><author>JackTheSpades</author>
                 Added support for JSON configuration file (with CFG files still supported for backwards-compatibility).
             </li>
+            <li><author>JackTheSpades</author>
+                Added functionality to generate <path>.ssc</path>, <path>.mwt</path>, <path>.mw2</path> and <path>.s16</path> files from information embedded into the JSON sprite configuration files. (Those files are used by Lunar Magic for displaying sprites more nicelys in the editor)
+            </li>
+            <li><author>JackTheSpades</author>
+                Updated the CFG Editor so that it actually lets you edit said embedded information in the JSON files via a more intuitive GUI, inspired by Lunar Magic's interface.
+            </li>
+            <li><author>JackTheSpades</author>
+                Added <icode>-npl</icode> option to disable per-level sprites. This is primarily intended as a workaround for Asar's <icode>freedata align</icode> freezing bug. NOTE: Do not use on ROMs with sprites already inserted into slots B0 to BF.
+            </li>
+            <li><author>JackTheSpades</author>
+                Added <icode>-a &lt;asm&gt;</icode> option to override the asm path PIXI uses.
+            </li>
+            <li><author>JackTheSpades</author>
+                Improved handling for when the ROM isn't in the same folder as PIXI by converting paths to either relative to the ROM or relative to the executable.
+            </li>
         </ul>
-        <li><author>JackTheSpades</author>
-            Added functionality to generate <path>.ssc</path>, <path>.mwt</path>, <path>.mw2</path> and <path>.s16</path> files from information embedded into the JSON sprite configuration files. (Those files are used by Lunar Magic for displaying sprites more nicelys in the editor)
-        </li>
-        <li><author>JackTheSpades</author>
-            Updated the CFG Editor so that it actually lets you edit said embedded information in the JSON files via a more intuitive GUI, inspired by Lunar Magic's interface.
-        </li>
-        <li><author>JackTheSpades</author>
-            Added <icode>-npl</icode> option to disable per-level sprites. This is primarily intended as a workaround for Asar's <icode>freedata align</icode> freezing bug. NOTE: Do not use on ROMs with sprites already inserted into slots B0 to BF.
-        </li>
-        <li><author>JackTheSpades</author>
-            Added <icode>-a &lt;asm&gt;</icode> option to override the asm path PIXI uses.
-        </li>
-        <li><author>JackTheSpades</author>
-            Improved handling for when the ROM isn't in the same folder as PIXI by converting paths to either relative to the ROM or relative to the executable.
-        </li>
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>
