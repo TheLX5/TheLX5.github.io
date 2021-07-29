@@ -10,6 +10,13 @@
     .link{
         font-size: x-small;
     }
+    .img{
+        font-style: italic;
+    }
+    .tbl{
+        font-style: italic;
+        font-weight: bold;
+    }
     path{
         font-family: 'Consolas';
         background-color: rgb(51, 48, 45);
@@ -22,6 +29,12 @@
     }
     icode{
         font-family: 'Consolas';
+        background-color: rgb(41, 51, 41);
+        border: 1px none;
+        border-radius: 8px;
+        padding: 1px 2px;
+    }
+    .code{
         background-color: rgb(41, 51, 41);
         border: 1px none;
         border-radius: 8px;
@@ -44,4 +57,25 @@
     /* selected */
     a:active {
         color: #1919ca;
+    }
+
+
+    table {
+        font-weight: normal;
+        border-collapse: collapse;
+        width:100%;
+    }
+
+    td, th {
+        border: 1px solid #cccccc;
+        text-align: left;
+        font-weight: normal;
+        padding: 4px 6px;
+    }
+    th {
+        font-weight: bold;
+        background-color: rgb(34, 34, 34);
+    }
+    div{
+        padding: 0px 4px;
     }

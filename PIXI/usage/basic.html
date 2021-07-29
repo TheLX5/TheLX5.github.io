@@ -1,7 +1,347 @@
 <head>
     <title>Basic usage - PIXI Documentation</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <p class="note">WIP</p>
+    <div id="top">
+        <h1>Basic usage <a href="basic.html" class="link">[Link]</a></h1>
+        <p>Here's everything to know about PIXI from a end user perspective.</p>
+        <p class="note">WIP</p>
+    </div>
+    <hr>
+    <div id="index">
+        <h2>Content <a href="#index" class="link">[Link]</a></h2>
+        <ul>
+            <li><a href="#workspace">Workspace & files</a></li>
+            <li><a href="#types">Sprite types</a></li>
+            <li><a href="#list">PIXI sprite list</a></li>
+            <li><a href="#insert">Inserting sprites</a></li>
+            <!--
+            <li><a href="#"></a></li>
+            -->
+        </ul>
+    </div>
+    <hr>
+    <div id="workspace">
+        <h2>Workspace & files <a href="#workspace" class="link">[Link]</a></h2>
+        <p>PIXI comes with the ideal workspace where it performs the best; a isolated folder without other tools (other than CFG Editor) inside of it.</p>
+        <center>
+            <img src="files/basic_1.png">
+            <p class="img">PIXI's default file structure.</p>
+        </center>
+        <p>The files inside the .zip file have their very own purpose and it's not recommended to remove or rename them.</p>
+        <center>
+            <p class="tbl">Summary of PIXI's files and their functions</p>
+        </center>
+        <table>
+            <tr>
+                <th>Folder/File</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>asm</td>
+                <td>This folder contains the ASM source for everything PIXI requires to work in a ROM.</td>
+            </tr>
+            <tr>
+                <td>cluster</td>
+                <td>Default directory for <b>Cluster Sprites</b>. This is where those sprite types go.</td>
+            </tr>
+            <tr>
+                <td>extended</td>
+                <td>Default directory for <b>Extended Sprites</b>. This is where those sprite types go.</td>
+            </tr>
+            <tr>
+                <td>generators</td>
+                <td>Default directory for <b>Generator Sprites</b>. This is where those sprite types go.</td>
+            </tr>
+            <tr>
+                <td>misc_sprites</td>
+                <td>Default directory for <b>Misc Sprites</b>. Inside of this folder are more folders for different, albeit minor, sprite types that PIXI can insert.</td>
+            </tr>
+            <tr>
+                <td>routines</td>
+                <td>Default directory for <b>Shared Routines</b>. This is where every shared routine must go in order to be used by PIXI and its sprites.</td>
+            </tr>
+            <tr>
+                <td>shooters</td>
+                <td>Default directory for <b>Shooter Sprites</b>. This is where those sprite types go.</td>
+            </tr>
+            <tr>
+                <td>sprites</td>
+                <td>Default directory for <b>Custom Sprites.</b> This is where those sprite types go.</td>
+            </tr>
+            <tr>
+                <td>asar.dll</td>
+                <td>Asar in <path>.dll</path> form.</td>
+            </tr>
+            <tr>
+                <td>CFG Editor.exe</td>
+                <td>Old CFG Editor. Lets you modify certain behaviors of the <b>Custom Sprites</b> you insert. You're required to insert sprites again after modifying the <path>.cfg</path> or <path>.json</path> files.</td>
+            </tr>
+            <tr>
+                <td>changelog.txt</td>
+                <td>Old changelog file.</td>
+            </tr>
+            <tr>
+                <td>Newtonsoft.Json.dll</td>
+                <td>JSON parser for PIXI.</td>
+            </tr>
+            <tr>
+                <td>pixi.exe</td>
+                <td>Executable file for PIXI. Inserts sprites mentioned in the list file.</td>
+            </tr>
+            <tr>
+                <td>readme.txt</td>
+                <td>Old readme file with instructions.</td>
+            </tr>
+            <tr>
+                <td>removedResources.txt</td>
+                <td>List of every resource removed from PIXI in <a href="../changelog.html">v1.2.10</a>.</td>
+            </tr>
+            <!--
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            -->
+        </table>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="types">
+        <h2>Sprite types <a href="#types" class="link">[Link]</a></h2>
+        <p>PIXI lets you insert several sprite types into your ROM, which should cover every sprite type in the original game.</p>
+        <center>
+            <p class="tbl">PIXI's supported sprite types</p>
+        </center>
+        <table>
+            <tr>
+                <th>Sprite type</th>
+                <th>Examples</th>
+            </tr>
+            <tr>
+                <td>Regular/Custom</td>
+                <td>Koopas, Goombas, Rexes and Blurps</td>
+            </tr>
+            <tr>
+                <td>Shooter</td>
+                <td>Bullet Bill cannons and Torpedo Ted launchers</td>
+            </tr>
+            <tr>
+                <td>Generator</td>
+                <td>Fish generator.</td>
+            </tr>
+            <tr>
+                <td>Extended</td>
+                <td>Baseballs from Pitchin' Chucks and Player's fireballs.</td>
+            </tr>
+            <tr>
+                <td>Cluster</td>
+                <td>Boos in a circle & Sumo Bros' flames from a lightning.</td>
+            </tr>
+            <tr>
+                <td>Bounce</td>
+                <td>Appear above of a Question Mark Block that the player just hit.</td>
+            </tr>
+            <tr>
+                <td>Smoke</td>
+                <td>Small particles when the player quickly turns around.</td>
+            </tr>
+            <tr>
+                <td>Minor Extended</td>
+                <td>Exploding particles from a broken Throw block or Turn block.</td>
+            </tr>
+            <tr>
+                <td>Score</td>
+                <td>Text that appears upon defeating any enemy.</td>
+            </tr>
+            <tr>
+                <td>Spinning Coin</td>
+                <td>Coin that appears when hitting a Question Mark Block from below which contains one or more coins.</td>
+            </tr>
+            <!--
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            -->
+        </table>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="list">
+        <h2>PIXI sprite list <a href="#list" class="link">[Link]</a></h2>
+        <p>The default name for a list file is <path>list.txt</path> and should be in the same folder as your ROM file.</p>
+        <p>To insert sprites with PIXI you must create a <b>list file</b> containing a list of sprite you want to insert into your ROM. This list file has a <b>very specific format</b> that the end user has to follow to avoid errors or ROM corruptions.</p>
+        <p>List format:</p>
+        <pre class="code"><code>
+    &lt;sprite ID/number&gt; SPACE &lt;path to sprite file&gt;
+        </code></pre>
+        <p>Example:</p>
+        <pre class="code"><code>
+    00 Blue.cfg
+    01 Red.json
+    02 Koopas/Green.json
+    03 Koopas/Yellow.json
+        </code></pre>
+        Do note that every sprite ID should be in hex and two digits, meaning that you're only able to insert sprites with IDs within the range of <icode>00-FF</icode> (if the sprite type allows this). The hex number should not have any prefix to indicate that it's a hex number (no <icode>0x</icode>, <icode>$</icode> or any other notation).</p>
+        <p>You can also have comments in your list file, everything after a semicolon (<icode>;</icode>) will be treated as a comment:</p>
+        <pre class="code"><code>
+    00 Blue.cfg             ; insert Blue.cfg
+    01 Red.json             ; insert Red.json with an ID of 01
+    02 Koopas/Green.json    ; insert Green.json, which is inside of the Koopas folder
+    03 Koopas/Yellow.json
+    ; comments at the start of a line are valid as well
+        </code></pre>
+        <p>Every sprite type PIXI supports has a limit on how many sprites you can insert with the tool, they also require a <i>header</i> within the list file to let the tool know that the following IDs/sprites are another kind of sprite.</p>
+        <p>Sprites that aren't regular, shooters or generators usually require pointing to <path>.asm</path> files instead of <path>.cfg</path> or <path>.json</path> files.</p>
+        <pre class="code"><code>
+    SPRITE:                             ; you can ommit this line if needed
+    00 Green.json                       ; Green
+    1F SnakeBlock.cfg                   ; Custom Snake block
+    BF Powerups/PoisonMushroom.json     ; Poison Mushroom
+    C3 HomingBillLauncher.cfg           ; Shooter that spawns homing bullet bills
+    D1 LowGravity.json                  ; Generator for low gravity
+
+    ; We're done with other sprite types, anything below will be treated as a extended sprite
+    EXTENDED:                           
+    08 LotusBlueFire.asm                ; Blue fire for Lotus Plants
+
+    ; Now we're inserting cluster sprites, not extended sprites
+    CLUSTER:
+    01 fish.asm                         ; Layer 3 fish but in cluster sprite form!
+
+    ; ... and now we're inserting bounce sprites! Probably you get the idea at this point
+    BOUNCE:
+    07 red_note_block.asm               ; Recreation of SMB3's red note block
+
+    SMOKE:
+    00 gray_smoke.asm                   ; Regular smoke, but uses palette 9
+
+    MINOREXTENDED:
+    1D IceBlockShatter.asm              ; Particles for a weird ice block
+
+    SCORE:
+    02 7up.asm                          ; Because 5up wasn't enough
+
+    SPINNINGCOIN:
+    0E BlueCoin.asm                     ; Blue coin from blocks
+        </code></pre>
+        <center>
+            <p class="tbl">Summary of PIXI's support for sprite types in its list file</p>
+        </center>
+        <table>
+            <tr>
+                <th style="width:20%;">Sprite type</th>
+                <th style="width:20%;">Folder</th>
+                <th style="width:20%;">File type</th>
+                <th style="width:20%;">Header</th>
+                <th style="width:20%;">ID range</th>
+            </tr>
+            <tr>
+                <td>Regular/Custom</td>
+                <td>sprites</td>
+                <td><path>.cfg</path>/<path>.json</path></td>
+                <td>SPRITES:</td>
+                <td>00-BF</td>
+            </tr>
+            <tr>
+                <td>Shooter</td>
+                <td>shooters</td>
+                <td><path>.cfg</path>/<path>.json</path></td>
+                <td>SPRITES:</td>
+                <td>C0-CF</td>
+            </tr>
+            <tr>
+                <td>Generator</td>
+                <td>generators</td>
+                <td><path>.cfg</path>/<path>.json</path></td>
+                <td>SPRITES:</td>
+                <td>D0-DF</td>
+            </tr>
+            <tr>
+                <td>Extended</td>
+                <td>extended</td>
+                <td><path>.asm</path></td>
+                <td>EXTENDED:</td>
+                <td>00-7F</td>
+            </tr>
+            <tr>
+                <td>Cluster</td>
+                <td>cluster</td>
+                <td><path>.asm</path></td>
+                <td>CLUSTER:</td>
+                <td>00-7F</td>
+            </tr>
+            <tr>
+                <td>Bounce</td>
+                <td>misc_sprites/bounce</td>
+                <td><path>.asm</path></td>
+                <td>BOUNCE:</td>
+                <td>00-3F</td>
+            </tr>
+            <tr>
+                <td>Smoke</td>
+                <td>misc_sprites/smoke</td>
+                <td><path>.asm</path></td>
+                <td>SMOKE:</td>
+                <td>00-1F</td>
+            </tr>
+            <tr>
+                <td>Minor Extended</td>
+                <td>misc_sprites/minorextended</td>
+                <td><path>.asm</path></td>
+                <td>MINOREXTENDED:</td>
+                <td>00-3F</td>
+            </tr>
+            <tr>
+                <td>Score</td>
+                <td>misc_sprites/score</td>
+                <td><path>.asm</path></td>
+                <td>SCORE:</td>
+                <td>00-1F</td>
+            </tr>
+            <tr>
+                <td>Spinning Coin</td>
+                <td>misc_sprites/spinningcoin</td>
+                <td><path>.asm</path></td>
+                <td>SPINNINGCOIN:</td>
+                <td>00-1F</td>
+            </tr>
+            <!--
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            -->
+        </table>
+        <p><a href="#top">[Back to top]</a></p>
+    </div>
+    <hr>
+    <div id="insert">
+        <h2>Inserting sprites <a href="#insert" class="link">[Link]</a></h2>
+        <p>PIXI is a tool with a command line interface, meaning that there's no fancy GUI to help you insert sprites into your ROM or create a list file. Despite being like this, the tool is fairly straight forward to use.</p>
+        <p>By default PIXI will search a list file named <path>list.txt</path> in the <b>same folder</b> as the ROM file.</p>
+        <h3>Step 1</h3>
+        <p>Open PIXI.exe by double clicking the executable file or opening it directly from the command line window.</p>
+        <center>
+            <img src="files/basic_2.png">
+            <p class="img">PIXI's command line interface</p>
+        </center>
+        <h3>Step 2</h3>
+        <p>Write the path to your ROM file in the command line window or drag the file into the window.</p>
+        <center>
+            <img src="files/basic_3.png">
+            <p class="img">ROM name provided to PIXI</p>
+        </center>
+        <h3>Step 3</h3>
+        <p>Wait until PIXI is done inserting sprites. It may take a while to insert each sprite, so be patient and don't close the window if there's nothing going on.</p>
+        <center>
+            <img src="files/basic_4.png">
+            <p class="img">Sprite insertion done without issues.</p>
+        </center>
+    </div>
+    <p><a href="#top">[Back to top]</a></p>
+    <hr>
+    <p><a href="../index.html">[Return to the main page]</a></p>
 </body>
