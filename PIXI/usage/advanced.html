@@ -29,8 +29,41 @@
     <hr>
     <div id="commandline">
         <h2>Command line arguments <a href="#commandline" class="link">[Link]</a></h2>
-        <p class="note">WIP</p>
-        <p></p>
+        <ul>
+            <li><icode>-help</icode> Shows the help message</li>
+            <li><icode>-d|--debug</icode> Pixi prints debug output while inserting sprites</li>
+            <li><icode>-out &lt;filename&gt;</icode> If given alongside the <icode>-d</icode> flag, debug output will be redirected to that file instead of standard out</li>
+            <li><icode>-k</icode> Pixi usually deletes the temporary files after it is done inserting sprites, this flag will prevent the deletion</li>
+            <li id="listpath"><icode>-l &lt;list path&gt;</icode> Specify a custom location of the list file.</li>
+            <li id="perlevelflag"><icode>-pl</icode> Enables <a href="#perlevel">per level sprites</a></li>
+            <li><icode>-npl</icode> Disables <a href="#perlevel">per level sprites</a>, the default setting, kept for backwards compatibility</li>
+            <li><icode>-d255spl</icode> Disable 255 sprites per level support (won't do the $1938 remap)</li>
+            <li><icode>-w</icode> Enables checks for asar warnings (by default the tool only stops insertion upon asar errors)</li>
+            <li><icode>-a &lt;folder path&gt;</icode> Specifies a custom <path>asm/</path> directory to use instead of the default one.</li>
+            <li><icode>-sp &lt;folder path&gt;</icode> Specifies a custom <path>sprites/</path> directory to use instead of the default one.</li>
+            <li><icode>-sh &lt;folder path&gt;</icode> Specifies a custom <path>shooters/</path> directory to use instead of the default one.</li>
+            <li><icode>-g &lt;folder path&gt;</icode> Specifies a custom <path>generators/</path> directory to use instead of the default one.</li>
+            <li><icode>-e &lt;folder path&gt;</icode> Specifies a custom <path>extended/</path> directory to use instead of the default one.</li>
+            <li><icode>-c &lt;folder path&gt;</icode> Specifies a custom <path>cluster/</path> directory to use instead of the default one.</li>
+            <li><icode>-me &lt;folder path&gt;</icode> Specifies a custom <path>minorextended/</path> directory to use instead of the default one.</li>
+            <li><icode>-b &lt;folder path&gt;</icode> Specifies a custom <path>bounce/</path> directory to use instead of the default one.</li>
+            <li><icode>-sm &lt;folder path&gt;</icode> Specifies a custom <path>smoke/</path> directory to use instead of the default one.</li>
+            <li><icode>-sn &lt;folder path&gt;</icode> Specifies a custom <path>spinningcoin/</path> directory to use instead of the default one.</li>
+            <li><icode>-sc &lt;folder path&gt;</icode> Specifies a custom <path>score/</path> directory to use instead of the default one.</li>
+            <li><icode>-r &lt;folder path&gt;</icode> Specifies a custom <path>routines/</path> directory to use instead of the default one.</li>
+            <li><icode>-nr &lt;number&gt;</icode> Specifies the max amount of routines that can be insert, upper capacity is 310.</li>
+            <li><icode>-extmod-off</icode> Disables <a href="#extmod">extmod</a> file logging</li>
+            <li><icode>-ssc &lt;filename&gt;</icode> Specify <a href="#display">ssc</a> file to be copied into &lt;romname&gt;.ssc</li>
+            <li><icode>-mwt &lt;filename&gt;</icode> Specify <a href="#display">mwt</a> file to be copied into &lt;romname&gt;.mwt</li>
+            <li><icode>-mw2 &lt;filename&gt;</icode> Specify <a href="#display">mw2</a> file to be copied into &lt;romname&gt;.mw2</li>
+            <li><icode>-s16 &lt;filename&gt;</icode> Specify <a href="#display">s16</a> file to be copied into &lt;romname&gt;.s16</li>
+            <li><icode>-no-lm-aux</icode> Disables all of the Lunar Magic <a href="#auxiliary">auxiliary files</a> creation (ssc, mwt, mw2, s16).</li>
+            <li><icode>-lm-handle &lt;lm_handle_code&gt;</icode> Windows only command line argument that is to be used only withing LM's custom <a href="#toolbar">user toolbar</a> file, it receives LM's handle to reload the rom</li>
+            <li><icode>-meimei-off</icode> Disables <a href="#meimei">MeiMei</a> completely</li>
+            <li><icode>-meimei-a</icode> Enables always remap sprite data</li>
+            <li><icode>-meimei-k</icode> Makes <a href="#meimei">MeiMei</a> keep temporary files</li>
+            <li><icode>-meimei-d</icode> Enables <a href="#meimei">MeiMei</a>'s debug logging</li>
+        </ul>
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>
