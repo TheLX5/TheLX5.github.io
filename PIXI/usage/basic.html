@@ -172,10 +172,14 @@
     <div id="list">
         <h2>PIXI sprite list <a href="#list" class="link">[Link]</a></h2>
         <p>The default name for a list file is <path>list.txt</path> and should be in the same folder as your ROM file.</p>
-        <p>To insert sprites with PIXI you must create a <b>list file</b> containing a list of sprite you want to insert into your ROM. This list file has a <b>very specific format</b> that the end user has to follow to avoid errors or ROM corruptions.</p>
+        <p>To insert sprites with PIXI you must create a <b>list file</b> containing a list of sprite you want to insert into your ROM. This list file has a <b>very specific format</b> that the end user has to follow to avoid errors or ROM corruptions. Any number in list.txt must be in hexadecimal format</p>
         <p>List format:</p>
         <pre class="code"><code>
     &lt;sprite ID/number&gt; SPACE &lt;path to sprite file&gt;
+        </code></pre>
+        <p>List format (for per-level sprites, requires the <a href="advanced.html#perlevelflag"><icode>-pl</icode> flag</a> on the command line):</p>
+        <pre class="code"><code>
+    &lt;sprite ID/number&gt;:&lt;level ID/number&gt; SPACE &lt;path to sprite file&gt;
         </code></pre>
         <p>Example:</p>
         <pre class="code"><code>
@@ -183,6 +187,7 @@
     01 Red.json
     02 Koopas/Green.json
     03 Koopas/Yellow.json
+    B1:105 Bros/Hammer.json
         </code></pre>
         Do note that every sprite ID should be in hex and two digits, meaning that you're only able to insert sprites with IDs within the range of <icode>00-FF</icode> (if the sprite type allows this). The hex number should not have any prefix to indicate that it's a hex number (no <icode>0x</icode>, <icode>$</icode> or any other notation).</p>
         <p>You can also have comments in your list file, everything after a semicolon (<icode>;</icode>) will be treated as a comment:</p>
@@ -191,6 +196,7 @@
     01 Red.json             ; insert Red.json with an ID of 01
     02 Koopas/Green.json    ; insert Green.json, which is inside of the Koopas folder
     03 Koopas/Yellow.json
+    B1:105 Bros/Hammer.json ; this is a per level sprite for level 105
     ; comments at the start of a line are valid as well
         </code></pre>
         <p>Every sprite type PIXI supports has a limit on how many sprites you can insert with the tool, they also require a <i>header</i> within the list file to let the tool know that the following IDs/sprites are another kind of sprite.</p>
