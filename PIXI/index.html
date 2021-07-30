@@ -38,41 +38,43 @@
     <hr>
     <div id="features">
         <h2>Features <a href="#features" class="link">[Link]</a></h2>
-        <p class="note">Copy-pasted from PIXI's thread, requires checking/proofreading and maybe make it shorter or completely rewrite this part.</p>
         <p>PIXI is a sprite insertion tool made to allow more dynamic sprite usage, space savings and more SA-1 compatibility. Despite this, it is almost fully compatible with sprites written for older SpriteTools, save for the fact that Asar is now used as the assembler.</p>
         <ul>
             <li><b>Softcoded</b><br>
-                The old sprite tool inserted its code as a preassembled byte array and then sets up the calls (hijacks) for it. Put simply, it was a nightmare to read and figure out what hijacks it applied. Here, the applied asm file is available for editing. The tool only generates the binary tables that are included by the asm. So you can basically look at the code and edit it (to some extent) as you like.</li>
+                The old sprite tool inserted its code as a preassembled byte array and then sets up the calls (hijacks) for it. Put simply, it was a nightmare to read and figure out what hijacks it applied. Here, the applied asm file is available for editing. The tool only generates the binary tables that are included by the asm. So you can basically look at the code and edit it (to some extent) as you like.<br>
+                Additionally, you can create two folders called ExtraHijacks and ExtraDefines that the tool will apply after running all the sprites, thus allowing you to insert arbitrary asm alongside what Pixi already inserts.
+            </li>
             <li><b>Dynamic SA-1 support</b><br>
-                Kinda goes hand-in-hand with the softcoded part. The tool doesn't really care if the ROM is SA-1 or not. HOWEVER, there is an asm file with all sa-1 defines that will be default included in every sprite, so you don't have to stick that annoying read1() check for sa-1 at the beginning of every sprite. For all sprite relevant addresses, there exists a define. More info on that is in the readme.
+                The tool's code is 100% SA-1 hybrid. It also provides an asm file with all SA-1 defines that will be default included in every sprite, so you don't have to stick that annoying read1() check for sa-1 at the beginning of every sprite. For all sprite relevant addresses, there exists a define. More info on that is in the readme.
             </li>
             <li><b>GPS Interface</b><br>
-                I basically copied over the interface from p4plus2's GPS for 2 reasons:<br>
+                The user interface is basically the same as p4plus2's GPS for 2 reasons:<br>
                 1. It's simple, easy and comfortable to use.<br>
                 2. It's a lot more comfortable to work with multiple tools if they all use the same interface.
             </li>
             <li><b>Shared Routines</b><br>
-                Again, kinda goes hand-in-hand with the GPS interface, so why not copy that over as well? I mean that quite literally, that is 99% the code from GPS copied over. As a friend of mine likes to say: "Why bother to reinvent the wheel".<br>
-                As such, I included a bunch of common routines you may need in sprites. Check out the included sprites to see how some are used.
+                Pixi includes (as GPS) a folder listing all the shared routines that can be used in the sprites inserted with the tool. Calling a routine is simply achieved by doing <icode>%RoutineName()</icode>.<br>
+                Most of the routines have some included documentation on how to use them correctly in their respective asm files.<br>
+                These routines will only be inserted once no matter how many times they're used, and will only be inserted if they're used. This reduces code size by quite a large margin.
             </li>
             <li><b>Asar Only</b><br>
-                So yeah, this is one thing that's probably gonna be a problem for many people. The tool only allows asar coded sprites... no more TRASM. That is again for 2 simple reasons. 1. TRASM sucks and 2. I'd have had to literally overthrow the way my entire code works to include this shitty assembler, so no thank you.
+                Pixi only accepts sprites that are written using Asar syntax. No xkas or TRASM.
             </li>
             <li><b>Sprite Tool support</b><br>
-                The tool basically works the same as sprite tool and can be applied on top of a ROM that used sprite tool before. It will of course remove all the sprites though.
+                The tool basically works the same as sprite tool and might be able to be applied on top of a ROM where Sprite Tool has already been used. <br>
+                This process however, is unreliable, as Pixi will attempt to remove all Sprite Tool code beforehand (because of conflicting hijacks) and it may fail at doing so.<br>
+                If it succeds however, it will of course remove all the sprites.
             </li>
             <li><b>Per Level Sprites</b><br>
-                So here it is, the real reason why I even got into this in the first place. My stupid crazy idea. I noticed we have a lot of things that run on a per level basis. With Vitor's uberASM tool now even NMI. So I thought to myself, "Why not sprites?" and with that, the idea was born.<br>
-                This tool "sacrifices" 16 global sprite slots and turns them into per level slots. Meaning, you can assign the same sprite number to different sprites depending on the level. Sprite B0 could be a thwomp in level 105 and a hammer bro in level 106 or a reverse boo in level 107.<br>
-                The 16 slots from B0-BF can be freely assigned across all $200 levels.<br>
+                Per level sprites are a feature that lets you define a sprite as only "available" only in 1 level and 1 level only. You can have up to 0x10 (16) sprites per each level.<br>
+                The 16 slots from B0-BF can be freely assigned across all $200 levels. In the old version of per level sprites, B0-BF were only available as per level slots but the rewrite allows for those slots to be used by normal sprites aswell.<br>
+                This way, if you have both a global sprite in slot B0 and some per level sprite in the same slot, Pixi will automatically pick the global one if no per level sprite was defined in that specific level and the opposite otherwise.<br>
+                Please note that per level sprites are quite heavy on used ROM space, as they can take up to 2 banks.
                 Likewise, you can also have a shooter, that shoots sprite B0, which will spawn a sprite depending on the level.<br>
-                I figured this could be especially neat for collabs and such.</br>
+                This feature can be particularly useful for collabs</br>
             </li>
-            <li><b>Poison Mushroom</b><br>
-                Sprite Tool had a needlessly complicated way to insert the poison mushroom with another preassembled code and then setting up hijacks, all wrapped in a cfg file that doesn't follow the same format as any other cfg file. So I just included a patch you can apply to enable the poison mushroom. It doesn't really have anything to do with the tool. Just grab asar, run the patch, done.
-            </li>
-            <li><b>New CFG Editor</b><br>
-                Because I fucking can!!!
+            <li><b>CFG Editor</b><br>
+                The CFG Editor that comes with Pixi allows you to freely edit cfg/json files to your liking. It helps with creating custom sprite displays and collections.
             </li>
         </ul>
     </div>
@@ -80,21 +82,46 @@
     <hr>
     <div>
         <h2>Credits</h2>
-        <p class="note">I have no idea how to sort this list, I'll sort it alphabetically for now</p>
         <ul>
-            <li>Akaginite</li>
-            <li>Alcaro</li>
-            <li>Atari2.0</li>
-            <li>Blind Devil</li>
-            <li>dtothefourth</li>
-            <li>JackTheSpades</li>
-            <li>lx5</li>
-            <li>randomdude999</li>
-            <li>RPG Hacker</li>
-            <li>Sillymel</li>
-            <li>Tattletale</li>
-            <li>Telinc1</li>
-            <li>Vitor Vilela</li>
+            <li>Original author:</li>
+            <ul>
+                <li>JackTheSpades</li>
+            </ul>
+            <li>Maintainers:</li>
+            <ul>
+                <li>JackTheSpades (2016-2018)</li>
+                <li>Tattletale (2018-2020)</li>
+                <li>Atari2.0 (2020-current)</li>
+            </ul>
+            <li>With special thanks to:</li>
+            <ul>
+                <li>Akaginite, for a lot of optimized routines, MeiMei's code and the revamped per-level sprite system</li>
+                <li>p4plus2, for GPS, from which the core system of the tool was taken from.</li>
+            </ul>
+            <li>Other contributors:</li>
+            <ul>
+                <li>Blind Devil (bugfixes)</li>
+                <li>boldowa (bugfixes and some GIEPY asm code)</li>
+                <li>dtothefourth (CFG Editor updates)</li>
+                <li>lx5 (misc sprites additions)</li>
+                <li>MarioE (shared routines)</li>
+                <li>RPGHacker (bugfixes)</li>
+                <li>Sillymel (bugfixes)</li>
+                <li>Telinc1 (bugfixes)</li>
+                <li>Vitor Vilela (SA-1)</li>
+            </ul>
+            <li>Asar authors:</li>
+            <ul>
+                <li>Alcaro</li>
+                <li>RPG Hacker</li>
+                <li>randomdude999</li>
+                <li>p4plus2</li>
+            </ul>
+            <li>Documentation by:</li>
+            <ul>
+                <li>lx5</li>
+                <li>Atari2.0</li>
+            </ul>
         </ul>
         <p><a href="#top">[Back to top]</a></p>
     </div>
