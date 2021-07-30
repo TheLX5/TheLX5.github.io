@@ -13,6 +13,7 @@
         <h2>Content <a href="#index" class="link">[Link]</a></h2>
         <ul>
             <li><a href="#list-not-with-rom">PIXI can't open list.txt</a></li>
+            <li><a href="#x-wasnt-found">error: (E5016): File &lt;filename&gt; wasn't found</a></li>
             <!--
             <li><a href="#"></a></li>
             -->
@@ -29,9 +30,25 @@
     -->
     <div id="list-not-with-rom">
         <h2>PIXI can't open list.txt <a href="#list-not-with-rom" class="link">[Link]</a></h2>
-        <p>haha you suck</p>
+        <p>
+            This usually means that the list is placed wrongly within Pixi's folder hierarchy, the correct place by default is that the list.txt file must be in the same folder as the rom file.<br>
+            The default path can be overridden by using the <a href="advanced.html#listpath"><icode>-l</icode> command line argument</a>.
+        </p>
         <p><a href="#top">[Back to top]</a></p>
     </div>
+    <div id="x-wasnt-found">
+        <h2>error: (E5016): File &lt;filename&gt; wasn't found <a href="#x-wasnt-found" class="link">[Link]</a></h2>
+        <p>
+            The majority of times this happens because:
+            <ul>
+                <li>You misspelled a filename in your list.txt, in this case the fix is obvious</li>
+                <li>You misplaced a file in your sprites directory, fix is also obvious</li>
+                <li>Your path contains a non-ASCII character (e.g. ù) that Pixi and asar can't deal with (<a href="https://github.com/JackTheSpades/SpriteToolSuperDelux/issues/39">reference</a>)<br>
+                In this case, the only fix is to try and move your Pixi folder to a path that doesn't contain such characters, <a href="https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html">ASCII characters table</a></li>
+            </ul>
+        </p>
+    </div>
+        <p><a href="#top">[Back to top]</a></p>
     <hr>
     <p><a href="../index.html">[Return to the main page]</a></p>
 </body>
