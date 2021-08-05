@@ -1,11 +1,11 @@
 
     body{
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        background-color: rgb(28, 28, 28);
+        background-color: rgb(32, 34, 37);
         color: rgb(230, 230, 230);
     }
     .note{
-        color: rgb(255, 49, 49);
+        color: rgb(203, 43, 61);
     }
     .link{
         font-size: x-small;
@@ -78,4 +78,7 @@
     }
     div{
         padding: 0px 4px;
+    }
+    li.nostyle {
+        list-style-type: none;
     }
