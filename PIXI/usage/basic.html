@@ -5,7 +5,7 @@
 <body>
     <div id="top">
         <h1>Basic usage <a href="basic.html" class="link">[Link]</a></h1>
-        <p>Here's everything to know about PIXI from a end user perspective.</p>
+        <p>Here's everything related to the basic functions PIXI offers for regular users.</p>
         <p class="note">WIP</p>
     </div>
     <hr>
@@ -84,7 +84,7 @@
             </tr>
             <tr>
                 <td>Newtonsoft.Json.dll</td>
-                <td>JSON parser for PIXI.</td>
+                <td>JSON parser for CFG Editor.</td>
             </tr>
             <tr>
                 <td>pixi.exe</td>
@@ -177,6 +177,7 @@
         <pre class="code"><code>
     &lt;sprite ID/number&gt; SPACE &lt;path to sprite file&gt;
         </code></pre>
+<!--
         <p>List format (for per-level sprites, requires the <a href="advanced.html#perlevelflag"><icode>-pl</icode> flag</a> on the command line):</p>
         <pre class="code"><code>
     &lt;sprite ID/number&gt;:&lt;level ID/number&gt; SPACE &lt;path to sprite file&gt;
@@ -189,7 +190,9 @@
     03 Koopas/Yellow.json
     B1:105 Bros/Hammer.json
         </code></pre>
-        Do note that every sprite ID should be in hex and two digits, meaning that you're only able to insert sprites with IDs within the range of <icode>00-FF</icode> (if the sprite type allows this). The hex number should not have any prefix to indicate that it's a hex number (no <icode>0x</icode>, <icode>$</icode> or any other notation).</p>
+-->
+        <p>Do note that every sprite ID should be in hex and two digits, meaning that you're only able to insert sprites with IDs within the range of <icode>00-FF</icode> (if the sprite type allows this). The hex number should not have any prefix to indicate that it's a hex number (no <icode>0x</icode>, <icode>$</icode> or any other notation).</p>
+        <p>PIXI can insert sprites that are tied to a particular level, this kind of sprites are called <a href="advanced.html#perlevel">Per Level Sprites</a> and you can find more information about them in the <a href="advanced.html">Advanced Usage</a> page.</p>
         <p>You can also have comments in your list file, everything after a semicolon (<icode>;</icode>) will be treated as a comment:</p>
         <pre class="code"><code>
     00 Blue.cfg             ; insert Blue.cfg
