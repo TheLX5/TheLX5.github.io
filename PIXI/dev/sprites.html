@@ -15,7 +15,22 @@
             <li><a href="#info">General information</a></li>
             <li><a href="#programming">Programming</a></li>
             <li><a href="#defines">Defines</a></li>
+            <ul>
+                <!--
+                <li><a href="#defines-pixi-const">PIXI constants</a></li>
+                -->
+                <li><a href="#defines-pixi-ram">PIXI defined RAM</a></li>
+                <li><a href="#defines-original">Original game RAM</a></li>
+                <!--
+                <li><a href="#"></a></li>
+                -->
+            </ul>
             <li><a href="#routines">Shared routines</a></li>
+            <ul>
+                <!--
+                <li><a href="#"></a></li>
+                -->
+            </ul>
             <!--
             <li><a href="#"></a></li>
             -->
@@ -37,19 +52,400 @@
     <div id="defines">
         <h2>Defines <a href="#defines" class="link">[Link]</a></h2>
         <p class="note">WIP</p>
+        <!--
+        <h3>PIXI constants <a href="#defines-pixi-const" class="link">[Link]</a></h3>
         <table>
             <tr>
-                <th>Define</th>
-                <th>RAM address</th>
-                <th>Description</th>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">Value</th>
+                <th class="defines-desc">Description</th>
+            </tr>
+            <tr id="">
+                <td class="defines-define"><icode></icode> <a href="#" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode></icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+        </table>
+        -->
+        <h3 id="defines-pixi-ram">PIXI defined RAM <a href="#defines-pixi-ram" class="link">[Link]</a></h3>
+        <table>
+            <tr>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">RAM address<br>LoROM</th>
+                <th class="defines-ram">RAM address<br>SA-1</th>
+                <th class="defines-desc">Description</th>
+            </tr>
+            <tr id="7FAB10">
+                <td class="defines-define"><icode>!extra_bits</icode> <a href="#7FAB10" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB10</icode></td>
+                <td class="defines-ram"><icode>$6040</icode></td>
+                <td class="defines-desc">Extra bits</td>
+            </tr>
+            <tr id="7FAB1C">
+                <td class="defines-define"><icode>!new_code_flag</icode> <a href="#7FAB1C" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB1C</icode></td>
+                <td class="defines-ram"><icode>$6056</icode></td>
+                <td class="defines-desc">New code flag</td>
+            </tr>
+            <tr id="7FAB28">
+                <td class="defines-define"><icode>!extra_prop_1</icode> <a href="#7FAB28" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB28</icode></td>
+                <td class="defines-ram"><icode>$6057</icode></td>
+                <td class="defines-desc">Extra property byte 1</td>
+            </tr>
+            <tr id="7FAB34">
+                <td class="defines-define"><icode>!extra_prop_2</icode> <a href="#7FAB34" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB34</icode></td>
+                <td class="defines-ram"><icode>$606D</icode></td>
+                <td class="defines-desc">Extra property byte 2</td>
+            </tr>
+            <tr id="7FAB9E">
+                <td class="defines-define"><icode>!new_sprite_num</icode> <a href="#7FAB9E" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB9E</icode></td>
+                <td class="defines-ram"><icode>$6083</icode></td>
+                <td class="defines-desc">Custom sprite number</td>
+            </tr>
+            <tr id="7FAB40">
+                <td class="defines-define"><icode>!extra_byte_1</icode> <a href="#7FAB40" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB40</icode></td>
+                <td class="defines-ram"><icode>$6099</icode></td>
+                <td class="defines-desc">Extra byte 1</td>
+            </tr>
+            <tr id="7FAB4C">
+                <td class="defines-define"><icode>!extra_byte_2</icode> <a href="#7FAB4C" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB4C</icode></td>
+                <td class="defines-ram"><icode>$60AF</icode></td>
+                <td class="defines-desc">Extra byte 2</td>
+            </tr>
+            <tr id="7FAB58">
+                <td class="defines-define"><icode>!extra_byte_3</icode> <a href="#7FAB58" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB58</icode></td>
+                <td class="defines-ram"><icode>$60C5</icode></td>
+                <td class="defines-desc">Extra byte 3</td>
+            </tr>
+            <tr id="7FAB64">
+                <td class="defines-define"><icode>!extra_byte_4</icode> <a href="#7FAB64" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAB64</icode></td>
+                <td class="defines-ram"><icode>$60DB</icode></td>
+                <td class="defines-desc">Extra byte 4</td>
             </tr>
             <!--
             <tr id="">
-                <td> <a href="#" class="link">[Link]</a></td>
-                <td></td>
-                <td></td>
+                <td class="defines-define"><icode></icode> <a href="#" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode></icode></td>
+                <td class="defines-ram"><icode></icode></td>
+                <td class="defines-desc"></td>
             </tr>
             -->
+        </table>
+        <h3 id="defines-original">Original game RAM <a href="#defines-original" class="link">[Link]</a></h3>
+        <table>
+            <tr>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">RAM address<br>LoROM</th>
+                <th class="defines-ram">RAM address<br>SA-1</th>
+                <th class="defines-desc">Description</th>
+            </tr>
+            <tr id="9E">
+                <td class="defines-define"><icode>!sprite_num</icode> <a href="#9E" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$9E</icode></td>
+                <td class="defines-ram"><icode>$3200</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="AA">
+                <td class="defines-define"><icode>!sprite_speed_y</icode> <a href="#AA" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$AA</icode></td>
+                <td class="defines-ram"><icode>$9E</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="B6">
+                <td class="defines-define"><icode>!sprite_speed_x</icode> <a href="#B6" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$B6</icode></td>
+                <td class="defines-ram"><icode>$B6</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="C2">
+                <td class="defines-define"><icode>!sprite_misc_c2</icode> <a href="#C2" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$C2</icode></td>
+                <td class="defines-ram"><icode>$D8</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="D8">
+                <td class="defines-define"><icode>!sprite_y_low</icode> <a href="#D8" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$D8</icode></td>
+                <td class="defines-ram"><icode>$3216</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="E4">
+                <td class="defines-define"><icode>!sprite_x_low</icode> <a href="#E4" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$E4</icode></td>
+                <td class="defines-ram"><icode>$322C</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="14C8">
+                <td class="defines-define"><icode>!sprite_status</icode> <a href="#14C8" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$14C8</icode></td>
+                <td class="defines-ram"><icode>$3242</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="14D4">
+                <td class="defines-define"><icode>!sprite_y_high</icode> <a href="#14D4" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$14D4</icode></td>
+                <td class="defines-ram"><icode>$3258</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="14E0">
+                <td class="defines-define"><icode>!sprite_x_high</icode> <a href="#14E0" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$14E0</icode></td>
+                <td class="defines-ram"><icode>$326E</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="14EC">
+                <td class="defines-define"><icode>!sprite_speed_y_frac</icode> <a href="#14EC" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$14EC</icode></td>
+                <td class="defines-ram"><icode>$74C8</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="14F8">
+                <td class="defines-define"><icode>!sprite_speed_x_frac</icode> <a href="#14F8" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$14F8</icode></td>
+                <td class="defines-ram"><icode>$74DE</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1504">
+                <td class="defines-define"><icode>!sprite_misc_1504</icode> <a href="#1504" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1504</icode></td>
+                <td class="defines-ram"><icode>$74F4</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1510">
+                <td class="defines-define"><icode>!sprite_misc_1510</icode> <a href="#1510" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1510</icode></td>
+                <td class="defines-ram"><icode>$750A</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="151C">
+                <td class="defines-define"><icode>!sprite_misc_151c</icode> <a href="#151C" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$151C</icode></td>
+                <td class="defines-ram"><icode>$3284</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1528">
+                <td class="defines-define"><icode>!sprite_misc_1528</icode> <a href="#1528" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1528</icode></td>
+                <td class="defines-ram"><icode>$329A</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1534">
+                <td class="defines-define"><icode>!sprite_misc_1534</icode> <a href="#1534" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1534</icode></td>
+                <td class="defines-ram"><icode>$32B0</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1540">
+                <td class="defines-define"><icode>!sprite_misc_1540</icode> <a href="#1540" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1540</icode></td>
+                <td class="defines-ram"><icode>$32C6</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="154C">
+                <td class="defines-define"><icode>!sprite_misc_154c</icode> <a href="#154C" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$154C</icode></td>
+                <td class="defines-ram"><icode>$32DC</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1558">
+                <td class="defines-define"><icode>!sprite_misc_1558</icode> <a href="#1558" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1558</icode></td>
+                <td class="defines-ram"><icode>$32F2</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1564">
+                <td class="defines-define"><icode>!sprite_misc_1564</icode> <a href="#1564" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1564</icode></td>
+                <td class="defines-ram"><icode>$3308</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1570">
+                <td class="defines-define"><icode>!sprite_misc_1570</icode> <a href="#1570" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1570</icode></td>
+                <td class="defines-ram"><icode>$331E</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="157C">
+                <td class="defines-define"><icode>!sprite_misc_157c</icode> <a href="#157C" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$157C</icode></td>
+                <td class="defines-ram"><icode>$3334</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1588">
+                <td class="defines-define"><icode>!sprite_blocked_status</icode> <a href="#1588" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1588</icode></td>
+                <td class="defines-ram"><icode>$334A</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1594">
+                <td class="defines-define"><icode>!sprite_misc_1594</icode> <a href="#1594" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1594</icode></td>
+                <td class="defines-ram"><icode>$3360</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="15A0">
+                <td class="defines-define"><icode>!sprite_off_screen_horz</icode> <a href="#15A0" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$15A0</icode></td>
+                <td class="defines-ram"><icode>$3376</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="15AC">
+                <td class="defines-define"><icode>!sprite_misc_15ac</icode> <a href="#15AC" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$15AC</icode></td>
+                <td class="defines-ram"><icode>$338C</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="15B8">
+                <td class="defines-define"><icode>!sprite_slope</icode> <a href="#15B8" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$15B8</icode></td>
+                <td class="defines-ram"><icode>$7520</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="15C4">
+                <td class="defines-define"><icode>!sprite_off_screen</icode> <a href="#15C4" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$15C4</icode></td>
+                <td class="defines-ram"><icode>$7536</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="15D0">
+                <td class="defines-define"><icode>!sprite_being_eaten</icode> <a href="#15D0" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$15D0</icode></td>
+                <td class="defines-ram"><icode>$754C</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="15DC">
+                <td class="defines-define"><icode>!sprite_obj_interact</icode> <a href="#15DC" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$15DC</icode></td>
+                <td class="defines-ram"><icode>$7562</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="15EA">
+                <td class="defines-define"><icode>!sprite_oam_index</icode> <a href="#15EA" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$15EA</icode></td>
+                <td class="defines-ram"><icode>$33A2</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="15F6">
+                <td class="defines-define"><icode>!sprite_oam_properties</icode> <a href="#15F6" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$15F6</icode></td>
+                <td class="defines-ram"><icode>$33B8</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1602">
+                <td class="defines-define"><icode>!sprite_misc_1602</icode> <a href="#1602" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1602</icode></td>
+                <td class="defines-ram"><icode>$33CE</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="160E">
+                <td class="defines-define"><icode>!sprite_misc_160e</icode> <a href="#160E" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$160E</icode></td>
+                <td class="defines-ram"><icode>$33E4</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="161A">
+                <td class="defines-define"><icode>!sprite_index_in_level</icode> <a href="#161A" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$161A</icode></td>
+                <td class="defines-ram"><icode>$7578</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1626">
+                <td class="defines-define"><icode>!sprite_misc_1626</icode> <a href="#1626" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1626</icode></td>
+                <td class="defines-ram"><icode>$758E</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1632">
+                <td class="defines-define"><icode>!sprite_behind_scenery</icode> <a href="#1632" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1632</icode></td>
+                <td class="defines-ram"><icode>$75A4</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="163E">
+                <td class="defines-define"><icode>!sprite_misc_163e</icode> <a href="#163E" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$163E</icode></td>
+                <td class="defines-ram"><icode>$33FA</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="164A">
+                <td class="defines-define"><icode>!sprite_in_water</icode> <a href="#164A" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$164A</icode></td>
+                <td class="defines-ram"><icode>$75BA</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1656">
+                <td class="defines-define"><icode>!sprite_tweaker_1656</icode> <a href="#1656" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1656</icode></td>
+                <td class="defines-ram"><icode>$75D0</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1662">
+                <td class="defines-define"><icode>!sprite_tweaker_1662</icode> <a href="#1662" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1662</icode></td>
+                <td class="defines-ram"><icode>$75EA</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="166E">
+                <td class="defines-define"><icode>!sprite_tweaker_166e</icode> <a href="#166E" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$166E</icode></td>
+                <td class="defines-ram"><icode>$7600</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="167A">
+                <td class="defines-define"><icode>!sprite_tweaker_167a</icode> <a href="#167A" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$167A</icode></td>
+                <td class="defines-ram"><icode>$7616</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1686">
+                <td class="defines-define"><icode>!sprite_tweaker_1686</icode> <a href="#1686" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1686</icode></td>
+                <td class="defines-ram"><icode>$762C</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="186C">
+                <td class="defines-define"><icode>!sprite_off_screen_vert</icode> <a href="#186C" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$186C</icode></td>
+                <td class="defines-ram"><icode>$7642</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="187B">
+                <td class="defines-define"><icode>!sprite_misc_187b</icode> <a href="#187B" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$187B</icode></td>
+                <td class="defines-ram"><icode>$3410</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="7FAF00">
+                <td class="defines-define"><icode>!sprite_load_table</icode> <a href="#7FAF00" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$7FAF00</icode></td>
+                <td class="defines-ram"><icode>$418A00</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="190F">
+                <td class="defines-define"><icode>!sprite_tweaker_190f</icode> <a href="#190F" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$190F</icode></td>
+                <td class="defines-ram"><icode>$7658</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1FD6">
+                <td class="defines-define"><icode>!sprite_misc_1fd6</icode> <a href="#1FD6" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1FD6</icode></td>
+                <td class="defines-ram"><icode>$766E</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1FE2">
+                <td class="defines-define"><icode>!sprite_cape_disable_time</icode> <a href="#1FE2" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1FE2</icode></td>
+                <td class="defines-ram"><icode>$7FD6</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
         </table>
         <p><a href="#top">[Back to top]</a></p>
     </div>

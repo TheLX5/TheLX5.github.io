@@ -66,6 +66,15 @@
         width:100%;
     }
 
+    .defines-define{
+        width: 275px;
+        text-align: left;
+    }
+    .defines-ram{
+        width: 100px;
+        text-align: center;
+    }
+
     td, th {
         border: 1px solid #cccccc;
         text-align: left;

@@ -15,7 +15,22 @@
             <li><a href="#info">General information</a></li>
             <li><a href="#programming">Programming</a></li>
             <li><a href="#defines">Defines</a></li>
+            <ul>
+                <!--
+                <li><a href="#defines-pixi-const">PIXI constants</a></li>
+                -->
+                <li><a href="#defines-pixi-ram">PIXI defined RAM</a></li>
+                <li><a href="#defines-original">Original game RAM</a></li>
+                <!--
+                <li><a href="#"></a></li>
+                -->
+            </ul>
             <li><a href="#routines">Shared routines</a></li>
+            <ul>
+                <!--
+                <li><a href="#"></a></li>
+                -->
+            </ul>
             <!--
             <li><a href="#"></a></li>
             -->
@@ -37,19 +52,62 @@
     <div id="defines">
         <h2>Defines <a href="#defines" class="link">[Link]</a></h2>
         <p class="note">WIP</p>
+        <!--
+        <h3>PIXI constants <a href="#defines-pixi-const" class="link">[Link]</a></h3>
         <table>
             <tr>
-                <th>Define</th>
-                <th>RAM address</th>
-                <th>Description</th>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">Value</th>
+                <th class="defines-desc">Description</th>
             </tr>
-            <!--
             <tr id="">
-                <td> <a href="#" class="link">[Link]</a></td>
-                <td></td>
-                <td></td>
+                <td class="defines-define"><icode></icode> <a href="#" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode></icode></td>
+                <td class="defines-desc"></td>
             </tr>
-            -->
+        </table>
+        -->
+        <h3 id="defines-pixi-ram">PIXI defined RAM <a href="#defines-pixi-ram" class="link">[Link]</a></h3>
+        <table>
+            <tr>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">RAM address<br>LoROM</th>
+                <th class="defines-ram">RAM address<br>SA-1</th>
+                <th class="defines-desc">Description</th>
+            </tr>
+        </table>
+        <h3 id="defines-original">Original game RAM <a href="#defines-original" class="link">[Link]</a></h3>
+        <table>
+            <tr>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">RAM address<br>LoROM</th>
+                <th class="defines-ram">RAM address<br>SA-1</th>
+                <th class="defines-desc">Description</th>
+            </tr>
+            <tr id="17C0">
+                <td class="defines-define"><icode>!smoke_num</icode> <a href="#17C0" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$17C0</icode></td>
+                <td class="defines-ram"><icode>$77C0</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="17C4">
+                <td class="defines-define"><icode>!smoke_y_low</icode> <a href="#17C4" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$17C4</icode></td>
+                <td class="defines-ram"><icode>$77C4</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="17C8">
+                <td class="defines-define"><icode>!smoke_x_low</icode> <a href="#17C8" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$17C8</icode></td>
+                <td class="defines-ram"><icode>$77C8</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="17CC">
+                <td class="defines-define"><icode>!smoke_timer</icode> <a href="#17CC" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$17CC</icode></td>
+                <td class="defines-ram"><icode>$77CC</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
         </table>
         <p><a href="#top">[Back to top]</a></p>
     </div>

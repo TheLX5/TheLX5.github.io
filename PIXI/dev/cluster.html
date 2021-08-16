@@ -15,7 +15,22 @@
             <li><a href="#info">General information</a></li>
             <li><a href="#programming">Programming</a></li>
             <li><a href="#defines">Defines</a></li>
+            <ul>
+                <!--
+                <li><a href="#defines-pixi-const">PIXI constants</a></li>
+                -->
+                <li><a href="#defines-pixi-ram">PIXI defined RAM</a></li>
+                <li><a href="#defines-original">Original game RAM</a></li>
+                <!--
+                <li><a href="#"></a></li>
+                -->
+            </ul>
             <li><a href="#routines">Shared routines</a></li>
+            <ul>
+                <!--
+                <li><a href="#"></a></li>
+                -->
+            </ul>
             <!--
             <li><a href="#"></a></li>
             -->
@@ -37,19 +52,68 @@
     <div id="defines">
         <h2>Defines <a href="#defines" class="link">[Link]</a></h2>
         <p class="note">WIP</p>
+        <!--
+        <h3>PIXI constants <a href="#defines-pixi-const" class="link">[Link]</a></h3>
         <table>
             <tr>
-                <th>Define</th>
-                <th>RAM address</th>
-                <th>Description</th>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">Value</th>
+                <th class="defines-desc">Description</th>
             </tr>
-            <!--
             <tr id="">
-                <td> <a href="#" class="link">[Link]</a></td>
-                <td></td>
-                <td></td>
+                <td class="defines-define"><icode></icode> <a href="#" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode></icode></td>
+                <td class="defines-desc"></td>
             </tr>
-            -->
+        </table>
+        -->
+        <h3 id="defines-pixi-ram">PIXI defined RAM <a href="#defines-pixi-ram" class="link">[Link]</a></h3>
+        <table>
+            <tr>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">RAM address<br>LoROM</th>
+                <th class="defines-ram">RAM address<br>SA-1</th>
+                <th class="defines-desc">Description</th>
+            </tr>
+        </table>
+        <h3 id="defines-original">Original game RAM <a href="#defines-original" class="link">[Link]</a></h3>
+        <table>
+            <tr>
+                <th class="defines-define">Define</th>
+                <th class="defines-ram">RAM address<br>LoROM</th>
+                <th class="defines-ram">RAM address<br>SA-1</th>
+                <th class="defines-desc">Description</th>
+            </tr>
+            <tr id="1892">
+                <td class="defines-define"><icode>!cluster_num</icode> <a href="#1892" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1892</icode></td>
+                <td class="defines-ram"><icode>$7892</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1E02">
+                <td class="defines-define"><icode>!cluster_y_low</icode> <a href="#1E02" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1E02</icode></td>
+                <td class="defines-ram"><icode>$7E02</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1E2A">
+                <td class="defines-define"><icode>!cluster_y_high</icode> <a href="#1E2A" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1E2A</icode></td>
+                <td class="defines-ram"><icode>$7E2A</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1E16">
+                <td class="defines-define"><icode>!cluster_x_low</icode> <a href="#1E16" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1E16</icode></td>
+                <td class="defines-ram"><icode>$7E16</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
+            <tr id="1E3E">
+                <td class="defines-define"><icode>!cluster_x_high</icode> <a href="#1E3E" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1E3E</icode></td>
+                <td class="defines-ram"><icode>$7E3E</icode></td>
+                <td class="defines-desc"></td>
+            </tr>
         </table>
         <p><a href="#top">[Back to top]</a></p>
     </div>
