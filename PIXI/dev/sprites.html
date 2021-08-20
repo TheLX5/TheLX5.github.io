@@ -1,11 +1,16 @@
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/PIXI/dev/sprites.html">
+<meta property="og:title" content="Sprites creation | PIXI Documentation">
+<meta property="og:description" content="In depth information about custom sprites programming.">
+<meta name="theme-color" content="#6868D8">
 <head>
-    <title>Sprites creation - PIXI Documentation</title>
+    <title>Sprites creation | PIXI Documentation</title>
         <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <div id="top">
         <h1>Sprites creation <a href="sprites.html" class="link">[Link]</a></h1>
-        <p>In-depth information about <b>custom sprites</b> programming.</p>
+        <p>In depth information about <b>custom sprites</b> programming.</p>
         <p class="note">WIP</p>
     </div>
     <hr>
@@ -27,6 +32,25 @@
             </ul>
             <li><a href="#routines">Shared routines</a></li>
             <ul>
+                <li><a href="#routines-exclusive">Sprite only routines</a></li>
+                <ul>
+                    <li><a href="#routine-lde">%LDE()</a></li>
+                    <li><a href="#routine-get-draw-info">%GetDrawInfo()</a></li>
+                    <li><a href="#routine-finish-oam-write">%FinishOAMWrite()</a></li>
+                    <li><a href="#routine-sub-off-screen">%SubOffScreen()</a></li>
+                    <li><a href="#routine-sub-horz-pos">%SubHorzPos()</a></li>
+                    <li><a href="#routine-sub-vert-pos">%SubVertPos()</a></li>
+                    <li><a href="#routine-cape-contact">%CapeContact()</a></li>
+                </ul>
+                <li><a href="#routines-spawn">Spawn sprite routines</a></li>
+                <ul>
+                    <li><a href="#routine-spawn-extended">%SpawnExtended()</a></li>
+                    <li><a href="#routine-spawn-minor-extended">%SpawnMinorExtended()</a></li>
+                    <li><a href="#routine-spawn-score">%SpawnScore()</a></li>
+                    <li><a href="#routine-spawn-smoke">%SpawnSmoke()</a></li>
+                    <li><a href="#routine-spawn-cluster">%SpawnCluster()</a></li>
+                    <li><a href="#routine-spawn-spinning-coin">%SpawnSpinningCoin()</a></li>
+                </ul>
                 <!--
                 <li><a href="#"></a></li>
                 -->
@@ -453,6 +477,460 @@
     <div id="routines">
         <h2>Shared routines <a href="#routines" class="link">[Link]</a></h2>
         <p class="note">WIP</p>
+        <h3 id="routines-exclusive">Sprite-only routines</h3>
+        <table>
+            <tr>
+                <th class="routines-macro">Macro</th>
+                <th class="routines-io">Input</th>
+                <th class="routines-io">Output</th>
+                <th>Description</th>
+            </tr>
+            <tr id="routine-lde">
+                <td class="routines-macro">
+                    <icode>%LDE()</icode> <a href="#routine-lde" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Extra bit flag (bit 3)</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    Loads the extra bit flag into <icode>A</icode>.
+                </td>
+            </tr>
+            <tr id="routine-get-draw-info">
+                <td class="routines-macro">
+                    <icode>%GetDrawInfo()</icode> <a href="#routine-get-draw-info" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = index to sprite OAM (<icode><a href="#15EA">$15EA</a></icode>)</li>
+                        <li><icode>$00</icode> = Sprite <b>X</b> position relative to screen border</li>
+                        <li><icode>$01</icode> = Sprite <b>Y</b> position relative to screen border</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>This is a helper for the graphics routine. It sets off screen flags (<icode><a href="#15A0">$15A0</a></icode>, <icode><a href="#186C">$186C</a></icode>) and setups variables used in sprite drawing routines.</p>
+                    <p><b>WARNING:</b> This routine modifies the stack when a sprite isn't meant to be drawn on screen, it executes a destructive return that destroys the current <icode>JSL</icode> and expects a 16-bit return address in the next 2 bytes from the stack. If your graphics routine isn't in a <icode>JSR</icode> subroutine it'll lead into a crash.</p>
+                </td>
+            </tr>
+            <tr id="routine-finish-oam-write">
+                <td class="routines-macro">
+                    <icode>%FinishOAMWrite()</icode> <a href="#routine-finish-oam-write" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                        <li><icode>A</icode> = Number of tiles to draw - 1</li>
+                        <li><icode>Y</icode> = Tile size</li>
+                        <ul>
+                            <li><icode>$00</icode> = 8x8 tiles</li>
+                            <li><icode>$02</icode> = 16x16 tiles</li>
+                            <li><icode>$FF</icode> = Manually set the size</li>
+                        </ul>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li>N/A</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Optimized finishOAMWrite - routine by Akaginite</p>
+                </td>
+            </tr>
+            <tr id="routine-sub-off-screen">
+                <td class="routines-macro">
+                    <icode>%SubOffScreen()</icode> <a href="#routine-sub-off-screen" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                        <li><icode>A</icode> = Off screen range index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li>N/A</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p></p>
+                </td>
+            </tr>
+            <tr id="routine-sub-horz-pos">
+                <td class="routines-macro">
+                    <icode>%SubHorzPos()</icode> <a href="#routine-sub-horz-pos" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Which side of the sprite is the player at</li>
+                        <ul>
+                            <li><icode>$00</icode> = Mario to the <b>right</b> of the sprite</li>
+                            <li><icode>$01</icode> = Mario to the <b>left</b> of the sprite</li>
+                        </ul>
+                        <li><icode>$0E</icode> = Amount of pixels between Mario - Sprite X positions (16-bit)</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p></p>
+                </td>
+            </tr>
+            <tr id="routine-sub-vert-pos">
+                <td class="routines-macro">
+                    <icode>%SubVertPos()</icode> <a href="#routine-sub-vert-pos" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Which side of the sprite is the player at</li>
+                        <ul>
+                            <li><icode>$00</icode> = Player is <b>???</b> the sprite</li>
+                            <li><icode>$01</icode> = Player is <b>¿¿¿</b> the sprite</li>
+                        </ul>
+                        <li><icode>$0F</icode> = Amount of pixels between Mario - Sprite Y positions (8-bit)</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p></p>
+                </td>
+            </tr>
+            <tr id="routine-cape-contact">
+                <td class="routines-macro">
+                    <icode>%CapeContact()</icode> <a href="#routine-cape-contact" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>C</icode> = Contact status</li>
+                        <ul>
+                            <li>Set = Contact detected</li> 
+                            <li>Clear = No contact</li>
+                        </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Checks for contact between the current sprite and the player's cape.</p>
+                    <p>Taken from GIEPY's routines.</p>
+                </td>
+            </tr>
+            <tr id="routine-star">
+                <td class="routines-macro">
+                    <icode>%Star()</icode> <a href="#routine-star" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li>N/A</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Star kills the sprite and gives the player points.</p>
+                    <p>The routine doesn't check whether the player actually has a star or the sprite is in contact with the player.</p>
+                </td>
+            </tr>
+            <!--
+            <tr id="routine-">
+                <td class="routines-macro">
+                    <icode>%()</icode> <a href="#routine-" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                        <li><icode> </icode> = </li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode> </icode> = </li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p></p>
+                </td>
+            </tr>
+            ---->
+        </table>
+        <h3 id="routines-spawn">Spawn sprite routines</h3>
+        <table>
+            <tr>
+                <th class="routines-macro">Macro</th>
+                <th class="routines-io">Input</th>
+                <th class="routines-io">Output</th>
+                <th class="routines-description">Description</th>
+            </tr>
+            <tr id="routine-spawn-sprite">
+                <td class="routines-macro">
+                    <icode>%SpawnSprite()</icode> <a href="#routine-spawn-sprite" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Sprite number</li>
+                        <li><icode>X</icode> = Parent sprite index</li>
+                        <li><icode>C</icode> = Custom sprite flag</li>
+                        <ul>
+                            <li>Clear = Regular sprite</li>
+                            <li>Set = Custom sprite</li>
+                        </ul>
+                        <li><icode>$00</icode> = X offset</li>
+                        <li><icode>$01</icode> = Y offset</li>
+                        <li><icode>$02</icode> = X speed</li>
+                        <li><icode>$03</icode> = Y speed</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index to extended sprite (<icode>$FF</icode> means no sprite spawned)</li>
+                        <li><icode>C</icode> = Spawn status.</li>
+                            <ul>
+                                <li><icode>Set</icode> = Spawn failed</li>
+                                <li><icode>Clear</icode> = Spawn succesful</li>
+                            </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Spawns an extended sprite at the sprite position plus an offset.</p>
+                    <p>If X and/or Y offsets are negative, those values will be substracted instead of added from the parent sprite's position.</p>
+                </td>
+            </tr>
+            <tr id="routine-spawn-sprite-safe">
+                <td class="routines-macro">
+                    <icode>%SpawnSpriteSafe()</icode> <a href="#routine-spawn-sprite-safe" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Sprite number</li>
+                        <li><icode>X</icode> = Parent sprite index</li>
+                        <li><icode>C</icode> = Custom sprite flag</li>
+                        <ul>
+                            <li>Clear = Regular sprite</li>
+                            <li>Set = Custom sprite</li>
+                        </ul>
+                        <li><icode>$00</icode> = X offset</li>
+                        <li><icode>$01</icode> = Y offset</li>
+                        <li><icode>$02</icode> = X speed</li>
+                        <li><icode>$03</icode> = Y speed</li>
+                        <li><icode>$04</icode> = Starting sprite index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index to extended sprite (<icode>$FF</icode> means no sprite spawned)</li>
+                        <li><icode>C</icode> = Spawn status.</li>
+                            <ul>
+                                <li><icode>Set</icode> = Spawn failed</li>
+                                <li><icode>Clear</icode> = Spawn succesful</li>
+                            </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Spawns a regular sprite at the sprite position plus an offset.</p>
+                    <p>If X and/or Y offsets are negative, those values will be substracted instead of added from the parent sprite's position.</p>
+                </td>
+            </tr>
+            <tr id="routine-spawn-extended">
+                <td class="routines-macro">
+                    <icode>%SpawnExtended()</icode> <a href="#routine-spawn-extended" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Extended sprite number</li>
+                        <li><icode>X</icode> = Parent sprite index</li>
+                        <li><icode>$00</icode> = X offset</li>
+                        <li><icode>$01</icode> = Y offset</li>
+                        <li><icode>$02</icode> = X speed</li>
+                        <li><icode>$03</icode> = Y speed</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index to extended sprite (<icode>$FF</icode> means no sprite spawned)</li>
+                        <li><icode>C</icode> = Spawn status.</li>
+                            <ul>
+                                <li><icode>Set</icode> = Spawn failed</li>
+                                <li><icode>Clear</icode> = Spawn succesful</li>
+                            </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Spawns an extended sprite at the sprite position plus an offset. If the parent sprite is offscreen or being eaten, the sprite will not be spawned.</p>
+                    <p>If X and/or Y offsets are negative, those values will be substracted instead of added from the parent sprite's position.</p>
+                </td>
+            </tr>
+            <tr id="routine-spawn-cluster">
+                <td class="routines-macro">
+                    <icode>%SpawnCluster()</icode> <a href="#routine-spawn-cluster" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Cluster sprite number</li>
+                        <li><icode>X</icode> = Parent sprite index</li>
+                        <li><icode>$00</icode> = X offset</li>
+                        <li><icode>$01</icode> = Y offset</li>
+                        <li><icode>$02</icode> = X speed</li>
+                        <li><icode>$03</icode> = Y speed</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index to cluster sprite (<icode>$FF</icode> means no sprite spawned)</li>
+                        <li><icode>C</icode> = Spawn status.</li>
+                            <ul>
+                                <li><icode>Set</icode> = Spawn failed</li>
+                                <li><icode>Clear</icode> = Spawn succesful</li>
+                            </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Spawns a cluster sprite at the sprite position plus an offset.</p>
+                    <p>If X and/or Y offsets are negative, those values will be substracted instead of added from the parent sprite's position.</p>
+                    <p>The routine calls a generic spawn routine which depends on <icode>%SetupCoords()</icode> to get the parent sprite's position.</p>
+                </td>
+            </tr>
+            <tr id="routine-spawn-minor-extended">
+                <td class="routines-macro">
+                    <icode>%SpawnMinorExtended()</icode> <a href="#routine-spawn-minor-extended" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Minor extended sprite number</li>
+                        <li><icode>X</icode> = Parent sprite index</li>
+                        <li><icode>$00</icode> = X offset</li>
+                        <li><icode>$01</icode> = Y offset</li>
+                        <li><icode>$02</icode> = X speed</li>
+                        <li><icode>$03</icode> = Y speed</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index to the minor extended sprite (<icode>$FF</icode> means no sprite spawned)</li>
+                        <li><icode>C</icode> = Spawn status.</li>
+                            <ul>
+                                <li><icode>Set</icode> = Spawn failed</li>
+                                <li><icode>Clear</icode> = Spawn succesful</li>
+                            </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Spawns a minor extended sprite at the sprite position plus an offset.</p>
+                    <p>If X and/or Y offsets are negative, those values will be substracted instead of added from the parent sprite's position.</p>
+                    <p>The routine calls a generic spawn routine which depends on <icode>%SetupCoords()</icode> to get the parent sprite's position.</p>
+                </td>
+            </tr>
+            <tr id="routine-spawn-smoke">
+                <td class="routines-macro">
+                    <icode>%SpawnSmoke()</icode> <a href="#routine-spawn-smoke" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Smoke sprite number</li>
+                        <li><icode>X</icode> = Parent sprite index</li>
+                        <li><icode>$00</icode> = X offset</li>
+                        <li><icode>$01</icode> = Y offset</li>
+                        <li><icode>$02</icode> = Timer</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index to the spawned smoke sprite (<icode>$FF</icode> means no sprite spawned)</li>
+                        <li><icode>C</icode> = Spawn status.</li>
+                            <ul>
+                                <li><icode>Set</icode> = Spawn failed</li>
+                                <li><icode>Clear</icode> = Spawn succesful</li>
+                            </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Spawns a smoke sprite at the sprite position plus an offset.</p>
+                    <p>If X and/or Y offsets are negative, those values will be substracted instead of added from the parent sprite's position.</p>
+                    <p>The routine calls a generic spawn routine which depends on <icode>%SetupCoords()</icode> to get the parent sprite's position.</p>
+                </td>
+            </tr>
+            <tr id="routine-spawn-score">
+                <td class="routines-macro">
+                    <icode>%SpawnScore()</icode> <a href="#routine-spawn-score" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Score sprite number</li>
+                        <li><icode>X</icode> = Parent sprite index</li>
+                        <li><icode>$00</icode> = X offset</li>
+                        <li><icode>$01</icode> = Y offset</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index to the spawned score sprite (<icode>$FF</icode> means no sprite spawned)</li>
+                        <li><icode>C</icode> = Spawn status.</li>
+                            <ul>
+                                <li><icode>Set</icode> = Spawn failed</li>
+                                <li><icode>Clear</icode> = Spawn succesful</li>
+                            </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Spawns a score sprite at the sprite position plus an offset.</p>
+                    <p>If X and/or Y offsets are negative, those values will be substracted instead of added from the parent sprite's position.</p>
+                    <p>The routine calls a generic spawn routine which depends on <icode>%SetupCoords()</icode> to get the parent sprite's position.</p>
+                </td>
+            </tr>
+            <tr id="routine-spawn-spinning-coin">
+                <td class="routines-macro">
+                    <icode>%SpawnSpinningCoin()</icode> <a href="#routine-spawn-spinning-coin" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Spinning coin sprite number</li>
+                        <li><icode>X</icode> = Parent sprite index</li>
+                        <li><icode>$00</icode> = X offset</li>
+                        <li><icode>$01</icode> = Y offset</li>
+                        <li><icode>$03</icode> = Y speed</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index to the spawned spinning coin sprite (<icode>$FF</icode> means no sprite spawned)</li>
+                        <li><icode>C</icode> = Spawn status.</li>
+                            <ul>
+                                <li><icode>Set</icode> = Spawn failed</li>
+                                <li><icode>Clear</icode> = Spawn succesful</li>
+                            </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Spawns a spinning coin sprite at the sprite position plus an offset.</p>
+                    <p>If X and/or Y offsets are negative, those values will be substracted instead of added from the parent sprite's position.</p>
+                    <p>The routine calls a generic spawn routine which depends on <icode>%SetupCoords()</icode> to get the parent sprite's position.</p>
+                </td>
+            </tr>
+        </table>
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>

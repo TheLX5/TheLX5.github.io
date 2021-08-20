@@ -1,8 +1,8 @@
 
     body{
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        background-color: rgb(32, 34, 37);
-        color: rgb(230, 230, 230);
+        background-color: #0D1117;
+        color: #C9D1D9;
     }
     .note{
         color: rgb(203, 43, 61);
@@ -19,7 +19,7 @@
     }
     path{
         font-family: 'Consolas';
-        background-color: rgb(51, 48, 45);
+        background-color: #3f2e2e;
         border: 1px none;
         border-radius: 8px;
         padding: 1px 2px;
@@ -29,13 +29,13 @@
     }
     icode{
         font-family: 'Consolas';
-        background-color: rgb(41, 51, 41);
+        background-color: #2F333A;
         border: 1px none;
         border-radius: 8px;
         padding: 1px 2px;
     }
     .code{
-        background-color: rgb(41, 51, 41);
+        background-color: #2F333A;
         border: 1px none;
         border-radius: 8px;
         padding: 1px 2px;
@@ -44,11 +44,11 @@
     /* link stuff */
     /* unvisited */
     a:link {
-        color: #2ea1ff;
+        color: #2D98FF;
     }
     /* visited */
     a:visited {
-        color: #3051bd;
+        color: #2968df;
     }
     /* mouse over */
     a:hover {
@@ -56,7 +56,7 @@
     }
     /* selected */
     a:active {
-        color: #1919ca;
+        color: #164caf;
     }
 
 
@@ -74,16 +74,22 @@
         width: 100px;
         text-align: center;
     }
+    .routines-io{
+        width: 250px;
+    }
+    .routines-macro{
+        width: 250px;
+    }
 
     td, th {
-        border: 1px solid #cccccc;
+        border: 1px solid #acb3b9;
         text-align: left;
         font-weight: normal;
         padding: 4px 6px;
     }
     th {
         font-weight: bold;
-        background-color: rgb(34, 34, 34);
+        background-color: #161B22;
     }
     div{
         padding: 0px 4px;
