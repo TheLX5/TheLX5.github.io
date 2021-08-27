@@ -29,13 +29,17 @@
     }
     icode{
         font-family: 'Consolas';
-        background-color: #2F333A;
+        padding: 1px 2px;
+    }
+    icode2{
+        font-family: 'Consolas';
+        background-color: #2a2e35;
         border: 1px none;
         border-radius: 8px;
         padding: 1px 2px;
     }
     .code{
-        background-color: #2F333A;
+        background-color: #2a2e35;
         border: 1px none;
         border-radius: 8px;
         padding: 1px 2px;

@@ -18,7 +18,6 @@
             <li>finish documenting the <a href="#defines">Defines</a> section</li>
             <li>finish documenting the <a href="#routines">Routines</a> section</li>
             <ul>
-                <li>add global routines (those that doesn't depend on sprite specifc ram i.e. %Aiming()</li>
                 <li>solve those padding issues in cells with lists</li>
             </ul>
             <li>write things in the <a href="#info">General information</a> section</li>
@@ -29,12 +28,12 @@
             <li>write things in the <a href="#programming">Programming</a> section</li>
             <ul>
                 <li>print statements available</li>
+                <li>how routines work</li>
+                <li>how <path>_header.asm</path> works</li>
                 <li>extra bytes usage</li>
                 <li>extra property bytes and their weird behavior</li>
                 <li>json/cfg bytes</li>
                 <li>sa-1 pack support/notes</li>
-                <li>how routines work</li>
-                <li>how <path>_header.asm</path> works</li>
                 <li>etc</li>
             </ul>
         </ul>
@@ -43,8 +42,22 @@
     <div id="index">
         <h2>Content <a href="#index" class="link">[Link]</a></h2>
         <ul>
-            <li><a href="#info">General information</a></li>
             <li><a href="#programming">Programming</a></li>
+            <ul>
+                <li><a href="#programming-pointers">Code pointers</a></li>
+                <ul>
+                    <li><a href="#programming-pointers-main"><icode>print "MAIN",pc</icode></a></li>
+                    <li><a href="#programming-pointers-init"><icode>print "INIT",pc</icode></a></li>
+                    <li><a href="#programming-pointers-carriable"><icode>print "CARRIABLE",pc</icode></a></li>
+                    <li><a href="#programming-pointers-kicked"><icode>print "KICKED",pc</icode></a></li>
+                    <li><a href="#programming-pointers-carried"><icode>print "CARRIED",pc</icode></a></li>
+                    <li><a href="#programming-pointers-mouth"><icode>print "MOUTH",pc</icode></a></li>
+                    <li><a href="#programming-pointers-goal"><icode>print "GOAL",pc</icode></a></li>
+                </ul>
+                <li><a href="#programming-extra-bytes">Extra byte usage</a></li>
+                <li><a href="#programming-extra-prop">Extra property bytes</a></li>
+                <li><a href="#programming-tweaker">CFG/JSON information</a></li>
+            </ul>
             <li><a href="#defines">Defines</a></li>
             <ul>
                 <!--
@@ -66,15 +79,29 @@
                     <li><a href="#routine-sub-off-screen">%SubOffScreen()</a></li>
                     <li><a href="#routine-sub-horz-pos">%SubHorzPos()</a></li>
                     <li><a href="#routine-sub-vert-pos">%SubVertPos()</a></li>
+                    <li><a href="#routine-fireball-contact">%FireballContact()</a></li>
                     <li><a href="#routine-cape-contact">%CapeContact()</a></li>
+                    <li><a href="#routine-star">%Star()</a></li>
+                </ul>
+                <li><a href="#routines-global">Global routines</a></li>
+                <ul>
+                    <li><a href="#routine-aiming">%Aiming()</a></li>
+                    <li><a href="#routine-circle-x">%CircleX()</a></li>
+                    <li><a href="#routine-circle-y">%CircleY()</a></li>
+                    <li><a href="#routine-change-map16">%ChangeMap16()</a></li>
+                    <li><a href="#routine-get-map16">%GetMap16()</a></li>
+                    <li><a href="#routine-random">%Random()</a></li>
+                    <li><a href="#routine-lose-yoshi">%LoseYoshi()</a></li>
                 </ul>
                 <li><a href="#routines-spawn">Spawn sprite routines</a></li>
                 <ul>
+                    <li><a href="#routine-sprite">%SpawnSprite()</a></li>
+                    <li><a href="#routine-sprite-safe">%SpawnSpriteSafe()</a></li>
                     <li><a href="#routine-spawn-extended">%SpawnExtended()</a></li>
-                    <li><a href="#routine-spawn-minor-extended">%SpawnMinorExtended()</a></li>
-                    <li><a href="#routine-spawn-score">%SpawnScore()</a></li>
-                    <li><a href="#routine-spawn-smoke">%SpawnSmoke()</a></li>
                     <li><a href="#routine-spawn-cluster">%SpawnCluster()</a></li>
+                    <li><a href="#routine-spawn-minor-extended">%SpawnMinorExtended()</a></li>
+                    <li><a href="#routine-spawn-smoke">%SpawnSmoke()</a></li>
+                    <li><a href="#routine-spawn-score">%SpawnScore()</a></li>
                     <li><a href="#routine-spawn-spinning-coin">%SpawnSpinningCoin()</a></li>
                 </ul>
                 <!--
@@ -87,21 +114,86 @@
         </ul>
     </div>
     <hr>
-    <div id="info">
-        <h2>General information <a href="#info" class="link">[Link]</a></h2>
-        <p class="note">WIP</p>
-        <p><a href="#top">[Back to top]</a></p>
-    </div>
-    <hr>
     <div id="programming">
         <h2>Programming <a href="#programming" class="link">[Link]</a></h2>
-        <p class="note">WIP</p>
+        <p>This section contains everything related to PIXI's features for programming a sprite.</p>
+        <h3 id="programming-pointers">Code pointers <a href="#programming-pointers" class="link">[Link]</a></h3>
+            <p>Sprites have multiple code pointers available to them, whose override certain sprite statuses for complex behaviors. In total, there are 7 different pointers you can use inside your sprite:</p>
+            <table>
+                <tr>
+                    <th style="width:250px;">Code pointer</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td id="programming-pointers-main"><a href="#programming-pointers-main"><icode>print "MAIN",pc</icode></a></td>
+                    <td>
+                        <p>Executed when the <a href="#14C8">sprite stauts</a> is <icode2>$08</icode2></p>
+                        <p>This is the code that runs every frame on your sprite when it's considered alive and should run most of its logic.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="programming-pointers-init"><a href="#programming-pointers-init"><icode>print "INIT",pc</icode></a></td>
+                    <td>
+                        <p>Executed when the <a href="#14C8">sprite stauts</a> is <icode2>$01</icode2></p>
+                        <p>Runs whenever a sprite is loaded via the camera scroll or whenever another source spawns it with status set to <icode2>$01</icode2>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="programming-pointers-carriable"><a href="#programming-pointers-carriable"><icode>print "CARRIABLE",pc</icode></a></td>
+                    <td>
+                        <p>Executed when the <a href="#14C8">sprite stauts</a> is <icode2>$09</icode2></p>
+                        <p>Overrides the default handler for <b>sprites "stunned" or "being able to be carried"</b>. It <b>doesn't</b> run any of the original code and you're expected to cover everything by yourself here.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="programming-pointers-kicked"><a href="#programming-pointers-kicked"><icode>print "KICKED",pc</icode></a></td>
+                    <td>
+                        <p>Executed when the <a href="#14C8">sprite stauts</a> is <icode2>$0A</icode2></p>
+                        <p>Overrides the default handler for <b>sprites that were kicked by the player or any other source</b>. It <b>doesn't</b> run any of the original code and you're expected to cover everything by yourself here.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="programming-pointers-carried"><a href="#programming-pointers-carried"><icode>print "CARRIED",pc</icode></a></td>
+                    <td>
+                        <p>Executed when the <a href="#14C8">sprite stauts</a> is <icode2>$0B</icode2></p>
+                        <p>Overrides the default handler for <b>sprites being carried by the player</b>. It <b>doesn't</b> run any of the original code and you're expected to cover everything by yourself here.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="programming-pointers-mouth"><a href="#programming-pointers-mouth"><icode>print "MOUTH",pc</icode></a></td>
+                    <td>
+                        <p>Executed when the <a href="#14C8">sprite stauts</a> is <icode2>$07</icode2></p>
+                        <p>Overrides the default handler for <b>sprites being carried in Yoshi's mouth</b>. It <b>doesn't</b> run any of the original code and you're expected to cover everything by yourself here.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="programming-pointers-goal"><a href="#programming-pointers-goal"><icode>print "GOAL",pc</icode></a></td>
+                    <td>
+                        <p>Executed when the <a href="#14C8">sprite stauts</a> is <icode2>$0C</icode2></p>
+                        <p>Overrides the default behavior sprites have when the player touches a goal tape or their status is forced to <icode2>$0C</icode2> by other sources.</p>
+                    </td>
+                </tr>
+            </table>
+        <h3 id="programming-extra-bytes">Extra bytes <a href="#programming-extra-bytes" class="link">[Link]</a></h3>
+            <p class="note">WIP, requires code examples of using extra bytes</p>
+            <p>Sprites have a unique feature to get data from the level itself called <b>Extra Bytes</b>. The data gathered by the sprite is determined by a setting in the .cfg or .json file (number of extra bytes available for a sprite) and the <b>Extension field</b> in Lunar Magic.</p>
+            <center>
+                <img src="files/sprite_0.png">
+                <p class="img">Sprite with extra information in the Extension field, viewed from the manual sprite inserter in Lunar Magic.</p>
+            </center>
+            <center>
+                <img src="files/sprite_1.png">
+                <p class="img">Sprite with extra information in the Extension field, viewed from the level itself in Lunar Magic.</p>
+            </center>
+        <h3 id="programming-extra-prop">Extra property bytes <a href="#programming-extra-prop" class="link">[Link]</a></h3>
+            <p class="note">WIP</p>
+        <h3 id="programming-tweaker">CFG/JSON information <a href="#programming-tweaker" class="link">[Link]</a></h3>
+            <p class="note">WIP</p>
         <p><a href="#top">[Back to top]</a></p>
     </div>
     <hr>
     <div id="defines">
         <h2>Defines <a href="#defines" class="link">[Link]</a></h2>
-        <p class="note">WIP</p>
         <!--
         <h3>PIXI constants <a href="#defines-pixi-const" class="link">[Link]</a></h3>
         <table>
@@ -640,6 +732,31 @@
                     <p></p>
                 </td>
             </tr>
+            <tr id="routine-fireball-contact">
+                <td class="routines-macro">
+                    <icode>%FireballContact()</icode> <a href="#routine-fireball-contact" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>X</icode> = Sprite index</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>Y</icode> = Index of the fireball (<icode>$FF</icode> means no contact)</li>
+                        <li><icode>C</icode> = Contact status</li>
+                        <ul>
+                            <li>Set = Contact detected</li> 
+                            <li>Clear = No contact</li>
+                        </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Checks for contact between the current sprite and a player fireball.</p>
+                    <p>The index returned from the routine is an index to the last two extended sprites, by adding 8 to the values you can use it as an index to the extended sprite tables, alternatively, you can add 8 to the table's addresses when using them</p>
+                    <p><b>NOTE:</b> This routine assumes that the sprite uses the default clipping routine, as it calls <icode>$03B69F</icode> inside. It also assumes the hitbox of the fireball.</p>
+                </td>
+            </tr>
             <tr id="routine-cape-contact">
                 <td class="routines-macro">
                     <icode>%CapeContact()</icode> <a href="#routine-cape-contact" class="link">[Link]</a>
@@ -704,6 +821,199 @@
             </tr>
             ---->
         </table>
+
+
+
+
+
+
+        <h3 id="routines-global">Global routines</h3>
+        <table>
+            <tr>
+                <th class="routines-macro">Macro</th>
+                <th class="routines-io">Input</th>
+                <th class="routines-io">Output</th>
+                <th class="routines-description">Description</th>
+            </tr>
+            <tr id="routine-aiming">
+                <td class="routines-macro">
+                    <icode>%Aiming()</icode> <a href="#routine-aiming" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Projectile speed (8-bit)</li>
+                        <li><icode>$00</icode> = 16-bit (shooter x pos - target x pos)</li>
+                        <li><icode>$02</icode> = 16-bit (shooter y pos - target y pos)</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>$00</icode> = 8-bit X speed of projectile</li>
+                        <li><icode>$02</icode> = 8-bit Y speed of projectile</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Precise aiming routine made by MarioE.</p>
+                    <p>By giving this routine a base speed and the difference between two points' X and Y coords, it can convert input speed into X/Y speeds to accurately reach the target position.</p>
+                </td>
+            </tr>
+            <tr id="routine-circle-x">
+                <td class="routines-macro">
+                    <icode>%CircleX()</icode> <a href="#routine-circle-x" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>$04</icode> = Angle (16-bit)</li>
+                        <li><icode>$06</icode> = Radius (8-bit)</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>$07</icode> = X displacement (16-bit)</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Calculates the X distance when given an angle and a radius, perfect for sprites that move in circles.</p>
+                    <p>The angle is actually a 9 bit value (<icode>000</icode>-<icode>1FF</icode> = 0°-359°)</p>
+                    <p>Routine made by Ladida.</p>
+                </td>
+            </tr>
+            <tr id="routine-circle-y">
+                <td class="routines-macro">
+                    <icode>%CircleY()</icode> <a href="#routine-circle-y" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>$04</icode> = Angle (16-bit)</li>
+                        <li><icode>$06</icode> = Radius (8-bit)</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>$09</icode> = X displacement (16-bit)</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Calculates the Y distance when given an angle and a radius, perfect for sprites that move in circles.</p>
+                    <p>The angle is actually a 9 bit value (<icode>000</icode>-<icode>1FF</icode> = 0°-359°)</p>
+                    <p>Routine made by Ladida.</p>
+                </td>
+            </tr>
+            <tr id="routine-change-map16">
+                <td class="routines-macro">
+                    <icode>%ChangeMap16()</icode> <a href="#routine-change-map16" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Map16 number (16-bit)</li>
+                        <li><icode>$98</icode> = Block position Y (16-bit)</li>
+                        <li><icode>$9A</icode> = Block position X (16-bit)</li>
+                        <li><icode>$1933</icode> = Layer</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>C</icode> = Change status</li>
+                        <ul>
+                            <li>Set = Block wasn't changed</li>
+                            <li>Clear = Block changed successfully</li>
+                        </ul>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Changes the block's Map16 at the given coordinates.</p>
+                    <p>Example:</p>
+                    <pre class="code"><code>        REP #$20
+        LDA #&lt;block_number&gt;
+        %ChangeMap16()</code></pre>
+                </td>
+            </tr>
+            <tr id="routine-get-map16">
+                <td class="routines-macro">
+                    <icode>%GetMap16()</icode> <a href="#routine-get-map16" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>$98</icode> = Block position Y (16-bit)</li>
+                        <li><icode>$9A</icode> = Block position X (16-bit)</li>
+                        <li><icode>$1933</icode> = Layer</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Map16 low byte</li>
+                        <li><icode>Y</icode> = Map16 high byte</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Gets the Map16 number of the block at the given coordinates.</p>
+                    <p>Routine made by Akaginte.</p>
+                </td>
+            </tr>
+            <tr id="routine-random">
+                <td class="routines-macro">
+                    <icode>%Random()</icode> <a href="#routine-random" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Maximum value</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode>A</icode> = Random number generated in the interval [0, A]</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>Ranged pseudowrandom number generator.</p>
+                    <p>For non ranged purposes might be better to just call <icode>$01ACF9</icode></p>
+                </td>
+            </tr>
+            <tr id="routine-lose-yoshi">
+                <td class="routines-macro">
+                    <icode>%LoseYoshi()</icode> <a href="#routine-lose-yoshi" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li>N/A</li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li>N/A</li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p>If the player is riding Yoshi, this routine will make him run away as if hit by an enemy.</p>
+                    <p>Taken from GIEPY.</p>
+                </td>
+            </tr>
+            <!--
+            <tr id="routine-">
+                <td class="routines-macro">
+                    <icode>%()</icode> <a href="#routine-" class="link">[Link]</a>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode> </icode> = </li>
+                    </ul>
+                </td>
+                <td class="routines-io">
+                    <ul>
+                        <li><icode> </icode> = </li>
+                    </ul>
+                </td>
+                <td class="routines-description">
+                    <p></p>
+                </td>
+            </tr>
+            ---->
+        </table>
+
+
+
+
+
         <h3 id="routines-spawn">Spawn sprite routines</h3>
         <table>
             <tr>
