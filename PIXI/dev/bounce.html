@@ -81,7 +81,43 @@
                 <th class="defines-ram">RAM address<br>SA-1</th>
                 <th class="defines-desc">Description</th>
             </tr>
+            <tr id="1968">
+                <td class="defines-define">
+                    <icode>!bounce_table_2</icode> <a href="#1968" class="link">[Link]</a>
+                    <icode>!bounce_map16_high</icode>
+                </td>
+                <td class="defines-ram"><icode>$1968</icode></td>
+                <td class="defines-ram"><icode>$7968</icode></td>
+                <td class="defines-desc">
+                    <p>Extra table provided by PIXI.</p>
+                    <p>Holds the high byte of the Map16 tile number the bounce sprite will revert to.</p>
+                    <p><b>WARNING:</b> If <a href="../usage/advanced.html#limitlevel">255 sprites per level</a> are disabled, the RAM addresses mentioned here will be remapped to a long address. Please refer to the appropriate section for more information.</p>
+                </td>
+            </tr>
+            <tr id="196C">
+                <td class="defines-define"><icode>!bounce_table_3</icode> <a href="#196C" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$196C</icode></td>
+                <td class="defines-ram"><icode>$796C</icode></td>
+                <td class="defines-desc">
+                    <p>Extra table provided by PIXI. It doesn't have any particular feature tied to it.</p>
+                    <p><b>WARNING:</b> If <a href="../usage/advanced.html#limitlevel">255 sprites per level</a> are disabled, the RAM addresses mentioned here will be remapped to a long address. Please refer to the appropriate section for more information.</p>
+                </td>
+            </tr>
+            <tr id="1970">
+                <td class="defines-define"><icode>!bounce_table_4</icode> <a href="#1970" class="link">[Link]</a></td>
+                <td class="defines-ram"><icode>$1970</icode></td>
+                <td class="defines-ram"><icode>$7970</icode></td>
+                <td class="defines-desc">
+                    <p>Extra table provided by PIXI. It doesn't have any particular feature tied to it.</p>
+                    <p><b>WARNING:</b> If <a href="../usage/advanced.html#limitlevel">255 sprites per level</a> are disabled, the RAM addresses mentioned here will be remapped to a long address. Please refer to the appropriate section for more information.</p>
+                </td>
+            </tr>
         </table>
+
+
+
+
+
         <h3 id="defines-original">Original game RAM <a href="#defines-original" class="link">[Link]</a></h3>
         <table>
             <tr>
@@ -94,85 +130,121 @@
                 <td class="defines-define"><icode>!bounce_num</icode> <a href="#1699" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$1699</icode></td>
                 <td class="defines-ram"><icode>$7699</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Bounce sprite type number.</p>
+                </td>
             </tr>
             <tr id="169D">
                 <td class="defines-define"><icode>!bounce_init</icode> <a href="#169D" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$169D</icode></td>
                 <td class="defines-ram"><icode>$769D</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Bounce sprite initialization flag table. #$00 = bounce sprite in init routine; #$01 = bounce sprite in main routine. Used for several things, such as generating tile 152 (invisible solid) once only.</p>
+                </td>
             </tr>
             <tr id="16A1">
                 <td class="defines-define"><icode>!bounce_y_low</icode> <a href="#16A1" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16A1</icode></td>
                 <td class="defines-ram"><icode>$76A1</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Bounce sprite Y position, low byte.</p>
+                </td>
             </tr>
             <tr id="16A5">
                 <td class="defines-define"><icode>!bounce_x_low</icode> <a href="#16A5" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16A5</icode></td>
                 <td class="defines-ram"><icode>$76A5</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>	Bounce sprite X position, low byte.</p>
+                </td>
             </tr>
             <tr id="16A9">
                 <td class="defines-define"><icode>!bounce_y_high</icode> <a href="#16A9" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16A9</icode></td>
                 <td class="defines-ram"><icode>$76A9</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>	Bounce sprite Y position, high byte.</p>
+                </td>
             </tr>
             <tr id="16AD">
                 <td class="defines-define"><icode>!bounce_x_high</icode> <a href="#16AD" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16AD</icode></td>
                 <td class="defines-ram"><icode>$76AD</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>	Bounce sprite X position, high byte.</p>
+                </td>
             </tr>
             <tr id="16B1">
                 <td class="defines-define"><icode>!bounce_y_speed</icode> <a href="#16B1" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16B1</icode></td>
                 <td class="defines-ram"><icode>$76B1</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Bounce sprite Y speed.</p>
+                </td>
             </tr>
             <tr id="16B5">
                 <td class="defines-define"><icode>!bounce_x_speed</icode> <a href="#16B5" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16B5</icode></td>
                 <td class="defines-ram"><icode>$76B5</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Bounce sprite X speed.</p>
+                </td>
             </tr>
             <tr id="16B9">
                 <td class="defines-define"><icode>!bounce_x_bits</icode> <a href="#16B9" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16B9</icode></td>
                 <td class="defines-ram"><icode>$76B9</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Accumulating fraction bits for bounce sprite X speed.</p>
+                </td>
             </tr>
             <tr id="16BD">
                 <td class="defines-define"><icode>!bounce_y_bits</icode> <a href="#16BD" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16BD</icode></td>
                 <td class="defines-ram"><icode>$76BD</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Accumulating fraction bits for bounce sprite Y speed.</p>
+                </td>
             </tr>
             <tr id="16C1">
-                <td class="defines-define"><icode>!bounce_map16_tile</icode> <a href="#16C1" class="link">[Link]</a></td>
+                <td class="defines-define">
+                    <icode>!bounce_map16_tile</icode> <a href="#16C1" class="link">[Link]</a>
+                    <icode>!bounce_map16_low</icode>
+                </td>
                 <td class="defines-ram"><icode>$16C1</icode></td>
                 <td class="defines-ram"><icode>$76C1</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Bounce sprite turns into Map16 tile. This uses the same values as <a href="https://smwc.me/m/smw/ram/7E009C/">$7E:009C</a>.</p>
+                    <p>This table is also used as the low byte of the Map16 tile number the bounce sprite will revert to if the sprite doesn't make use of <a href="https://smwc.me/m/smw/rom/00BEB0/">SMW's $00BEB0</a>.</p>
+                </td>
             </tr>
             <tr id="16C5">
                 <td class="defines-define"><icode>!bounce_timer</icode> <a href="#16C5" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$16C5</icode></td>
                 <td class="defines-ram"><icode>$76C5</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Bounce sprite timer - amount of frames until bounce sprite disappears. Turn blocks are set to spinning mode when this timer runs out.</p>
+                </td>
             </tr>
             <tr id="16C9">
-                <td class="defines-define"><icode>!bounce_table</icode> <a href="#16C9" class="link">[Link]</a></td>
+                <td class="defines-define">
+                    <icode>!bounce_table</icode> <a href="#16C9" class="link">[Link]</a>
+                    <icode>!bounce_table_1</icode>
+                </td>
                 <td class="defines-ram"><icode>$16C9</icode></td>
                 <td class="defines-ram"><icode>$76C9</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">
+                    <p>Block bounce sprite table.</p>
+                    <p>Format: <icode>L-----DD</icode></p>
+                    <pre class="code"><code>    L is which layer it is on. Clear means it's on layer 1, set means it's on layer 2 (or layer 3 if applicable).
+    DD is the direction it is moving in. 00 = up; 01 = right; 10 = left; 11 = down.</code></pre>
+                </td>
             </tr>
             <tr id="1901">
                 <td class="defines-define"><icode>!bounce_properties</icode> <a href="#1901" class="link">[Link]</a></td>
                 <td class="defines-ram"><icode>$1901</icode></td>
                 <td class="defines-ram"><icode>$7901</icode></td>
-                <td class="defines-desc"></td>
+                <td class="defines-desc">YXPPCCCT data of bounce sprite that is being shown.</td>
             </tr>
         </table>
         <p><a href="#top">[Back to top]</a></p>
