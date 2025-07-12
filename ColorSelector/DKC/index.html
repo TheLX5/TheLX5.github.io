@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/ColorSelector/Donkey/index.html">
+<meta property="og:title" content="Donkey Kong Country Player Color Selector">
+<meta property="og:description" content="Preview and edit player palettes for the Donkey Kong Country Archipelago Randomizers">
+<meta name="theme-color" content="#ffc03a">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/ColorSelector/DKC/dk_preview.png">
+<html>
+
+<head>
+    <title>Donkey Kong Country Player Color Selector</title>
+    <link rel="icon" type="image/x-icon" href="./selector-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="animationFrameData.js"></script>
+    <script src="index.js"></script>
+    <script src="Creature.js"></script>
+    <script src="imageData.js"></script>
+    <script src="ColorModifiers.js"></script>
+</head>
+
+<body>
+    <div class="container" id="characterContainer">
+        <div class="row container">
+            <div class="container">
+                <canvas id="creatureCanvas" height="350" width="350"></canvas>
+                <div class="horizontal container center">
+                    <button id="randomizeCreatureEverything">
+                        <h3>Randomize Colors</h3>
+                    </button>
+                    <button id="randomizeCreatureColors">
+                        <h3>Randomize Hues</h3>
+                    </button>
+                    <div>
+                        <label for="animation-dropdown">Change animation:</label>
+                        <select id="animation-dropdown"></select>
+                    </div>
+                    <div>
+                        <label for="default-palette-dropdown">Change default palette:</label>
+                        <select id="default-palette-dropdown"></select>
+                    </div>
+                </div>
+            </div>
+            <table id="colorHexTable">
+            </table>
+            <div class="container">
+                </br>
+                <span id="span-instructions"></span>
+                <div class="container row" id="characterButtons"></div>
+                <label for="pixelSizeSlider">Change Pixel Size:</label>
+                <input class="slider" id="pixelSizeSlider" type="range" min="1" max="20" value="10" />
+                <label for="pixelSizeSlider">Change Canvas Size:</label>
+                <input class="slider" id="canvasSizeSlider" type="range" min="200" max="800" step="50" value="350" />
+                <label for="pixelSizeSlider">Animation Loop time:</label>
+                <input class="slider" id="secondsPerAnimationLoop" type="range" min=".1" max="5" value="5" step=".1" />
+                <div class="container row" style="display:none;">
+
+                    <button id="saveGif">Save as video (webm)</button>
+                    <span>(you can create a gif from a webm with a
+                        convertor)</span>
+                </div>
+                <textarea id="textarea" disabled="true" rows="17" value=""></textarea>
+                <p><em><b id="additional-info"></b></em></p>
+
+            </div>
+
+        </div>
+        <div>
+
+
+            <table id="color-modding-table">
+            </table>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
