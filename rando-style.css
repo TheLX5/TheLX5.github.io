@@ -1,0 +1,98 @@
+body {
+    font-family: 'Exo';
+    background-color: rgb(24, 24, 24);
+    color: rgb(240, 240, 240);
+    font-size: 18px;
+    line-height: 1.35;
+    margin: auto;
+    padding: 0px;
+}
+  
+h1 {
+    font-size: 35px;
+}
+h2 {
+    font-size: 26px;
+}
+
+code{
+    background-color: rgb(43, 43, 43);
+    color: rgb(250, 250, 250);
+    border: 1px none;
+    border-radius: 8px;
+    padding: 1px 2px;
+}
+
+.main-content {
+    border-style: outset;
+    border-color: rgba(5, 5, 5, 0.85);
+    background-color: rgba(5, 5, 5, 0.75);;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container > .main-content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.ap-index > .main-content {
+    margin-left: 20px;
+}
+
+* { box-sizing: border-box; }
+
+/* Create three equal columns that floats next to each other */
+.ap-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ap-flex > .ap-index{
+    position: -webkit-sticky;
+    top: 0;
+    align-self: flex-start;
+    position: sticky;
+    flex-basis: 19%;
+    margin: 0.66%;
+    border-radius: 12px;
+}
+.ap-flex > .container{
+    float: left;
+    width: auto;
+    flex-basis: 77%;
+    margin: 0.66%;
+    border-radius: 12px;
+}
+
+
+a:link {
+    color: rgb(240, 240, 240);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(240, 240, 240);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(193, 193, 193);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgb(240, 240, 240);
+    background-color: transparent;
+    text-decoration: underline;
+}

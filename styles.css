@@ -1,0 +1,150 @@
+body {
+    font-family: 'Exo';
+    background-color: rgb(24, 24, 24);
+    color: rgb(240, 240, 240);
+    font-size: 18px;
+    line-height: 1.35;
+    margin: auto;
+    background-image: url("selected-none.png");
+}
+  
+.head-title {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 65px;
+    -webkit-text-stroke: rgb(5, 5, 5) 2px;
+    text-shadow: 2px 2px 3px black;
+}
+
+h1 {
+    font-size: 35px;
+}
+h2 {
+    font-size: 26px;
+}
+
+.main-content {
+    border-style: outset;
+    border-color: rgba(5, 5, 5, 0.85);
+    background-color: rgba(5, 5, 5, 0.75);;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+* { box-sizing: border-box; }
+
+/* Create three equal columns that floats next to each other */
+.ap-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ap-flex > div{
+    float: right;
+    width: 32%;
+    padding: 10px;
+    margin: 0.66%;
+    border-radius: 12px;
+    transition: 0.20s;
+}
+
+.ap-header {
+    border-bottom: solid;
+    border-color: rgb(240, 240, 240);
+}
+.ap-header h2 {
+    position: relative;
+}
+.ap-header img {
+    float: left;
+}
+
+.ap-item > p{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.ap-item > a:link{
+    color: rgb(240, 240, 240);
+    font-style: normal;
+    text-decoration: none; 
+}
+.ap-item > a:visited{
+    color: rgb(240, 240, 240);
+    font-style: normal;
+    text-decoration: none; 
+}
+.ap-item > a:hover{
+    color: rgb(240, 240, 240);
+    font-style: normal;
+    text-decoration: none; 
+}
+.ap-item > a:active{
+    color: rgb(240, 240, 240);
+    font-style: normal;
+    text-decoration: none; 
+}
+
+.ap-item.smw {
+    background-color: rgba(226, 27, 27, 0.075);
+}
+.ap-item.smw:hover{
+    background-color: rgba(226, 27, 27, 0.25);
+}
+
+.ap-item.mmx {
+    background-color: rgba(27, 40, 226, 0.075);
+}
+.ap-item.mmx:hover {
+    background-color: rgba(27, 40, 226, 0.25);
+}
+
+.ap-item.mmx2 {
+    background-color: rgba(27, 226, 60, 0.075);
+}
+.ap-item.mmx2:hover {
+    background-color: rgba(27, 226, 60, 0.25);
+}
+
+.ap-item.mmx3 {
+    background-color: rgba(226, 27, 193, 0.075);
+}
+.ap-item.mmx3:hover {
+    background-color: rgba(226, 27, 193, 0.25);
+}
+
+.ap-item.dkc2 {
+    background-color: rgba(226, 107, 27, 0.075);
+}
+.ap-item.dkc2:hover {
+    background-color: rgba(226, 123, 27, 0.25);
+}
+
+.ap-item.dkc {
+    background-color: rgba(194, 168, 23, 0.075);
+}
+.ap-item.dkc:hover {
+    background-color: rgba(255, 211, 17, 0.25);
+}
+
+.ap-item.ckd {
+    background-color: rgba(194, 168, 23, 0.075);
+}
+.ap-item.ckd:hover {
+    background-color: rgba(255, 211, 17, 0.25);
+}
+
+.ap-item.soon {
+    background-color: rgba(71, 71, 71, 0.075);
+}
+.ap-item.soon:hover {
+    background-color: rgba(71, 71, 71, 0.25);
+}

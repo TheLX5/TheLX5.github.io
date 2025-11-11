@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spicy Mycena Waffles - lx5's works</title>
+        <link rel="stylesheet" href="../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("../selected-smw.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <div class="main-content">
+            <h1>SMW: Spicy Mycena Waffles</h1>
+            <p>This is my fork of Super Mario World's Archipelago Randomizer which aims to provide a different experience.</p>
+        </div>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <div class="main-content">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#featuras" style="text-decoration: underline;">Features</a></li>
+                    <li><a href="#qol" style="text-decoration: underline;">Quality of Life</a></li>
+                    <li><a href="#locs" style="text-decoration: underline;">Locations</a></li>
+                    <li><a href="#goal" style="text-decoration: underline;">Goals</a></li>
+                    <li><a href="#traps" style="text-decoration: underline;">Traps</a></li>
+                    <li><a href="#link" style="text-decoration: underline;">Linked features</a></li>
+                    <li><a href="#setup" style="text-decoration: underline;">Setup</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <a href="../index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-content">
+                <a href="#featuras"><h1 id="featuras">Features</h1></a>
+                <p>Spicy Mycena Waffles offers a wide variety of options to make your Super Mario World session very enjoyable, aside from brand new features compared to the original implementation, it also revamps some of the original's features in order to offer a different experience. All of the features (old and new) are the following:</p>
+                <ul>
+                    <li>Level shuffle</li>
+                    <li>Enemy shuffle</li>
+                    <li>Boss shuffle</li>
+                    <li>Map Transition shuffle</li>
+                    <li>Pipes and Star Road Warp shuffle</li>
+                    <li>Level exit destination shuffle</li>
+                    <li>Ability & item shuffle</li>
+                    <li>Random level effects</li>
+                    <li>A bunch of added locations</li>
+                    <li>Stat tracking</li>
+                    <li>Universal Tracker support</li>
+                    <li>ROM-less generation</li>
+                </ul>
+                <p>There are several quality of life changes as well traps to keep you engaged, those are further disclosed on their respective sections.</p>
+            </div>
+            <div class="main-content">
+                <a href="#qol"><h1 id="qol">Quality of Life</h1></a>
+                <p>The game features a lot of quality of life settings which aims to make the experience a lot smoother for not seasoned players, it also includes some other options to make the sessions less obnoxious.</p>
+                <a href="#qol-difficulty"><h2 id="qol-difficulty">Difficulty accesibility</h2></a>
+                <p>There are various ways where the implementation allows you to have an overall easier time playing the game.</p>
+                <ul>
+                    <li><b>Level Logic:</b> Levels are categorized into different difficulty levels (normal, hard, very hard). Each logic level changes the logical entry requirements for them but you can still complete them even if you don't meet them, that will simply be "out of logic".</li>
+                    <li><b>Extra Hit:</b> If players have found a heart and picked it up, it'll follow them anywhere and will take a hit for them. It won't protect from falling into lava or pits.</li>
+                    <li><b>Infinite lives:</b> Lives no longer exist in the game, they're replaced with hearts for the <b>Extra Hit</b> feature mentioned above.</li>
+                    <li><b>Extra Defense:</b> A new item in the item pool allows players to not go back to Small Mario when taking a hit while being Cape Mario or Fire Mario, instead they will go back to Big Mario which results into an extra hit being granted.</li>
+                    <li><b>Better Timer:</b> There are a few timer upgrades that will make the HUD timer tick much slower which acts as a counter to Timer Traps or as a help for people who love to play slowly.</li>
+                    <li><b>Hidden 1-Ups out of order:</b> In vanilla, players are supposed to collect Hidden 1-Ups in a specific order for them to trigger the location, now that requirement is nullified and players can now collect them in any order they desire.</li>
+                </ul>
+                <a href="#qol-inventory"><h2 id="qol-inventory">Inventory system</h2></a>
+                <p>A inventory system similar to NSMBWii has been added which allows you to enter levels with specific powerups or items. You can summon the inventory system via SELECT during the map gameplay portion.</p>
+                <p>There are ways to obtain inventory items in the game and use them any time.</p>
+                <ul>
+                    <li><b>Goal Tape:</b> By hitting the goal at a certain height, players can get a random inventory item (or coins). The higher the goal is hit, the better the reward is.</li>
+                    <li><b>Combos:</b> Any kind of combo will grant a random inventory item, this includes: jumping in enemies, defeating them with a star, collecting silver coins or combo-ing them with a kicked shell. Every time a reward is granted all combo counters will be reset.</li>
+                    <li><b>EnergyLink:</b> When the inventory is shown and your selected item count is 0 an additional counter will appear at the top suggesting that you can spend EnergyLink coins to obtain one of the currently selected item.</li>
+                    <li><b>Fishing Lakitu: </b> By grabbing the hooked item players will receive a random inventory item.</li>
+                </ul>
+                <a href="#qol-enhancements"><h2 id="qol-enhancements">Powerup and item enhancements</h2></a>
+                <p>There have been some adjusments for the powerups and items to enhance their abilities to be slightly more useful.</p>
+                <ul>
+                    <li>Fireballs can be thrown in an upwards arc when pressing UP while shooting them.</li>
+                    <li>Yoshi's Tongue is tied to a second Yoshi upgrade instead of being coupled with the regular Carry item.</li>
+                    <li>A second Swim upgrade was added which enhances the player's horizontal speed to match the one when Mario is holding an item.</li>
+                    <li>Mario is able to perform a wall run anywhere as long a second Run item is obtained and has full P-Speed.</li>
+                    <li>Mario walks faster on the map, even faster if Run is obtained.</li>
+                    <li>Super Stars now lasts more time the more Progressive Star items you obtain.</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <a href="#locs"><h1 id="locs">Locations</h1></a>
+                <p>This randomizer allows you to select additional Locations other than the Level Exits which will increase the Location count.</p>
+                <p>As a bonus, most locations have a way to tell which kind of item is tied to them, allowing you to scout locations ahead of time... though it's mostly irrelevant for 80% of the game's locations. It does look cool though.</p>
+                <ul>
+                    <li>Dragon Coins</li>
+                    <li>Midway Points</li>
+                    <li>3-Up Moons</li>
+                    <li>Prizes from Star Blocks</li>
+                    <li>Hidden 1-Ups</li>
+                    <li>Most blocks with items or coins in the game</li>
+                </ul>
+                <p>Note to players: The <b>Hidden 1-Ups</b> option enables some obscure checks, enable it at your own risk. The same applies to <b>Yellow Switch Palace</b> blocks when enabled as items as part of the Block Checks option.</p>
+                <a href="#locs-eggs"><h2 id="locs-eggs">Golden Yoshi Eggs in level exits</h2></a>
+                <p>The fork allows you to add extra locations in level exits that will have a <b>Golden Yoshi Egg</b> item which will be granted alongisde the Level Exit location. This creates a big opportunity for players to simulate a 96-exit session or a landmark one which includes:</p>
+                <ul>
+                    <li>Castles</li>
+                    <li>Ghost Houses</li>
+                    <li>Switch Palaces</li>
+                    <li>Special World Levels</li>
+                </ul>
+                <p>Even though the Boss Tokens aren't present anymore, players can still play an "All Bosses" seed if eggs are forcefully placed in Castles.</p>
+            </div>
+            <div class="main-content">
+                <a href="#goal"><h1 id="goal">Goals</h1></a>
+                <p>This fork has the same goals as the original implementation, except this time the goals depend on the same McMuffin item; Golden Yoshi Eggs.</p>
+                <p>Like the original implementation, visiting Yoshi's House also allows you to know how many eggs are required to unlock the goal condition.</p>
+                <a href="#goal-bowser"><h2 id="goal-bowser">Bowser</h2></a>
+                <p>Collect Golden Yoshi Eggs scattered across the multiworld and then defeat Bowser.</p>
+                <p>While it's not based on Tokens, you can still recreate the "All Bosses" setting with some options. Read <a href="#locs-eggs" style="text-decoration: underline;">Golden Yoshi Eggs in level</a> for more info.</p>
+                <a href="#goal-yoshi-house"><h2 id="goal-yoshi-house">Yoshi House</h2></a>
+                <p>Collect Golden Yoshi Eggs scattered across the multiworld and then visit Yoshi's House to beat the game.</p>
+            </div>
+            <div class="main-content">
+                <a href="#traps"><h1 id="traps">Traps</h1></a>
+                <p>SMW offers players a wide variety of traps to play around with. They range from being a fun thing to being extremely annoying (depends on who you ask). Most of them are gone after getting a single hit or going back to the map, so they're not entirely annoying to deal with.</p>
+                <a href="#traps-ice"><h2 id="traps-ice">Ice Trap</h2></a>
+                <p>Makes the floor slippery. May be annoying on hard levels.</p>
+                <a href="#traps-stun"><h2 id="traps-stun">Stun Trap</h2></a>
+                <p>Freezes the player in place for a few seconds. May be deadly if combo'd with another trap.</p>
+                <a href="#traps-literature"><h2 id="traps-literature">Literature Trap</h2></a>
+                <p>Generates text on screen across multiple text boxes.</p>
+                <a href="#traps-timer"><h2 id="traps-timer">Timer Trap</h2></a>
+                <p>Brings the timer down to 100 seconds.</p>
+                <a href="#traps-reverse"><h2 id="traps-reverse">Reverse Trap</h2></a>
+                <p>Reverses the player's inputs, including the ABXY buttons.</p>
+                <a href="#traps-thwimp"><h2 id="traps-thwimp">Thwimp Trap</h2></a>
+                <p>Spawns a Thwimp above the player from outside the screen. May be deadly if the player is climbing or on high ground.</p>
+                <a href="#traps-fishin-boo"><h2 id="traps-fishin-boo">Fishin' Boo Trap</h2></a>
+                <p>Spawns a Fishin' Boo from the sides of the screen which will haunt the player until it hurts them.</p>
+                <a href="#traps-screen-flip"><h2 id="traps-screen-flip">Screen Flip Trap</h2></a>
+                <p>Flips the screen vertically. May disorient, even worse if paired with a reverse trap.</p>
+                <a href="#traps-sticky-hands"><h2 id="traps-sticky-hands">Sticky Hands Trap</h2></a>
+                <p>Players are unable to drop items.</p>
+                <a href="#traps-sticky-floor"><h2 id="traps-sticky-floor">Sticky Floor Trap</h2></a>
+                <p>Players are unable to walk. They're forced to jump and will get rid of the effect after jumping for a bit.</p>
+                <a href="#traps-pixelate"><h2 id="traps-pixelate">Pixelate Trap</h2></a>
+                <p>Pixelates the screen. May disorient a ton. Fun.</p>
+                <a href="#traps-spotlight"><h2 id="traps-spotlight">Spotlight Trap</h2></a>
+                <p>Limits the player vision to a small circle on screen.</p>
+                <a href="#traps-bullet-time"><h2 id="traps-bullet-time">Bullet Time Trap</h2></a>
+                <p>Makes the game run to 15fps. Lasts for THREE slowed down real world seconds.</p>
+                <a href="#traps-invisibility"><h2 id="traps-invisibility">Invisibility Trap</h2></a>
+                <p>Mario becomes invisible. Doesn't affect Yoshi, Star sparkles or hearts.</p>
+                <a href="#traps-empty-box"><h2 id="traps-empty-box">Empty Item Box Trap</h2></a>
+                <p>Removes your current held item. Does nothing if the box isn't unlocked.</p>
+            </div>
+            <div class="main-content">
+                <a href="#link"><h1 id="link">Linked features</h1></a>
+                <p>Waffles aims to support most of the protocols available to interact with outside slots. More to come later.</p>
+                <a href="#link-energylink"><h2 id="link-energylink">EnergyLink</h2></a>
+                <p>Whenever players with EnergyLink active collect a coin, they will deposit a fraction of it in a shared Coin bank which gets converted to EnergyLink Coins. SMW players with EnergyLink active can spend EnergyLink Coins to purchase inventory items during the map gameplay segment if they don't have any of the currently selected inventory item. More info in <a href="#qol-inventory" style="text-decoration: underline;">the Inventory system</a> section.</p>
+                <a href="#link-traplink"><h2 id="link-traplink">TrapLink</h2></a>
+                <p>Shared traps across slots! TrapLink players will send their traps once activated and will receive equivalent ones as well from other slots. Can be highly chaotic in big sessions!</p>
+                <a href="#link-ringlink"><h2 id="link-ringlink">RingLink</h2></a>
+                <p><b>CURRENTLY DISABLED. NEEDS A MORE INVOLVED SYSTEM BECAUSE LIVES NO LONGER EXISTS.</b></p>
+                <p>Every time a player with RingLink collects a coin, everyone else with RingLink will receive a coin (or whatever is equivalent to a coin).</p>
+                <a href="#link-deathlink"><h2 id="link-deathlink">DeathLink</h2></a>
+                <p><b>CURRENTLY DISABLED. I BROKE IT WHEN SA-1 GOT ADDED.</b></p>
+                <p>Any time a player dies, everyone dies! Can be highly chaotic.</p>
+            </div>
+            <div class="main-content">
+                <a href="#setup"><h1 id="setup">Setup</h1></a>
+                <p>Waffles require a similar setup found in other SNES games in Archipelago, you can follow one of those guides or keep reading this one.</p>
+                <a href="#setup-required-software"><h2 id="setup-required-software">Required Software</h2></a>
+                <ul>
+                    <li><a href="https://github.com/ArchipelagoMW/Archipelago/releases" style="text-decoration: underline;">Archipelago 0.6.3 or newer</a></li>
+                    <li>Software capable of loading and playing SNES ROM files:
+                        <ul>
+                            <li><a href="https://github.com/Skarsnik/snes9x-emunwa/releases" style="text-decoration: underline;">snes9x-nwa</a> (Recommended!)</li>
+                            <li><a href="https://github.com/gocha/snes9x-rr/releases" style="text-decoration: underline;">snes9x-rr</a></li>
+                            <li><a href="https://github.com/black-sliver/bsnes-plus" style="text-decoration: underline;">BSNES-plus</a> (Do not reset within the emulator, it'll lead to RAM corruption)</li>
+                            <p>Any emulator or method not listed here is NOT endorsed by the developer, you may have varied results in those.</p>
+                        </ul>
+                    </li>
+                    <li>Your Super Mario World (US) ROM file from the original cartridge. Archipelago or I can't provide these.
+                        <ul>MD5: <code>cdd3c8c37322978ca8669b34bc89c804</code></ul>
+                    </li>
+                </ul>
+                <a href="#setup-optional-software"><h2 id="setup-optional-software">Optional Software</h2></a>
+                <ul>
+                    <li><a href="https://github.com/FarisTheAncient/Archipelago/releases" style="text-decoration: underline;">Universal Tracker</a></li>
+                </ul>
+                <a href="#setup-how-to-play"><h2 id="setup-how-to-play">How to play</h2></a>
+                <ol>
+                    <li>Place the <code>.apworld</code> in your <code>Archipelago/custom_worlds</code> folder, or double-click the <code>.apworld</code> to do so automatically.</li>
+                    <li>Use <code>ArchipelagoLauncher.exe</code> to open the Launcher, and click on Generate Template Options to create template yamls for your custom <code>.apworlds</code>.</li>
+                    <li>Place the desired player yamls in the <code>Players</code> folder, and customize them as you see fit.</li>
+                    <li>Use <code>ArchipelagoGenerate.exe</code> to generate the game.</li>
+                    <li>Upload the generated game (in the output folder) on the website at <a href="https://archipelago.gg/uploads"  style="text-decoration: underline;">https://archipelago.gg/uploads</a> and create a new room.</li>
+                </ol>
+                <a href="#setup-final-notes"><h2 id="setup-final-notes">Final Notes</h2></a>
+                <ul>
+                    <li>snes9x will not run the randomized ROM if the overclock hacks within the emulator are enabled. Please disable those.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
