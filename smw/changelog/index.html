@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/smw/changelog/index.html">
+<meta property="og:title" content="Spicy Mycena Waffles (Changelog) - lx5's works">
+<meta property="og:description" content="Changelog for Spicy Mycena Waffles (A Super Mario World Randomizer for Archipelago).">
+<meta name="theme-color" content="#ff0101">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/icons/smw.png">
+<html>
+    <head>
+        <title>Spicy Mycena Waffles - lx5's works</title>
+        <link rel="stylesheet" href="../../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("../../selected-smw.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <div class="main-content">
+            <h1>SMW: Spicy Mycena Waffles</h1>
+            <p>This is my fork of Super Mario World's Archipelago Randomizer which aims to provide a different experience.</p>
+        </div>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <div class="main-content">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#1.0.0" style="text-decoration: underline;">v1.0.0</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <a href="../index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-content">
+                <a href="#1.0.0"><h1 id="1.0.0">v1.0.0</h1></a>
+                <h2>Additions</h2>
+                <ul>
+                <li>ROM-less generation via APPP</li>
+                <li>Universal Tracker support for logic tracking (regular + Glitched™) and YAML-less tracking</li>
+                <li>EnergyLink support
+                    <ul>
+                    <li>You're now able to (automatically) deposit coins in a shared bank with other players</li>
+                    <li>Coins are used to buy Inventory items at the overworld</li>
+                    </ul>
+                </li>
+                <li>Enemy shuffle (Beta™)
+                    <ul>
+                    <li>Most enemies in levels are shuffled around, there are a small batch of exceptions to make levels beatable (and keep our logic happy)</li>
+                    </ul>
+                </li>
+                <li>Map teleport and transition shuffle
+                    <ul>
+                    <li>Pipes and Stars can be shuffled with each other, walkable transitions are shuffled among themselves</li>
+                    <li>Hints about these can be found in Info Boxes</li>
+                    </ul>
+                </li>
+                <li>Logic difficulty for levels
+                    <ul>
+                    <li>Makes some items appear earlier for some sets of levels</li>
+                    </ul>
+                </li>
+                <li>Map exit destination shuffle; (some) Normal and Secret exits can be swapped!</li>
+                <li>Golden Yoshi Eggs are the new form of Boss Tokens and Yoshi Eggs from the original randomizer</li>
+                <li>New appearances for blocks, 3-Up Moons and Dragon Coins when they're enabled as valid locations</li>
+                <li>NSMBWii inspired inventory system
+                    <ul>
+                    <li>You can summon an inventory menu where you can grant yourself an item before going inside a level</li>
+                    <li>Items can be gained by hitting the Goal Tape at high heights</li>
+                    </ul>
+                </li>
+                <li>Ending screen replaced with a results screen
+                    <ul>
+                    <li>The game keeps track of some random statistics of your current session</li>
+                    </ul>
+                </li>
+                <li>Goal Tape now grants inventory items and coins upon breaking it at certain heights</li>
+                <li>Levels can have permanent trap effects when playing them</li>
+                <li>Midway points can be valid locations</li>
+                <li>Midway points can be unlocked as an item
+                    <ul>
+                    <li>Also prevents midway point locations from being sent</li>
+                    </ul>
+                </li>
+                <li>Made Swim a progressive item; the second upgrade allows for faster horizontal swimming</li>
+                <li>Made Run a progressive item; the second upgrade allows Wall Running from anywhere as long you have P-Speed</li>
+                <li>Made Yoshi a progressive item; the second upgrade allows using Yoshi's Tongue
+                    <ul>
+                    <li>This means that Yoshi's Tongue is decoupled from Carry</li>
+                    </ul>
+                </li>
+                <li>Added a new item that makes losing a Fire Flower or a Cape go back to Big Mario instead of Small Mario</li>
+                <li>Added a Heart item that allows the player to tank one hit; it's lost on contact</li>
+                <li>Added an item that makes your TIME counter go down slower permanently</li>
+                <li>Super Stars get better for each Progressive Super Star you get</li>
+                <li>Current item box contents are displayed during the map gameplay</li>
+                <li>New items:
+                    <ul>
+                    <li>Progressive Swim</li>
+                    <li>Progressive Yoshi</li>
+                    <li>Progressive Run</li>
+                    <li>Progressive Super Star</li>
+                    <li>Midway Points</li>
+                    <li>Item box</li>
+                    <li>Better Timer</li>
+                    <li>Extra Defense</li>
+                    <li>Inventory Heart</li>
+                    <li>Inventory Mushroom</li>
+                    <li>Inventory Fire Flower</li>
+                    <li>Inventory Feather</li>
+                    <li>Inventory Super Star</li>
+                    <li>Inventory Green Yoshi</li>
+                    <li>Inventory Red Yoshi</li>
+                    <li>Inventory Yellow Yoshi</li>
+                    <li>Inventory Blue Yoshi</li>
+                    </ul>
+                </li>
+                <li>New traps:
+                    <ul>
+                    <li>Fishin' Boo Trap</li>
+                    <li>Screen Flip Trap</li>
+                    <li>Sticky Hands Trap</li>
+                    <li>Sticky Floor Trap</li>
+                    <li>Spotlight Trap</li>
+                    <li>Pixelate Trap</li>
+                    <li>Bullet Time Trap</li>
+                    <li>Invisibility Trap</li>
+                    <li>Empty Item Box Trap</li>
+                    </ul>
+                </li>
+                </ul>
+
+                <h2>Adjustments</h2>
+                <ul>
+                <li>Rewritten rules for different considerations compared to the original SMW AP</li>
+                <li>Removed Boss Token requirements per world</li>
+                <li>Dragon Coins now remember their individual collected status
+                    <ul>
+                    <li>Only saved upon level completion and midway point collection</li>
+                    </ul>
+                </li>
+                <li>Blocksanity is renamed to Block Checks; this marks a new configuration where you can enable certain blocks to be checks</li>
+                <li>Most Yellow Switch Palace blocks at Yoshi's Island 3 are valid checks</li>
+                <li>Green Star blocks are no longer valid checks under the "Blocks Checks" category (previously Blocksanity)
+                    <ul>
+                    <li>They're still checks under the Bonus Block category</li>
+                    </ul>
+                </li>
+                <li>Hidden 1-Ups can now be triggered out of order</li>
+                <li>Level goal tapes now grant coins or inventory items as a reward instead of 0 bonus stars</li>
+                <li>Replaced 1-Up Mushroom with Hearts</li>
+                <li>1-Up combos now grant a random inventory item</li>
+                <li>100 coin reward is now a heart</li>
+                <li>Players now have infinite lives</li>
+                <li>Forced fast walk animations in the OW
+                    <ul>
+                    <li>They're smoother, also faster if run has been unlocked</li>
+                    </ul>
+                </li>
+                <li>Ice Trap is now more slippery</li>
+                <li>Removed the auto saving yaml option in favor of automatic silent saves
+                    <ul>
+                    <li>Regular saves still trigger, will get removed later™</li>
+                    </ul>
+                </li>
+                <li>Fireballs can be thrown in an upwards arc by pressing UP</li>
+                <li>The curated palette pool is now forced upon users</li>
+                <li>Castles are now automagically collected</li>
+                <li>Added location groups</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
