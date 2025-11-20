@@ -31,6 +31,7 @@
             <div class="main-content">
                 <h1>Index</h1>
                 <ul>
+                    <li><a href="#1.1.0" style="text-decoration: underline;">v1.1.0</a></li>
                     <li><a href="#1.0.0" style="text-decoration: underline;">v1.0.0</a></li>
                 </ul>
             </div>
@@ -39,6 +40,70 @@
             </div>
         </div>
         <div class="container">
+            <div class="main-content">
+                <a href="#1.1.0"><h1 id="1.1.0">v1.1.0</h1></a>
+                <h2>Additions</h2>
+                <ul>
+                <li>Visiting rooms can grant a check
+                    <ul>
+                    <li>Boss Rooms not included</li>
+                    <li>Some rooms are in logic even if you don't have items required to beat the level. Example: Donut Secret 1 is a water level but you can collect a check from visiting the main portion of the level without access to Swim.</li>
+                    </ul>
+                </li>
+                <li>Added an item (<code>Trap Repellent</code>) which blocks incoming traps in a level
+                    <ul>
+                    <li>Used from the Inventory System. Effects are gone when going back to the map.</li>
+                    <li>Can be obtained via any way 1-Ups were awarded (1/4 chance) or purchased for 100 Red Coins with EnergyLink enabled</li>
+                    <li>This can effectively disable the permanent traps from the <code>level_effects</code> option... For a single playthrough of a level at least.</li>
+                    </ul>
+                </li>
+                <li>It's now possible to select which abilities or items will be added to the item pool or will be in the player's inventory at generation
+                    <ul>
+                    <li>This is sort-of why Start Inventory from Pool exists, but eh lol. Many people don't use that option and worked fine in DKC1/2</li>
+                    <li>Those abilities only include the amount of items that are "enough" to be able to use them meaning that additional upgrades to existing abilities will be in the item pool regardless of this setting which includes:
+                        <ul>
+                        <li>Wall Running from anywhere (Progressive Run x2)</li>
+                        <li>Additional Star duration (Progressive Super Star x9)</li>
+                        <li>Faster swimming (Progressive Swim x2)</li>
+                        </ul>
+                    </li>
+                    </ul>
+                </li>
+                </ul>
+
+                <h2>Adjustments</h2>
+                <ul>
+                <li>Midway Points are now colored according to the item's classification they have</li>
+                <li>Renamed <code>bonus_blocks_checks</code> to <code>star_block_checks</code></li>
+                <li>Removed <code>exclude_special_zone</code> to <code>exclude_special_zone</code></li>
+                <li>Blocks are now properly collected
+                    <ul>
+                    <li>The code worked, I just didn't properly test it and disabled it</li>
+                    </ul>
+                </li>
+                <li>Altered Universal Tracker's behavior for Glitched™ logic, it always assumes Hard logic instead of the very next logic level</li>
+                <li>Several Enemy Shuffle adjustments to placements feel more fair</li>
+                <li>Updated the Results Screen font</li>
+                <li>Disabled save prompts
+                    <ul>
+                    <li>We have silent autosaves, no need for an extra prompt</li>
+                    </ul>
+                </li>
+                </ul>
+
+                <h2>Fixes</h2>
+                <ul>
+                <li>Universal Tracker now properly tracks Glitched™ logic for swapped level exits</li>
+                <li>Fixed Goals not being properly colored when level exits are swapped</li>
+                <li>Fixed some backend issues with sprite loading which would lead to garbage being uploaded to VRAM every time an effect spawned on screen
+                    <ul>
+                    <li>In non-nerd speak: Fixed fireballs in boss arenas (and possibly other places)</li>
+                    </ul>
+                </li>
+                <li>Fixed Star Blocks not being properly colored when they're valid locations and haven't been collected</li>
+                <li>Some logic adjustments</li>
+                </ul>
+            </div>
             <div class="main-content">
                 <a href="#1.0.0"><h1 id="1.0.0">v1.0.0</h1></a>
                 <h2>Additions</h2>
@@ -175,7 +240,6 @@
                 <li>Castles are now automagically collected</li>
                 <li>Added location groups</li>
                 </ul>
-
             </div>
         </div>
     </div>
