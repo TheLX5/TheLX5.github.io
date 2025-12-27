@@ -31,6 +31,7 @@
             <div class="main-content">
                 <h1>Index</h1>
                 <ul>
+                    <li><a href="#1.2.0" style="text-decoration: underline;">v1.2.0</a></li>
                     <li><a href="#1.1.2" style="text-decoration: underline;">v1.1.2</a></li>
                     <li><a href="#1.1.1" style="text-decoration: underline;">v1.1.1</a></li>
                     <li><a href="#1.1.0" style="text-decoration: underline;">v1.1.0</a></li>
@@ -42,6 +43,68 @@
             </div>
         </div>
         <div class="container">
+            <div class="main-content">
+                <a href="#1.2.0"><h1 id="1.2.0">v1.2.0</h1></a>
+                <h2>Additions</h2>
+                <ul>
+                    <li><strong>BUMPED MINIMUM AP VERSION TO 0.6.5.</strong> WE'RE USING <code>SnesReader</code>!!!!</li>
+                    <li>Starting location shuffle
+                        <ul>
+                        <li>No longer restricted to Yoshi's Island as a starting area</li>
+                        </ul>
+                    </li>
+                    <li>Players can now warp to the starting location (the tile, not the actual level) from anywhere by pressing <code>L+R</code> while standing on a level tile in the map</li>
+                    <li>Carryless Secret Exits
+                        <ul>
+                        <li>Keyholes are replaced with Goal Orbs at random</li>
+                        </ul>
+                    </li>
+                    <li>Adjusted level map tiles depending on which level the location has
+                        <ul>
+                        <li>Also listens to the level exit shuffle setting and will inform the player via a different level tile on the map</li>
+                        </ul>
+                    </li>
+                    <li>Added a basic Manager/Adjuster which can edit a few things on an already generated seed
+                        <ul>
+                        <li>Enable, disable or change the Enemy Shuffle seed</li>
+                        <li>Set local and global Graphics Packs
+                            <ul>
+                            <li>Local pack will override the global one</li>
+                            <li>Global packs will always be loaded, similar to LTTP's adjuster</li>
+                            </ul>
+                        </li>
+                        <li>Export a template Graphics Pack from a Waffles ROM</li>
+                        <li>Create a new Graphics Pack from a folder</li>
+                        <li>More to come at a later date</li>
+                        </ul>
+                    </li>
+                    <li>Initial Deferred Entrances™ support for Universal Tracker
+                        <ul>
+                        <li>It basically doesn't spoil the entire location list at once and tells players which levels they've not visited at all</li>
+                        <li>Toggleable from Universal Tracker's settings in <code>host.yaml</code></li>
+                        </ul>
+                    </li>
+                    <li>New Glitched™ logic for some locations has been implemented for Universal Tracker</li>
+                </ul>
+
+                <h2>Adjustments</h2>
+                <ul>
+                    <li>Beaten castles no longer require <code>L+R</code> to enter, players can enter them with <code>B</code> or <code>A</code></li>
+                    <li>Removed RNG element from American Footballs</li>
+                    <li>Consistent names for Star World locations</li>
+                    <li>Some Enemy Shuffle and logic adjustments</li>
+                </ul>
+
+                <h2>Fixes</h2>
+                <ul>
+                    <li>Boss Rooms no longer make the player fall of the platform if the P-Switch is active</li>
+                    <li>Forest of Illusion 2 is no longer permanently marked as Glitched™ on Universal Tracker</li>
+                    <li>Some blocks aren't automatically sent upon loading a level</li>
+                    <li>Stars no longer keep playing the song if they haven't been unlocked</li>
+                    <li>Blocks are now detected properly as locations for FxPak users</li>
+                    <li>Character GFX packs now properly show the actual name with palettes in the HUD</li>
+                </ul>
+            </div>
             <div class="main-content">
                 <a href="#1.1.2"><h1 id="1.1.2">v1.1.2</h1></a>
                 <h2>Fixes</h2>

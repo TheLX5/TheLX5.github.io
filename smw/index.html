@@ -24,7 +24,7 @@
         <div class="main-content">
             <h1>SMW: Spicy Mycena Waffles</h1>
             <p>This is my fork of Super Mario World's Archipelago Randomizer which aims to provide a different experience.</p>
-            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/waffles-v1.1.2" style="text-decoration: underline;">v1.1.2</a></p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/waffles-v1.2.0" style="text-decoration: underline;">v1.2.0</a></p>
             <p>Changelog <a href="./changelog/index.html" style="text-decoration: underline;">here</a></p>
         </div>
     </div>
@@ -39,6 +39,7 @@
                     <li><a href="#goal" style="text-decoration: underline;">Goals</a></li>
                     <li><a href="#traps" style="text-decoration: underline;">Traps</a></li>
                     <li><a href="#link" style="text-decoration: underline;">Linked features</a></li>
+                    <li><a href="#gfx-packs" style="text-decoration: underline;">Graphics Packs</a></li>
                     <li><a href="#setup" style="text-decoration: underline;">Setup</a></li>
                 </ul>
             </div>
@@ -52,6 +53,7 @@
                 <p>Spicy Mycena Waffles offers a wide variety of options to make your Super Mario World session very enjoyable, aside from brand new features compared to the original implementation, it also revamps some of the original's features in order to offer a different experience. All of the features (old and new) are the following:</p>
                 <ul>
                     <li>Level shuffle</li>
+                    <li>Random starting world</li>
                     <li>Enemy shuffle</li>
                     <li>Boss shuffle</li>
                     <li>Map Transition shuffle</li>
@@ -69,6 +71,7 @@
             <div class="main-content">
                 <a href="#qol"><h1 id="qol">Quality of Life</h1></a>
                 <p>The game features a lot of quality of life settings which aims to make the experience a lot smoother for not seasoned players, it also includes some other options to make the sessions less obnoxious.</p>
+                <hr>
                 <a href="#qol-difficulty"><h2 id="qol-difficulty">Difficulty accesibility</h2></a>
                 <p>There are various ways where the implementation allows you to have an overall easier time playing the game.</p>
                 <ul>
@@ -79,15 +82,20 @@
                     <li><b>Better Timer:</b> There are a few timer upgrades that will make the HUD timer tick much slower which acts as a counter to Timer Traps or as a help for people who love to play slowly.</li>
                     <li><b>Hidden 1-Ups out of order:</b> In vanilla, players are supposed to collect Hidden 1-Ups in a specific order for them to trigger the location, now that requirement is nullified and players can now collect them in any order they desire.</li>
                 </ul>
-                <a href="#qol-inventory"><h2 id="qol-inventory">Inventory system</h2></a>
-                <p>A inventory system similar to NSMBWii has been added which allows you to enter levels with specific powerups or items. You can summon the inventory system via SELECT during the map gameplay portion.</p>
-                <p>There are ways to obtain inventory items in the game and use them any time.</p>
+                <hr>
+                <a href="#qol-map"><h2 id="qol-map">Map gameplay enhancements</h2></a>
+                <p>The map gameplay portion of the game has received some tweaks to allow smoother experiences</p>
                 <ul>
-                    <li><b>Goal Tape:</b> By hitting the goal at a certain height, players can get a random inventory item (or coins). The higher the goal is hit, the better the reward is.</li>
-                    <li><b>Combos:</b> Any kind of combo will grant a random inventory item, this includes: jumping in enemies, defeating them with a star, collecting silver coins or combo-ing them with a kicked shell. Every time a reward is granted all combo counters will be reset.</li>
-                    <li><b>EnergyLink:</b> When the inventory is shown and your selected item count is 0 an additional counter will appear at the top suggesting that you can spend EnergyLink coins to obtain one of the currently selected item.</li>
-                    <li><b>Fishing Lakitu: </b> By grabbing the hooked item players will receive a random inventory item.</li>
+                    <li>Item tracker at the top of the border, you can see which items you've gotten so far.</li>
+                    <li>Location tracker at the top right corner of the border, it'll tell you which locations have been found so far in that particular level.</li>
+                    <li>Inventory system that's accessed via <code>SELECT</code>. More info in <a href="#qol-inventory" style="text-decoration: underline;">Inventory system</a>.</li>
+                    <li>Fast travel to the starting location via <code>L+R</code>.</li>
+                    <li>Level tiles are changed to match which levels had their tiles swapped around. This also "caused" every level tile to match which kind of level is inside; if it's a ghost house or a regular level.<br>
+                        <div class="centered-image"><img src="./images/smw-level-tiles.png"></div>
+                        <p class="centered-text">Levels with big red dots or are gray houses had their exits swapped.</p>
+                    </li>
                 </ul>
+                <hr>
                 <a href="#qol-enhancements"><h2 id="qol-enhancements">Powerup and item enhancements</h2></a>
                 <p>There have been some adjusments for the powerups and items to enhance their abilities to be slightly more useful.</p>
                 <ul>
@@ -97,6 +105,16 @@
                     <li>Mario is able to perform a wall run anywhere as long a second Run item is obtained and has full P-Speed.</li>
                     <li>Mario walks faster on the map, even faster if Run is obtained.</li>
                     <li>Super Stars now lasts more time the more Progressive Star items you obtain.</li>
+                </ul>
+                <hr>
+                <a href="#qol-inventory"><h2 id="qol-inventory">Inventory system</h2></a>
+                <p>A inventory system similar to NSMBWii has been added which allows you to enter levels with specific powerups or items. You can summon the inventory system via SELECT during the map gameplay portion.</p>
+                <p>There are ways to obtain inventory items in the game and use them any time.</p>
+                <ul>
+                    <li><b>Goal Tape:</b> By hitting the goal at a certain height, players can get a random inventory item (or coins). The higher the goal is hit, the better the reward is.</li>
+                    <li><b>Combos:</b> Any kind of combo will grant a random inventory item, this includes: jumping in enemies, defeating them with a star, collecting silver coins or combo-ing them with a kicked shell. Every time a reward is granted all combo counters will be reset.</li>
+                    <li><b>EnergyLink:</b> When the inventory is shown and your selected item count is 0 an additional counter will appear at the top suggesting that you can spend EnergyLink coins to obtain one of the currently selected item.</li>
+                    <li><b>Fishing Lakitu: </b> By grabbing the hooked item players will receive a random inventory item.</li>
                 </ul>
             </div>
             <div class="main-content">
@@ -112,6 +130,7 @@
                     <li>Most blocks with items or coins in the game</li>
                 </ul>
                 <p>Note to players: The <b>Hidden 1-Ups</b> option enables some obscure checks, enable it at your own risk. The same applies to <b>Yellow Switch Palace</b> blocks when enabled as items as part of the Block Checks option.</p>
+                <hr>
                 <a href="#locs-eggs"><h2 id="locs-eggs">Golden Yoshi Eggs in level exits</h2></a>
                 <p>The fork allows you to add extra locations in level exits that will have a <b>Golden Yoshi Egg</b> item which will be granted alongisde the Level Exit location. This creates a big opportunity for players to simulate a 96-exit session or a landmark one which includes:</p>
                 <ul>
@@ -126,71 +145,105 @@
                 <a href="#goal"><h1 id="goal">Goals</h1></a>
                 <p>This fork has the same goals as the original implementation, except this time the goals depend on the same McMuffin item; Golden Yoshi Eggs.</p>
                 <p>Like the original implementation, visiting Yoshi's House also allows you to know how many eggs are required to unlock the goal condition.</p>
+                <hr>
                 <a href="#goal-bowser"><h2 id="goal-bowser">Bowser</h2></a>
                 <p>Collect Golden Yoshi Eggs scattered across the multiworld and then defeat Bowser.</p>
                 <p>While it's not based on Tokens, you can still recreate the "All Bosses" setting with some options. Read <a href="#locs-eggs" style="text-decoration: underline;">Golden Yoshi Eggs in level</a> for more info.</p>
+                <hr>
                 <a href="#goal-yoshi-house"><h2 id="goal-yoshi-house">Yoshi House</h2></a>
                 <p>Collect Golden Yoshi Eggs scattered across the multiworld and then visit Yoshi's House to beat the game.</p>
             </div>
             <div class="main-content">
                 <a href="#traps"><h1 id="traps">Traps</h1></a>
                 <p>SMW offers players a wide variety of traps to play around with. They range from being a fun thing to being extremely annoying (depends on who you ask). Most of them are gone after getting a single hit or going back to the map, so they're not entirely annoying to deal with.</p>
+                <hr>
                 <a href="#traps-ice"><h2 id="traps-ice">Ice Trap</h2></a>
                 <p>Makes the floor slippery. May be annoying on hard levels.</p>
+                <hr>
                 <a href="#traps-stun"><h2 id="traps-stun">Stun Trap</h2></a>
                 <p>Freezes the player in place for a few seconds. May be deadly if combo'd with another trap.</p>
+                <hr>
                 <a href="#traps-literature"><h2 id="traps-literature">Literature Trap</h2></a>
                 <p>Generates text on screen across multiple text boxes.</p>
+                <hr>
                 <a href="#traps-timer"><h2 id="traps-timer">Timer Trap</h2></a>
                 <p>Brings the timer down to 100 seconds.</p>
+                <hr>
                 <a href="#traps-reverse"><h2 id="traps-reverse">Reverse Trap</h2></a>
                 <p>Reverses the player's inputs, including the ABXY buttons.</p>
+                <hr>
                 <a href="#traps-thwimp"><h2 id="traps-thwimp">Thwimp Trap</h2></a>
                 <p>Spawns a Thwimp above the player from outside the screen. May be deadly if the player is climbing or on high ground.</p>
+                <hr>
                 <a href="#traps-fishin-boo"><h2 id="traps-fishin-boo">Fishin' Boo Trap</h2></a>
                 <p>Spawns a Fishin' Boo from the sides of the screen which will haunt the player until it hurts them.</p>
+                <hr>
                 <a href="#traps-screen-flip"><h2 id="traps-screen-flip">Screen Flip Trap</h2></a>
                 <p>Flips the screen vertically. May disorient, even worse if paired with a reverse trap.</p>
+                <hr>
                 <a href="#traps-sticky-hands"><h2 id="traps-sticky-hands">Sticky Hands Trap</h2></a>
                 <p>Players are unable to drop items.</p>
+                <hr>
                 <a href="#traps-sticky-floor"><h2 id="traps-sticky-floor">Sticky Floor Trap</h2></a>
                 <p>Players are unable to walk. They're forced to jump and will get rid of the effect after jumping for a bit.</p>
+                <hr>
                 <a href="#traps-pixelate"><h2 id="traps-pixelate">Pixelate Trap</h2></a>
                 <p>Pixelates the screen. May disorient a ton. Fun.</p>
+                <hr>
                 <a href="#traps-spotlight"><h2 id="traps-spotlight">Spotlight Trap</h2></a>
                 <p>Limits the player vision to a small circle on screen.</p>
+                <hr>
                 <a href="#traps-bullet-time"><h2 id="traps-bullet-time">Bullet Time Trap</h2></a>
                 <p>Makes the game run to 15fps. Lasts for THREE slowed down real world seconds.</p>
+                <hr>
                 <a href="#traps-invisibility"><h2 id="traps-invisibility">Invisibility Trap</h2></a>
                 <p>Mario becomes invisible. Doesn't affect Yoshi, Star sparkles or hearts.</p>
+                <hr>
                 <a href="#traps-empty-box"><h2 id="traps-empty-box">Empty Item Box Trap</h2></a>
                 <p>Removes your current held item. Does nothing if the box isn't unlocked.</p>
             </div>
             <div class="main-content">
                 <a href="#link"><h1 id="link">Linked features</h1></a>
                 <p>Waffles aims to support most of the protocols available to interact with outside slots. More to come later.</p>
+                <hr>
                 <a href="#link-energylink"><h2 id="link-energylink">EnergyLink</h2></a>
                 <p>Whenever players with EnergyLink active collect a coin, they will deposit a fraction of it in a shared Coin bank which gets converted to EnergyLink Coins. SMW players with EnergyLink active can spend EnergyLink Coins to purchase inventory items during the map gameplay segment if they don't have any of the currently selected inventory item. More info in <a href="#qol-inventory" style="text-decoration: underline;">the Inventory system</a> section.</p>
+                <hr>
                 <a href="#link-traplink"><h2 id="link-traplink">TrapLink</h2></a>
                 <p>Shared traps across slots! TrapLink players will send their traps once activated and will receive equivalent ones as well from other slots. Can be highly chaotic in big sessions!</p>
+                <hr>
                 <a href="#link-ringlink"><h2 id="link-ringlink">RingLink</h2></a>
                 <p><b>CURRENTLY DISABLED. NEEDS A MORE INVOLVED SYSTEM BECAUSE LIVES NO LONGER EXISTS.</b></p>
                 <p>Every time a player with RingLink collects a coin, everyone else with RingLink will receive a coin (or whatever is equivalent to a coin).</p>
+                <hr>
                 <a href="#link-deathlink"><h2 id="link-deathlink">DeathLink</h2></a>
                 <p><b>CURRENTLY DISABLED. I BROKE IT WHEN SA-1 GOT ADDED.</b></p>
                 <p>Any time a player dies, everyone dies! Can be highly chaotic.</p>
+            </div>
+            <div class="main-content">
+                <a href="#gfx-packs"><h1 id="gfx-packs">Graphics Packs</h1></a>
+                <p>Sadly, I don't have the skills to explain how Graphics for SMW works, but MM102 made an excellent videos that covers part of it, though it fully requires you to understand how to hack Super Mario World.</p>
+                <ul>
+                    <li>SMW Character Creation Tutorial <a href="https://www.youtube.com/watch?v=FJb-rR0cVhs" style="text-decoration: underline;">(Video URL)</a></li>
+                    <li>SMW character creation Aseprite script <a href="https://www.youtube.com/watch?v=t7qfZgj8nnc" style="text-decoration: underline;">(Video URL)</a></li>
+                    <li>SNES GFX Tools for aseprite <a href="https://www.youtube.com/watch?v=4ICXL0K8QUY" style="text-decoration: underline;">(Video URL)</a></li>
+                </ul>
+                <p>The Adjuster will allow you create Graphics Packs with ease and supports the output from MM102's Aseprite script.</p>
+                <p>Any futher assistance will be pointed towards <a href="https://www.smwcentral.net">SMW Central</a>, as they will provide better assistance than me.</p>
+                <p>Hosting an index for Graphics Packs similar to LTTP's is unlikely to happen as it may be super annoying to maintain.</p>
             </div>
             <div class="main-content">
                 <a href="#setup"><h1 id="setup">Setup</h1></a>
                 <p>Waffles require a similar setup found in other SNES games in Archipelago, you can follow one of those guides or keep reading this one.</p>
                 <a href="#setup-required-software"><h2 id="setup-required-software">Required Software</h2></a>
                 <ul>
-                    <li><a href="https://github.com/ArchipelagoMW/Archipelago/releases" style="text-decoration: underline;">Archipelago 0.6.3 or newer</a></li>
-                    <li>Software capable of loading and playing SNES ROM files:
+                    <li><a href="https://github.com/ArchipelagoMW/Archipelago/releases" style="text-decoration: underline;">Archipelago 0.6.5 or newer</a></li>
+                    <li>Software or hardware capable of loading and playing SNES ROM files:
                         <ul>
                             <li><a href="https://github.com/Skarsnik/snes9x-emunwa/releases" style="text-decoration: underline;">snes9x-nwa</a> (Recommended!)</li>
                             <li><a href="https://github.com/gocha/snes9x-rr/releases" style="text-decoration: underline;">snes9x-rr</a></li>
                             <li><a href="https://github.com/black-sliver/bsnes-plus" style="text-decoration: underline;">BSNES-plus</a> (Do not reset within the emulator, it'll lead to RAM corruption)</li>
+                            <li><a href="https://retrorgb.com/fxpakpro.html" style="text-decoration: underline;">FxPak</a></li>
                             <p>Any emulator or method not listed here is NOT endorsed by the developer, you may have varied results in those.</p>
                         </ul>
                     </li>
@@ -212,7 +265,9 @@
                 </ol>
                 <a href="#setup-final-notes"><h2 id="setup-final-notes">Final Notes</h2></a>
                 <ul>
+                    <li>snes9x-nwa will require enabling <code>Enable Emu Network Control</code> under the <code>Netplay</code> menu in the emulator.</li>
                     <li>snes9x will not run the randomized ROM if the overclock hacks within the emulator are enabled. Please disable those.</li>
+                    <li>FxPak will take a good amount of time to process bought items in the inventory menu with EnergyLink (around 20-30 seconds) as fetching SRAM changes is a slow procedure.</li>
                 </ul>
             </div>
         </div>

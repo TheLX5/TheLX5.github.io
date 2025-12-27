@@ -3,7 +3,7 @@ body {
     background-color: rgb(24, 24, 24);
     color: rgb(240, 240, 240);
     font-size: 18px;
-    line-height: 1.35;
+    line-height: 1.45;
     margin: auto;
     background-image: url("selected-none.png");
 }
@@ -23,6 +23,14 @@ h1 {
 }
 h2 {
     font-size: 26px;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
 }
 
 .main-content {
