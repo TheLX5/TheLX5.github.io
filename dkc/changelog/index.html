@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/dkc/index.html">
+<meta property="og:title" content="Donkey Kong Country Randomizer - lx5's works">
+<meta property="og:description" content="Changelog for Donkey Kong Country Randomizer">
+<meta name="theme-color" content="#ffdb0f">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/icons/dkc.png">
+<html>
+    <head>
+        <title>Donkey Kong Country Randomizer - lx5's works</title>
+        <link rel="stylesheet" href="../../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("../../selected-dkc.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <div class="main-content">
+            <h1>Donkey Kong Country</h1>
+            <p>A Donkey Kong Country randomizer for Archipelago.</p>
+        </div>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <div class="main-content">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#1.2.0" style="text-decoration: underline;">v1.2.0</a></li>
+                    <li><a href="#1.1.0" style="text-decoration: underline;">v1.1.0</a></li>
+                    <li><a href="#1.0.5" style="text-decoration: underline;">v1.0.5</a></li>
+                    <li><a href="#1.0.4" style="text-decoration: underline;">v1.0.4</a></li>
+                    <li><a href="#1.0.3" style="text-decoration: underline;">v1.0.3</a></li>
+                    <li><a href="#1.0.2" style="text-decoration: underline;">v1.0.2</a></li>
+                    <li><a href="#1.0.1" style="text-decoration: underline;">v1.0.1</a></li>
+                    <li><a href="#1.0.0" style="text-decoration: underline;">v1.0.0</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <a href="../index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-content">
+                <a href="#1.2.0"><h1 id="1.2.0">v1.2.0</h1></a>
+                <h2>Additions</h2>
+                <ul>
+                    <li>Added an adjuster</li>
+                    <li>
+                        Added a level clear counter to the map, it also tells how many levels are required to be beaten to enter the area's boss
+                        <ul>
+                            <li>This counter also applies to Big Bananas on the Isle Map</li>
+                        </ul>
+                    </li>
+                    <li>There's an in-game text that informs you can reset checkpoints with L/R on the map</li>
+                    <li>
+                        Added a section that edits some of the bosses' features (HP &amp; misc. things)
+                        <ul>
+                            <li>May be updated again in the future, no promises though, the game's code hard to follow</li>
+                        </ul>
+                    </li>
+                    <li>KONG letters are remembered between levels</li>
+                    <li>
+                        DeathLink
+                        <ul>
+                            <li>Barely tested addition. Let me know if something breaks.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2>Adjustments</h2>
+                <ul>
+                    <li>Squawks no longer has a flashbang in his arsenal</li>
+                    <li>
+                        <code>/request</code> now requires a number that's used to determine how many barrels will be requested
+                    </li>
+                    <li>Allow for more than 255 backup barrels to be stored</li>
+                    <li>Allow requesting barrels if you don't have both kongs unlocked</li>
+                    <li>Updated client to partially use SnesReader (forces AP 0.6.5+)</li>
+                    <li>Client no longer processes anything if no connection is found</li>
+                </ul>
+                <h2>Fixes</h2>
+                <ul>
+                    <li>
+                        Fixed a bug from the initial version where additional checks weren't registered anywhere on the ROM and the client recognized them as always available even if weren't enabled as checks in the YAML
+                    </li>
+                    <li>Extra hits are now considered when getting hit while riding an Animal buddy</li>
+                    <li>Squawks not being unlocked actually makes him disappear in every scenario</li>
+                    <li>
+                        There shouldn't be any more duplicate items in the pool in case of restrictive starts or the starting world
+                    </li>
+                    <li>Trick Track Trek bonuses 2 &amp; 3 are no longer swapped</li>
+                    <li>
+                        A few logic updates
+                        <ul>
+                            <li>Adjusted Orang-Utan Gang and Manic Mincers strictness (Strict &amp; Loose)</li>
+                            <li>Mine Cart Madness no longer requires Tires in some checks (Strict &amp; Loose)</li>
+                            <li>Forced Cartwheel in Ice Age Alley (Strict)</li>
+                            <li>Torchlight Trouble now expects Squawks (Loose)</li>
+                            <li>Loopy Lights now expects Switch Barrels (Loose)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="main-content">
+                    <a href="#1.1.0"><h1 id="1.1.0">v1.1.0</h1></a>
+                    <h2>Additions</h2>
+                    <ul>
+                        <li>Added logic for warping across worlds via glitches</li>
+                        <li>
+                            Added Cache Detector item
+                            <ul>
+                                <li>It will detect the nearest cache and draw a fast spinning banana on it</li>
+                            </ul>
+                        </li>
+                        <li>Added manifest file for AP 0.7.0+</li>
+                    </ul>
+                    <h2>Adjustments</h2>
+                    <ul>
+                        <li>
+                            Guaranteed successful generations on restrictive-ish starts
+                            <ul>
+                                <li>Makes fuzzer happy (lol)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h2>Fixes</h2>
+                    <ul>
+                        <li>Fixed Rope Bridge Rumble Bonus logic</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-content">
+                    <a href="#1.0.5"><h1 id="1.0.0">v1.0.5</h1></a>
+                    <h2>Adjustments</h2>
+                    <ul>
+                        <li>
+                            Added a new way to disable sprites which will no longer cause issues with despawning entities in certain levels
+                        </li>
+                    </ul>
+                    <h2>Fixes</h2>
+                    <ul>
+                        <li>Potentially added a fix for Army and Nut Traps messing up the graphics in the game</li>
+                        <li>
+                            Army and Nut traps will no longer spawn if there's no entity slots available for them at the moment
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-content">
+                    <a href="#1.0.4"><h1 id="1.0.4">v1.0.4</h1></a>
+                    <h2>Additions</h2>
+                    <ul>
+                        <li>You can now tell the game to use different letters for the KONG collectibles</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-content">
+                    <a href="#1.0.3"><h1 id="1.0.3">v1.0.3</h1></a>
+                    <h2>Fixes</h2>
+                    <ul>
+                        <li>Stun Traps no longer crash the game in certain scenarios</li>
+                        <li>Universal Tracker's Glitched Logic fixes</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-content">
+                    <a href="#1.0.2"><h1 id="1.0.2">v1.0.2</h1></a>
+                    <h2>Additions</h2>
+                    <ul>
+                        <li>
+                            Calling a <code>Backup DK Barrel</code> while you have the maximum number of Kongs alive will grant the player a protection layer which lasts for a single hit.
+                            <ul>
+                                <li>Persists between levels (and probably on/off cycles as well)</li>
+                                <li>This is indicated by a K letter on the bottom left corner of the screen.</li>
+                                <li>
+                                    Getting hit while riding an animal buddy will get rid of the animal first before the protection layer, they have very messy code
+                                </li>
+                                <li>
+                                    Getting hit during a Minecart <em>will</em> get rid of the protection layer first, but you won't be able to summon a new one
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Added support for Universal Tracker's Glitched Logic ™️</li>
+                    </ul>
+                    <h2>Fixes</h2>
+                    <ul>
+                        <li>Fixed a generation issue related to Balloons as checks</li>
+                        <li>Various logic adjustments and fixes</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-content">
+                    <a href="#1.0.1"><h1 id="1.0.1">v1.0.1</h1></a>
+                    <h2>Additions</h2>
+                    <ul>
+                        <li>The client now sends the loaded level ID to PopTracker</li>
+                    </ul>
+                    <h2>Adjustments</h2>
+                    <ul>
+                        <li>
+                            Calling a Backup DK Barrels no longer generates the breaking barrel VFX
+                            <ul>
+                                <li>This is to lower the system load and avoid <em>some</em> visual glitches</li>
+                            </ul>
+                        </li>
+                        <li>
+                            It's now possible to call a Backup DK Barrel as soon you're out of hitstun instead of waiting for the i-frames to run out and the other kong is no longer on screen
+                        </li>
+                        <li>Stun, Ice and Sticky Floor traps now play a sound effect when they're actually triggered</li>
+                        <li>Stun trap has better animation most of the time</li>
+                        <li>It's no longer possible to receive stun traps underwater</li>
+                        <li>Docs now properly mention DKC instead of DKC2</li>
+                    </ul>
+                    <h2>Fixes</h2>
+                    <ul>
+                        <li>
+                            Fixed for Ice Trap
+                            <ul>
+                                <li>No longer messes up the camera in water levels</li>
+                                <li>No longer nukes some palette effects</li>
+                                <li>No longer applies filters to sprite palettes</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Fixes for Stun Trap
+                            <ul>
+                                <li>No longer allows to switch kongs during a Stun Trap</li>
+                            </ul>
+                        </li>
+                        <li>Orang-utan Gang now properly sends its Enguarde Token</li>
+                        <li>Slipslide Ride now properly sends its Enguarde Token</li>
+                        <li>Ropey Rampage now properly sends its Winky Token</li>
+                        <li>Various logic adjustments</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-content">
+                    <a href="#1.0.0"><h1 id="1.0.0">v1.0.0</h1></a>
+                <p>Initial version.</p>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

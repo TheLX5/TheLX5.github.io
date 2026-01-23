@@ -15,7 +15,7 @@
         <meta charset="utf-8"/>
         <style type="text/css">
             body {
-                background-image: url("../selected-none.png");
+                background-image: url("../selected-dkc.png");
             }
         </style>
     </head>
@@ -24,6 +24,8 @@
         <div class="main-content">
             <h1>Donkey Kong Country</h1>
             <p>A Donkey Kong Country randomizer for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc-v1.2.0" style="text-decoration: underline;">v1.2.0</a></p>
+            <p>Changelog <a href="./changelog/index.html" style="text-decoration: underline;">here</a></p>
         </div>
     </div>
     <div class="ap-flex">
@@ -34,7 +36,10 @@
                     <li><a href="#featuras" style="text-decoration: underline;">Features</a></li>
                     <li><a href="#qol" style="text-decoration: underline;">Quality of Life</a></li>
                     <li><a href="#locs" style="text-decoration: underline;">Locations</a></li>
-                    <li><a href="#goal" style="text-decoration: underline;">Goals</a></li>
+                    <li><a href="#goal" style="text-decoration: underline;">Goal</a></li>
+                    <li><a href="#traps" style="text-decoration: underline;">Traps</a></li>
+                    <li><a href="#link" style="text-decoration: underline;">Linked features</a></li>
+                    <li><a href="#setup" style="text-decoration: underline;">Setup</a></li>
                 </ul>
             </div>
             <div class="main-content">
@@ -44,19 +49,96 @@
         <div class="container">
             <div class="main-content">
                 <a href="#featuras"><h1 id="featuras">Features</h1></a>
-                <p>In progress..</p>
+                <p>Donkey Kong Country in Archipelago allows players to go through the DK isle with new features and Quality of Life changes that aim to make your journey quite enjoyable! All of the features present are:</p>
+                <ul>
+                    <li>Open world</li>
+                    <li>Random starting world</li>
+                    <li>Ability & item shuffle</li>
+                    <li>A lot of locations, some are very hidden!</li>
+                    <li>Different logic difficulty levels</li>
+                    <li>Several unique traps</li>
+                    <li>EnergyLink and TrapLink support</li>
+                    <li>Universal tracker support</li>
+                    <li>ROM-less generation</li>
+                </ul>
+                <p>There are several quality of life changes as well traps to keep players engaged, those are further disclosed on their respective sections.</p>
             </div>
             <div class="main-content">
                 <a href="#qol"><h1 id="qol">Quality of Life</h1></a>
-                <p>In progress..</p>
+                <p>There are a few Quality of Life additions for this game. The original game is quite hard, so they're very welcome especially for new users trying out this randomizer!</p>
+                <ul>
+                    <li><b>Backup DK Barrels:</b> There are items with this name that allows players to summon one DK Barrel at any point with <code>L</code> or <code>R</code>. If they have the maximum amount of Kongs on screen, an extra hit will be granted which allows players to tank one hit without losing a Kong. A [K] letter will be drawn on the bottom left corner to indicate that an extra hit is active.</li>
+                    <li><b>Reset checkpoint:</b> Players can reset checkpoints by holding L/R while entering a level</li>
+                    <li><b>KONG letters always saved:</b> The letters are now persistent between levels and are saved upon getting them, allowing for some Out of Logic scenarios in all logic settings.</li>
+                    <li><b>Goal always visible on map:</b> A label indicating how many world clears are needed will be displayed on DK Isle, at the same time a similar label appears in each world indicating how many levels are required to face the world's boss.</li>
+                    <li><b>Cache detector:</b> A new item was added that indicates the nearest cache with a fast-spinning banana. Useful when Banana Bunch checks are enabled.</li>
+                    <li><b>Squawks:</b> He no longers have a flashbang. (No more full brightness screens when turning around).</li>
+                </ul>
             </div>
             <div class="main-content">
                 <a href="#locs"><h1 id="locs">Locations</h1></a>
+                <p>DKC in Archipelago has quite a few added locations, some can be very hidden.</p>
+                <ul>
+                    <li><b>Level Clears:</b> Beat a level, get a check. Simple.</li>
+                    <li><b>Bonus Rooms:</b> Find a bonus room, get a check. It's not necessary to actually get the reward from the bonus room.</li>
+                    <li><b>KONG:</b> Collect all four KONG letters to get a check. Can be toggled.</li>
+                    <li><b>Animal Tokens:</b> Collect an Animal Token in levels to get a check. Animal Tokens inside bonuses are not considered.</li>
+                    <li><b>Balloons:</b> Collect a colored balloon to get a check.</li>
+                    <li><b>Banana Bunches:</b> Find and collect banana bunches to get a check. A lot of them are hidden inside item caches!</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <a href="#goal"><h1 id="goal">Goal</h1></a>
+                <p>Goal is simple: beat K. Rool at Gangplank Galleon after beating enough world bosses. Each world boss can be locked to require a specific amount of beaten levels, that way players can wander around DK Isle for a longer time.</p>
+            </div>
+            <div class="main-content">
+                <a href="#traps"><h1 id="traps">Traps</h1></a>
                 <p>In progress..</p>
             </div>
             <div class="main-content">
-                <a href="#goal"><h1 id="goal">Goals</h1></a>
+                <a href="#link"><h1 id="link">Linked features</h1></a>
                 <p>In progress..</p>
+            </div>
+
+            <div class="main-content">
+                <a href="#setup"><h1 id="setup">Setup</h1></a>
+                <p>DKC AP requires a similar setup found in other SNES games in Archipelago, you can follow one of those guides or keep reading this one.</p>
+                <a href="#setup-required-software"><h2 id="setup-required-software">Required Software</h2></a>
+                <ul>
+                    <li><a href="https://github.com/ArchipelagoMW/Archipelago/releases" style="text-decoration: underline;">Archipelago 0.6.5 or newer</a></li>
+                    <li>Software or hardware capable of loading and playing SNES ROM files:
+                        <ul>
+                            <li><a href="https://github.com/Skarsnik/snes9x-emunwa/releases" style="text-decoration: underline;">snes9x-nwa</a> (Recommended!)</li>
+                            <li><a href="https://github.com/gocha/snes9x-rr/releases" style="text-decoration: underline;">snes9x-rr</a></li>
+                            <li><a href="https://github.com/black-sliver/bsnes-plus" style="text-decoration: underline;">BSNES-plus</a> (Do not reset within the emulator, it'll lead to RAM corruption)</li>
+                            <li><a href="https://retrorgb.com/fxpakpro.html" style="text-decoration: underline;">FxPak</a></li>
+                            <p>Any emulator or method not listed here is NOT endorsed by the developer, you may have varied results in those.</p>
+                        </ul>
+                    </li>
+                    <li>Your Donkey Kong Country v1.0 (US) ROM file from the original cartridge. Archipelago or I can't provide these.
+                        <ul>MD5: <code>30c5f292ff4cbbfcc00fd8fa96c2de3b</code></ul>
+                    </li>
+                </ul>
+                <a href="#setup-optional-software"><h2 id="setup-optional-software">Optional Software</h2></a>
+                <ul>
+                    <li><a href="https://github.com/pwkfisher/ap-dkc-tracker/releases/" style="text-decoration: underline;">PopTracker pack</a></li>
+                    <li><a href="https://github.com/FarisTheAncient/Archipelago/releases" style="text-decoration: underline;">Universal Tracker</a></li>
+                    <li><a href="https://thelx5.github.io/ColorSelector/DKC/" style="text-decoration: underline;">Color selector</a></li>
+                    <li><a href="http://www.dkc-atlas.com/maps/dkc/" style="text-decoration: underline;">DKC Atlas</a></li>
+                </ul>
+                <a href="#setup-how-to-play"><h2 id="setup-how-to-play">How to play</h2></a>
+                <ol>
+                    <li>Place the <code>.apworld</code> in your <code>Archipelago/custom_worlds</code> folder, or double-click the <code>.apworld</code> to do so automatically.</li>
+                    <li>Use <code>ArchipelagoLauncher.exe</code> to open the Launcher, and click on Generate Template Options to create template yamls for your custom <code>.apworlds</code>.</li>
+                    <li>Place the desired player yamls in the <code>Players</code> folder, and customize them as you see fit.</li>
+                    <li>Use <code>ArchipelagoGenerate.exe</code> to generate the game.</li>
+                    <li>Upload the generated game (in the output folder) on the website at <a href="https://archipelago.gg/uploads"  style="text-decoration: underline;">https://archipelago.gg/uploads</a> and create a new room.</li>
+                </ol>
+                <a href="#setup-final-notes"><h2 id="setup-final-notes">Final Notes</h2></a>
+                <ul>
+                    <li>snes9x-nwa will require enabling <code>Enable Emu Network Control</code> under the <code>Netplay</code> menu in the emulator.</li>
+                    <div class="centered-image"><img src="../nwa.png"></div>
+                </ul>
             </div>
         </div>
     </div>
