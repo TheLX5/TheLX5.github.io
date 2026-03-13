@@ -24,7 +24,9 @@
         <div class="main-content">
             <h1>Mega Man X</h1>
             <p>A Mega Man X randomizer for Archipelago.</p>
-            <p>Latest release: to be filled later</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/mmx-v1.6.0" style="text-decoration: underline;">v1.6.0</a></p>
+            <p>Setup info: <a href="./setup.html" style="text-decoration: underline;">here</a></p>
+            <p>Changelog: <a href="./changelog/index.html" style="text-decoration: underline;">here</a></p>
         </div>
     </div>
     <div class="ap-flex">
@@ -36,6 +38,8 @@
                     <li><a href="#qol" style="text-decoration: underline;">Quality of Life</a></li>
                     <li><a href="#locs" style="text-decoration: underline;">Locations</a></li>
                     <li><a href="#goal" style="text-decoration: underline;">Goals</a></li>
+                    <li><a href="#plando" style="text-decoration: underline;">Weakness Plando</a></li>
+                    <li><a href="#link" style="text-decoration: underline;">Linked features</a></li>
                 </ul>
             </div>
             <div class="main-content">
@@ -45,19 +49,91 @@
         <div class="container">
             <div class="main-content">
                 <a href="#featuras"><h1 id="featuras">Features</h1></a>
-                <p>In progress..</p>
+                <p>Mega Man X in Archipelago contains a ton of additional features to enhance the randomizer experience to the fullest.</p>
+                <ul>
+                    <li>Shuffled stage access</li>
+                    <li>Shuffled arsenal (weapons, upgrades)</li>
+                    <li>Randomized boss weaknesses</li>
+                    <li>Random starting HP</li>
+                    <li>Random boss HP</li>
+                    <li>Pickups as locations</li>
+                    <li>Hadouken tweaks</li>
+                    <li>Chip upgrades from X5-X6</li>
+                    <li>QoL changes from future entries</li>
+                    <li>Custom palettes for X</li>
+                    <li>EnergyLink support</li>
+                    <li>Full Universal Tracker support</li>
+                </ul>
             </div>
             <div class="main-content">
                 <a href="#qol"><h1 id="qol">Quality of Life</h1></a>
-                <p>In progress..</p>
+                <p>Additions have been made to ensure better replayability, including from those people who aren't exactly good at the game:</p>
+                <ul>
+                    <li><b>Checkpoint selector:</b> Allows players to travel to any previously visited checkpoint in the game by selecting a checkpoint at the stage select screen. Switch between different checkpoints with <code>L</code> or <code>R</code>.</li>
+                    <li><b>Enhanced Helmet:</b> By getting the Helmet Upgrade item, the Checkpoint Selector will allow players to travel to any checkpoint regardless if they have visited them or not.</li>
+                    <li><b>Sigma's Fortress Stage Selector:</b> Players can switch which Fortress level they want to travel to by pressing <code>SELECT</code> at the stage select screen when selecting Sigma's tile.</li>
+                    <li><b>Skipped dialogs:</b> Gotta play fast.</li>
+                    <li><b>Better Wall Jump:</b> In X1 players had to press the dash button again in order to perform dashed wall jumps from walls. There's an option to mimick the behavior from X2 and onwards.</li>
+                    <li><b>Hadouken:</b> This particular move has been tweaked so it can be fired at any time, its damage has been adjusted in order to "balance" it. It deals some base damage plus an additional amount of damage based on X's current HP.</li>
+                    <li><b>Default button configuration:</b> Yeah.</li>
+                    <li><b>X2's Air Dash:</b> Adds an additional Legs Upgrade item that grants players X2's Air Dash.</li>
+                    <li><b>X4's Long Jumps:</b> Allows players to perform grounded Dash Jumps while holding the Dash button even if X isn't in the Dash animation.</li>
+                    <li><b>X5-X6 Chips:</b> Several chips are put into the item pool which will permanently grant those chips' effects. They're mostly similar to the game they appear in.
+                        <ul>
+                            <li>Quick Charge (Mega Man X5)</li>
+                            <li>Speedster (Mega Man X5)</li>
+                            <li>Super Recover (Mega Man X5)</li>
+                            <li>Rapid Five (Mega Man X5)</li>
+                            <li>Speed Shot (Mega Man X5)</li>
+                            <li>Buster Plus (Mega Man X6)</li>
+                            <li>Weapon Plus (Mega Man X6)</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
             <div class="main-content">
                 <a href="#locs"><h1 id="locs">Locations</h1></a>
-                <p>In progress..</p>
+                <p>Everything collectible is made a check in Mega Man X1, alongside some obvious staples from other Archipelago implementations:</p>
+                <ul>
+                    <li>Bosses</li>
+                    <li>Mid-bosses</li>
+                    <li>Upgrade capsules</li>
+                    <li>Heart Tanks</li>
+                    <li>Sub Tanks</li>
+                    <li>(Optional) Pickup items (1-Up, HP, Weapon)</li>
+                </ul>
             </div>
             <div class="main-content">
                 <a href="#goal"><h1 id="goal">Goals</h1></a>
-                <p>In progress..</p>
+                <p>The main goal is to reach Sigma's Fortress level 4 and defeat Wolf Sigma. For that to happen players have to collect enough items in the multiworld to find how to access the Fortress levels.</p>
+                <a href="#fortress-unlock"><h3>Unlocking Sigma's Fortress</h3></a>
+                <p>The set of levels can be unlocked after fulfilling the set options, those could be:</p>
+                <ul>
+                    <li>Getting enough <b>Maverick Medal</b> items, commonly found within Mavericks</li>
+                    <li>Weapon/Armor Upgrade/Heart Tank/Sub Tank count. Get enough of those items from the Multiworld to gain access to the fortress.</li>
+                </ul>
+                <p>All of those can be mixed to gain access to Sigma's fortress. Useful in cases where players absolutely would hate facing the level gauntlet at fortress while being undergeared.</p>
+            </div>
+            <div class="main-content">
+                <a href="#plando"><h1 id="link">Weakness Plando</h1></a>
+                <p>There's an option to force a singular weakness into bosses. It will ignore generated weaknesses by the world in case where weaknesses are shuffled.</p>
+                <pre>boss_weakness_plando:
+    Spark Mandrill: Lemon (Dash)
+    Armored Armadillo: Electric Spark</pre>
+                <p>This will force <b>Spark Mandrill</b> to receive increased damage from dashed shorts and will force <b>Armored Armadillo</b> to always receive increased damage from Electric Spark.</p>
+            </div>
+            <div class="main-content">
+                <a href="#link"><h1 id="link">Linked features</h1></a>
+                <p>This APWorld fully features EnergyLink in a very intuitive way, where players don't have to interact with the console in order to use it.</p>
+                <p>Players can deposit Energy into the pool by collecting any kind of Pickup in game (HP, Weapon, 1-Up) which then can be exchanged for HP refills or Weapon Energy refills. The Energy in pool will be displayed in the pause menu.</p>
+                <p>To request HP, players need to pause the game and press <code>SELECT</code> while selecting the X-Buster weapon.</p>
+                <p>To request Weapon Energy, players need to do the previous thing while selecting the Weapon they want to refill.</p>
+                <p>There's a way to interact with EnergyLink and refills via the SNIClient with the following commands:</p>
+                <ul>
+                    <li><code>/heal [amount]</code> Only present with EnergyLink. Request a HP refill using EnergyLink's pool.</li>
+                    <li><code>/refill [amount]</code> Only present with EnergyLink. Request a Weapon Energy refill using EnergyLink's pool.</li>
+                    <li><code>/trade [amount]</code> Exchanges HP for Weapon Energy. The conversion rate is 1:1.</li>
+                </ul>
             </div>
         </div>
     </div>

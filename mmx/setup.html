@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/mmx/setup.html">
+<meta property="og:title" content="Mega Man X Randomizer - lx5's works">
+<meta property="og:description" content="Everything about Mega Man X Randomizer for Archipelago is contained here!">
+<meta name="theme-color" content="#0f27ff">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/icons/mmx.png">
+<html>
+    <head>
+        <title>Mega Man X Randomizer - lx5's works</title>
+        <link rel="stylesheet" href="../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("../selected-mmx.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <div class="main-content">
+            <h1>Mega Man X</h1>
+            <p>A Mega Man X randomizer for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/mmx-v1.6.0" style="text-decoration: underline;">v1.6.0</a></p>
+            <p>Changelog: <a href="./changelog/index.html" style="text-decoration: underline;">here</a></p>
+        </div>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <div class="main-content">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#optional" style="text-decoration: underline;">Optional software</a></li>
+                    <li><a href="#setup" style="text-decoration: underline;">Setup</a></li>
+                    <li><a href="#setup-snes9x-nwa" style="text-decoration: underline;">Setup (Snes9x-nwa)</a></li>
+                    <li><a href="#setup-snes9x-rr" style="text-decoration: underline;">Setup (Snes9x-rr)</a></li>
+                    <li><a href="#setup-bsnes-plus" style="text-decoration: underline;">Setup (BSNES-Plus)</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <a href="index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-content">
+                <a href="#optional-software"><h2 id="optional-software">Optional Software</h2></a>
+                <ul>
+                    <li><a href="https://github.com/FarisTheAncient/Archipelago/releases" style="text-decoration: underline;">Universal Tracker</a></li>
+                    <li><a href="https://github.com/Michpem/megamanx-ap-poptracker/releases" style="text-decoration: underline;">PopTracker pack made by MeridianBC/Michpem</a></li>
+                    <li><a href="https://github.com/Coltaho/emulator_lua_scripts" style="text-decoration: underline;">Item tracker for Bizhawk made by Coltaho</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <a href="#setup"><h1 id="setup">Setup</h1></a>
+                <p>Mega Man X1 AP requires a similar setup found in other SNES games in Archipelago, you can follow one of those guides or keep reading this one.</p>
+                <a href="#setup-required-software"><h2 id="setup-required-software">Required Software</h2></a>
+                <ul>
+                    <li><a href="https://github.com/ArchipelagoMW/Archipelago/releases" style="text-decoration: underline;">Archipelago 0.6.5 or newer</a></li>
+                    <li>Software or hardware capable of loading and playing SNES ROM files:
+                        <ul>
+                            <li><a href="https://github.com/Skarsnik/snes9x-emunwa/releases" style="text-decoration: underline;">snes9x-nwa</a> (Recommended!)</li>
+                            <li><a href="https://github.com/gocha/snes9x-rr/releases" style="text-decoration: underline;">snes9x-rr</a></li>
+                            <li><a href="https://github.com/black-sliver/bsnes-plus" style="text-decoration: underline;">BSNES-plus</a> (Do not reset within the emulator, it'll lead to RAM corruption)</li>
+                            <li><a href="https://retrorgb.com/fxpakpro.html" style="text-decoration: underline;">FxPak</a></li>
+                            <p>Any emulator or method not listed here is NOT endorsed by the developer, you may have varied results in those.</p>
+                        </ul>
+                    </li>
+                    <li>Your Mega Man X1 v1.0 (US) ROM file from the original cartridge or the version bundled with the Mega Man X Legacy Collection. Archipelago or I can't provide these.
+                        <ul>1.0 US MD5: <code>a10071fa78554b57538d0b459e00d224</code></ul>
+                        <ul>LC MD5: <code>f1dfbbcdc3d8cdeafa4b4b9aa51a56d6</code></ul>
+                    </li>
+                </ul>
+                <a href="#setup-how-to-play"><h2 id="setup-how-to-play">How to play</h2></a>
+                <ol>
+                    <li>Place the <code>.apworld</code> in your <code>Archipelago/custom_worlds</code> folder, or double-click the <code>.apworld</code> to do so automatically.</li>
+                    <li>Use <code>ArchipelagoLauncher.exe</code> to open the Launcher, and click on Generate Template Options to create template yamls for your custom <code>.apworlds</code>.</li>
+                    <li>Place the desired player yamls in the <code>Players</code> folder, and customize them as you see fit.</li>
+                    <li>Use <code>ArchipelagoGenerate.exe</code> to generate the game.</li>
+                    <li>Upload the generated game (in the output folder) on the website at <a href="https://archipelago.gg/uploads" style="text-decoration: underline;">https://archipelago.gg/uploads</a> and create a new room.</li>
+                    <li>Download the patch file from the session page</li>
+                    <li>Open the <code>.apmmx</code> file with <code>ArchipelagoLauncher.exe</code>, it should create a ROM file and open SNI Client.</li>
+                </ol>
+                <a href="#setup-snes9x-nwa"><h2 id="setup-snes9x-nwa">snes9x-nwa</h2></a>
+                <ol>
+                    <li>Click on the Network Menu and check <b>Enable Emu Network Control</b></li>
+                    <div class="centered-image"><img src="../nwa.png"></div>
+                    <li>Load your ROM file if it hasn't already been loaded.</li>
+                    <li>The emulator should automatically connect while SNI is running.</b></li>
+                </ol>
+                <a href="#setup-snes9x-rr"><h2 id="setup-snes9x-rr">snes9x-rr</h2></a>
+                <ol>
+                    <li>Load your ROM file if it hasn't already been loaded.</li>
+                    <li>Click on the File menu and hover on <b>Lua Scripting</b></li>
+                    <li>Click on <b>New Lua Script Window...</b></li>
+                    <li>In the new window, click <b>Browse...</b></li>
+                    <li>Select the connector lua file included with your client
+                        <ul>Look in the Archipelago folder for <code>/SNI/lua/</code></ul>
+                    </li>
+                    <li>If you see an error while loading the script that states <code>socket.dll missing</code> or similar, navigate to the folder of the lua you are using in your file explorer and copy the <code>socket.dll</code> to the base folder of your snes9x install.</li>
+                </ol>
+                <a href="#setup-bsnes-plus"><h2 id="setup-snes9x-nwa">snes9x-nwa</h2></a>
+                <ol>
+                    <li>Load your ROM file if it hasn't already been loaded.</li>
+                    <li>The emulator should automatically connect while SNI is running.</b></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
