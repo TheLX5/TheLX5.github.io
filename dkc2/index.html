@@ -4,10 +4,10 @@
 <meta property="og:title" content="Donkey Kong Country 2 Randomizer - lx5's works">
 <meta property="og:description" content="Everything about Donkey Kong Country 2 Randomizer for Archipelago is contained here!">
 <meta name="theme-color" content="#ffdb0f">
-<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/icons/dkc2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/icons/dkc.png">
 <html>
     <head>
-        <title>Donkey Kong Country Randomizer - lx5's works</title>
+        <title>Donkey Kong Country 2 Randomizer - lx5's works</title>
         <link rel="stylesheet" href="../rando-style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
         <div class="main-content">
             <h1>Donkey Kong Country 2</h1>
             <p>A Donkey Kong Country 2 randomizer for Archipelago.</p>
-            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc2-v3.1.1" style="text-decoration: underline;">v3.1.1</a></p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc2-v3.1.2" style="text-decoration: underline;">v3.1.2</a></p>
         </div>
     </div>
     <div class="ap-flex">
@@ -54,7 +54,7 @@
         <div class="container">
             <div class="main-content">
                 <a href="#featuras"><h1 id="featuras">Features</h1></a>
-                <p>Donkey Kong Country in Archipelago allows players to go through the DK isle with new features and Quality of Life changes that aim to make your journey quite enjoyable! All of the features present are:</p>
+                <p>Donkey Kong Country 2 in Archipelago allows players to go through the DK isle with new features and Quality of Life changes that aim to make your journey quite enjoyable! All of the features present are:</p>
                 <ul>
                     <li>Open world</li>
                     <li>Random starting world</li>
@@ -75,8 +75,14 @@
                 <ul>
                     <li><b>Backup DK Barrels:</b> There are items with this name that allows players to summon one DK Barrel at any point with <code>L</code> or <code>R</code>. If they have the maximum amount of Kongs on screen, an extra hit will be granted which allows players to tank one hit without losing a Kong. A [K] letter will be drawn on the bottom left corner to indicate that an extra hit is active.</li>
                     <li><b>KONG letters always saved:</b> The letters are now persistent between levels and are saved upon getting them, allowing for some Out of Logic scenarios in all logic settings.</li>
-                    <li><b>Goal always visible on map:</b> A label indicating how many world clears are needed will be displayed on DK Isle, at the same time a similar label appears in each world indicating how many levels are required to face the world's boss.</li>
-                    <li>wip</li>
+                    <li><b>Goal always visible on map:</b> A label is displayed inside worlds that indicate how many level clears are required to visit the world's boss.</li>
+                    <li><b>Farmable Backup DK Barrels:</b> By pressing <code>SELECT</code> during the map gameplay, players can decide what happens when obtaining an 1-Up from any source. This is indicated by a DIDDY/DIXIE icon on the botton right corner of the screen.
+                        <ul>
+                            <li>DIDDY: Gain extra lives.</li>
+                            <li>DIXIE: Gain extra barrels.</li>
+                        </ul>
+                    </li>
+                    <li><b>Non-RNG goals:</b> Goals at the end of certain levels have RNG rewards in the original game, sometimes a G letter or a DK Coin. A setting inside the <a href="./setup.html#optional-manager" style="text-decoration: underline;">Manager</a> is added so players can toggle this feature.</li>
                 </ul>
             </div>
             <div class="main-content">
@@ -124,11 +130,36 @@
                 <p>Whenever players with EnergyLink active collect a banana, they will deposit a fraction of it in a shared Banana bank which gets converted to EnergyLink power (in bananas). DKC2 players with EnergyLink active can spend EnergyLink Bananas to purchase <code>Backup DK Barrels</code> which then they can use at any time in game.</p>
                 <p>Players can make use of the <code>/request NUMBER</code> command in SNI Client to request Backup DK Barrels.</p>
                 <hr>
-                <a href="#link-traplink"><h2 id="link-traplink">TrapLink</h2></a>
-                <p>Shared traps across slots! TrapLink players will send their traps once activated and will receive equivalent ones as well from other slots. Can be highly chaotic in big sessions!</p>
-                <hr>
                 <a href="#link-deathlink"><h2 id="link-deathlink">DeathLink</h2></a>
                 <p>Any time a player dies, everyone dies! Can be highly chaotic.</p>
+                <hr>
+                <a href="#link-damagelink"><h2 id="link-damagelink">DamageLink</h2></a>
+                <p>Whenever players get hurt, send damage signals to others. May be very chaotic with some game variety.</p>
+                <div class="centered-image"><table>
+                    <thead>
+                        <tr>
+                            <th>Damage source</th>
+                            <th>Damage points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="damage-link-source">Lose a Kong</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td class="damage-link-source">Lose extra hit</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td class="damage-link-source">Lose an animal</td>
+                            <td>80</td>
+                        </tr>
+                    </tbody>
+                </table></div>
+                <hr>
+                <a href="#link-traplink"><h2 id="link-traplink">TrapLink</h2></a>
+                <p>Shared traps across slots! TrapLink players will send their traps once activated and will receive equivalent ones as well from other slots. Can be highly chaotic in big sessions!</p>
             </div>
         </div>
     </div>

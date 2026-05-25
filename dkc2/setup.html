@@ -24,7 +24,7 @@
         <div class="main-content">
             <h1>Donkey Kong Country 2</h1>
             <p>A Donkey Kong Country 2 randomizer for Archipelago.</p>
-            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc2-v3.1.1" style="text-decoration: underline;">v3.1.1</a></p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc2-v3.1.2" style="text-decoration: underline;">v3.1.2</a></p>
         </div>
     </div>
     <div class="ap-flex">
@@ -37,8 +37,8 @@
                     <li><a href="#setup-snes9x-rr" style="text-decoration: underline;">Setup (Snes9x-rr)</a></li>
                     <li><a href="#setup-bizhawk" style="text-decoration: underline;">Setup (Bizhawk)</a></li>
                     <li><a href="#setup-bsnes-plus" style="text-decoration: underline;">Setup (BSNES-Plus)</a></li>
-                    <li><a href="#optional-manager" style="text-decoration: underline;">Manager</a></li>
-                    <li><a href="#optional-ut" style="text-decoration: underline;">Universal Tracker</a></li>
+                    <li><a href="#manager" style="text-decoration: underline;">Manager</a></li>
+                    <li><a href="#ut" style="text-decoration: underline;">Universal Tracker</a></li>
                     <li><a href="#optional-pop" style="text-decoration: underline;">Poptracker</a></li>
                     <li><a href="#optional-color" style="text-decoration: underline;">Color selector</a></li>
                     <li><a href="#optional-atlas" style="text-decoration: underline;">DKC Atlas</a></li>
@@ -122,24 +122,86 @@
                 </ol>
                 <p><b>WARNING:</b> Never, never, <b>NEVER</b> restart the game with one of the emulator buttons, it's better to close off the emulator and rerun it.</p>
             </div>
+
             <div class="main-content">
-                <a href="#optional-software"><h1 id="optional-software">Optional Software</h1></a>
-                <hr>
-                <h2 id="optional-manager"><a href="#optional-manager">Manager</a></h2>
+                <a href="#manager"><h1 id="manager">Manager</h1></a>
                 <h3>Bundled with <code>dkc2.apworld</code></h3>
-                <p>This APWorld comes with a manager that allows you to edit some features from an already generated game. Players can find this software in <code>ArchipelagoLauncher.exe</code> under the <b>Adjuster</b> menu.</p>
-                <p>Do note that any change requires loading a <code>.apdkc2</code> patch first.</p>
+                <p>This APWorld comes with a manager that allows you to edit some features from an already generated game or some other global features. Players can find this software in <code>ArchipelagoLauncher.exe</code> under the <b>Adjuster</b> menu.</p>
                 <div class="centered-image"><img src="adjuster.png"></div>
                 <hr>
-                <h2 id="optional-ut"><a href="#optional-ut">Universal Tracker</a></h2>
+                <a href="#manager-linked"><h2 id="manager-linked">Linked Options</h2></a>
+                <p>This section allows you to toggle Death Link, Damage Link, Trap Link and Energy Link. Requires a <code>.apdkc2</code> patch file to be loaded first.</p>
+                <hr>
+                <a href="#manager-global"><h2 id="manager-global">Global Options</h2></a>
+                <p>This section allows you to toggle some global options. These do not require loading a patch first and will apply to any future session.</p>
+                <ul>
+                    <li><b>Guaranteed DK Coins and G letters in goals:</b> Goals have RNG rewards and some goals have these valuable items. This makes them not RNG and be guaranteed.</li>
+                    <li><b>Random rewards in goals:</b> Makes the goal roulette have different rewards. Does not affect goals with guaranteed rewards and valuable items (DK Coins & G Letters) are not randomized.</li>
+                </ul>
+                <hr>
+                <a href="#manager-swanky"><h2 id="manager-swanky">Trivia Options</h2></a>
+                <p>This section allows you to customize Swanky's Trivia. It allows you to toggle the current question count per Swanky game (there are 3 games per Swanky level).</p>
+                <p>Each game/trivia topic allows you to select if these questions will appear in the game or not</p>
+                <ul>
+                    <li><b>Session:</b> Will be added as a valid topic if the game is being played in the current session.</li>
+                    <li><b>Forced:</b> All of its questions will be added to the pool of questions regardless if the game is being played.</li>
+                    <li><b>Excluded:</b> None of its questions will appear.</li>
+                </ul>
+                <p>If a <code>.apdkc2</code> patch is provided, games detected will change their Session status to Included to tell players which of these will be added to the current and future sessions.</p>
+            </div>
+
+            <div class="main-content">
+                <a href="#ut"><h1 id="ut">Universal Tracker</h1></a>
                 <h3><a href="https://github.com/FarisTheAncient/Archipelago/releases?q=Tracker" style="text-decoration: underline;">Download</a></h3>
                 <p>Universal Tracker is a custom APWorld that allows players to generate a list of in-logic locations for the current slot, very useful when trying to figure out why is something suddenly appearing as reachable.</p>
+                <div class="centered-image"><table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Supported?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="damage-link-source">Glitched logic</td>
+                            <td>✔️</td>
+                        </tr>
+                        <tr>
+                            <td class="damage-link-source">YAML-less tracking</td>
+                            <td>✔️</td>
+                        </tr>
+                        <tr>
+                            <td class="damage-link-source">Explain command</td>
+                            <td>✔️</td>
+                        </tr>
+                        <tr>
+                            <td class="damage-link-source">Get Logical Path command</td>
+                            <td>✔️</td>
+                        </tr>
+                        <tr>
+                            <td class="damage-link-source">Deferred entrances</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td class="damage-link-source">Map Tracker Tab</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td class="damage-link-source">Player location in Map Tracker</td>
+                            <td>❌</td>
+                        </tr>
+                    </tbody>
+                </table></div>
+                <p>DKC2 will show you in the Tracker Tab what would be doable in the next logic level as "Glitched", in case you want to give those a try.</p>
                 <p>DKC2 supports two Universal Tracker exclusive commands that allow players to know what's the logic behind a certain location</p>
                 <ul>
                     <li><code>/explain "location name"</code>: It outputs the logic rules for a specific location, showing which item combinations will make it appear in logic.</li>
                     <li><code>/get_logical_path "location name"</code>: Shows a list that explains how to reach to a certain location in the game.</li>
                 </ul>
-                <p>This APWorld does not require a YAML to process the current slot.</p>
+            </div>
+
+            <div class="main-content">
+                <a href="#optional-software"><h1 id="optional-software">Optional Software</h1></a>
                 <hr>
                 <h2 id="optional-pop"><a href="#optional-pop">Poptracker</a></h2>
                 <h3><a href="https://github.com/pwkfisher/ap-dkc2-tracker/releases/" style="text-decoration: underline;">Download</a>, made by MasakariPLZ</h3>

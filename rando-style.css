@@ -107,3 +107,27 @@ a:active {
     background-color: transparent;
     text-decoration: underline;
 }
+
+table {
+    width: 400px;
+    border-collapse: collapse;
+  }
+th, td {
+border: 1px solid #353535;
+padding: 8px;
+text-align: left;
+white-space: normal;
+overflow-wrap: break-word;
+word-break: break-word;
+}
+th {
+background-color: #38383854;
+}
+
+.damage-link-source {
+    width: 65%;
+}
+
+.damage-link-points {
+    width: 35%;
+}
