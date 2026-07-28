@@ -34,7 +34,7 @@ code{
     padding: 1px 2px;
 }
 
-.main-content {
+section {
     border-style: outset;
     border-color: rgba(5, 5, 5, 0.85);
     background-color: rgba(5, 5, 5, 0.75);;
@@ -49,13 +49,22 @@ code{
     margin-bottom: 20px;
 }
 
-.container > .main-content {
+.container > section {
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.ap-index > .main-content {
+.ap-index > section {
     margin-left: 20px;
+}
+
+figure {
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 * { box-sizing: border-box; }
@@ -113,12 +122,12 @@ table {
     border-collapse: collapse;
   }
 th, td {
-border: 1px solid #353535;
-padding: 8px;
-text-align: left;
-white-space: normal;
-overflow-wrap: break-word;
-word-break: break-word;
+    border: 1px solid #353535;
+    padding: 8px;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 th {
 background-color: #38383854;

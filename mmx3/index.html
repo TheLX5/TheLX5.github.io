@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://thelx5.github.io/mmx3/index.html">
-<meta property="og:title" content="Mega Man X3 Randomizer - lx5's works">
-<meta property="og:description" content="Everything about Mega Man X3 Randomizer for Archipelago is contained here!">
+<meta property="og:url" content="https://thelx5.github.io/mmx/index.html">
+<meta property="og:title" content="Mega Man X Randomizer - lx5's works">
+<meta property="og:description" content="Everything about Mega Man X Randomizer for Archipelago is contained here!">
 <meta name="theme-color" content="#0f27ff">
-<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/icons/mmx.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/mmx3/icon.png">
 <html>
     <head>
         <title>Mega Man X3 Randomizer - lx5's works</title>
@@ -21,43 +21,126 @@
     </head>
     <body>
     <div class="container">
-        <div class="main-content">
+        <section id="header">
             <h1>Mega Man X3</h1>
             <p>A Mega Man X3 randomizer for Archipelago.</p>
-        </div>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/mmx3-v1.5.2" style="text-decoration: underline;">v1.5.2</a></p>
+        </section>
     </div>
     <div class="ap-flex">
         <div class="ap-index">
-            <div class="main-content">
+            <section id="useful">
+                <h2>Useful pages</h2>
+                <ul>
+                    <li><a href="./setup.html" style="text-decoration: underline;">Setup</a></li>
+                    <li><a href="./tricks.html" style="text-decoration: underline;">Logic Tricks</a></li>
+                    <li><a href="./changelog.html" style="text-decoration: underline;">Changelog</a></li>
+                </ul>
+            </section>
+            <section id="index">
                 <h1>Index</h1>
                 <ul>
-                    <li><a href="#featuras" style="text-decoration: underline;">Features</a></li>
-                    <li><a href="#qol" style="text-decoration: underline;">Quality of Life</a></li>
+                    <li><a href="#goal" style="text-decoration: underline;">Goal</a></li>
                     <li><a href="#locs" style="text-decoration: underline;">Locations</a></li>
-                    <li><a href="#goal" style="text-decoration: underline;">Goals</a></li>
+                    <li><a href="#items" style="text-decoration: underline;">Items</a></li>
+                    <li><a href="#links" style="text-decoration: underline;">Linked systems</a></li>
+                    <li><a href="#changes" style="text-decoration: underline;">Changes from the base game</a></li>
                 </ul>
-            </div>
-            <div class="main-content">
+            </section>
+            <section id="index-back">
                 <a href="../index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
-            </div>
+            </section>
         </div>
         <div class="container">
-            <div class="main-content">
-                <a href="#featuras"><h1 id="featuras">Features</h1></a>
-                <p>In progress..</p>
-            </div>
-            <div class="main-content">
-                <a href="#qol"><h1 id="qol">Quality of Life</h1></a>
-                <p>In progress..</p>
-            </div>
-            <div class="main-content">
-                <a href="#locs"><h1 id="locs">Locations</h1></a>
-                <p>In progress..</p>
-            </div>
-            <div class="main-content">
-                <a href="#goal"><h1 id="goal">Goals</h1></a>
-                <p>In progress..</p>
-            </div>
+            <section id="goal">
+                <a href="#goal"><h1>Goal</h1></a>
+                <p>Defeat Sigma Virus on Dr. Doppler's Laboratory! In order to do that players have to collect enough items in the multiworld to find how to access the Dr. Doppler's Laboratory levels.</p>
+                <h2>Unlocking Dr. Doppler's Laboratory</h2>
+                <p>The set of levels can be unlocked after fulfilling the requirements picked in the YAML option file.</p>
+                <ul>
+                    <li>Getting enough <strong>Maverick Medal</strong> items, which are held by Mavericks.</li>
+                    <li>Finding the <strong>Access Codes</strong> item in the multiworld</li>
+                </ul>
+            </section>
+            <section id="locs">
+                <a href="#locs"><h1>Locations</h1></a>
+                <p>Every collectible is a location in this implementation, alongside some other obvious staples in other Archipelago implementations to have a nice sense of progression in the session:</p>
+                <ul>
+                    <li>Mavericks & other bosses</li>
+                    <li>Mid-stage bosses</li>
+                    <li>Upgrade Capsules</li>
+                    <li>Heart Tanks</li>
+                    <li>Sub Tanks</li>
+                    <li><strong>[Optional]</strong> Pickup items (1-Ups, HP refills, Weapon Energy refills)</li>
+                </ul>
+            </section>
+            <section id="items">
+                <a href="#items"><h1>Items</h1></a>
+                <p>Players can find as multiworld items the following unlockables and consumables:</p>
+                <ul>
+                    <li>Maverick weapons</li>
+                    <li>Access codes (level unlocks)</li>
+                    <li>Armor upgrades</li>
+                    <li>Health upgrades (Heart tanks)</li>
+                    <li>Sub tanks</li>
+                    <li>HP Refill items</li>
+                    <li><strong>[Optional]</strong> Z-Saber</li>
+                    <li><strong>[Optional]</strong> Chip enhancement items from future games in the saga</li>
+                </ul>
+                <a href="#items-chips"><h2 id="items-chips">Chip enhancement items</h2></a>
+                <p>The following items <strong>require</strong> enabling Pickup Items as locations. Upon getting one of these their effect becomes <strong>permanent</strong>! Be sure to include the ones that sound nice to you.</p>
+                <ul>
+                    <li><strong>Quick Charge Chip [MMX5]</strong> Halves charge time for X-Buster and Special Weapon shots</li>
+                    <li><strong>Speedster Chip [MMX5]</strong> Increases walking speed by 50%</li>
+                    <li><strong>Super Recover Chip [MMX5]</strong> Increases recovery from items by 25%</li>
+                    <li><strong>Rapid Five Chip [MMX5]</strong> Increases the amount of buster shots on screen to 5</li>
+                    <li><strong>Speed Shot Chip [MMX5]</strong> Increases default buster shot (lemons) horizontal speed by 50%</li>
+                    <li><strong>Buster Plus Chip [MMX5]</strong> Increases Buster damage by 1</li>
+                    <li><strong>Weapon Plus Chip [MMX6]</strong> Increases Weapon damage by 1</li>
+                    <li><strong>Item Plus Chip [MMX7]</strong> Increases item drop rates by roughly 33%</li>
+                </ul>
+            </section>
+            <section id="changes">
+                <a href="#changes"><h1>Changes from the base game</h1></a>
+                <p>There have been <strong>several</strong> changes to the base game in order to get this randomizer to exist at all. Those were made to increase replayability and some other Quality of Life additions to help less experienced players.</p>
+                <hr>
+                <a href="#changes-checkpoint"><h2 id="changes-checkpoint">Checkpoint selector</h2></a>
+                <p>Whenever a checkpoint is reached in levels they're recorded and saved. Players can revisit levels on any checkpoint they've reached before.</p>
+                <p>A <strong>Checkpoint</strong> label is present on the <strong>Stage Select screen</strong>, the number indicates which checkpoint players will teleport to upon entering the level. This number can be changed by pressing <code>L</code> or <code>R</code>.</p>
+                <hr>
+                <a href="#changes-helmet"><h2 id="changes-helmet">Enhanced Helmet</h2></a>
+                <p>Helmet upgrades are mostly useless to the player. In this randomizer by getting a <code>Helmet Upgrade</code> item, players will unlock every checkpoint in levels even if they haven't reached said checkpoint before.</p>
+                <hr>
+                <a href="#changes-lab-level-selector"><h2 id="changes-lab-level-selector">Dr. Doppler's Laboratory level selector</h2></a>
+                <p>Players can select which level they want to play on the Dr. Doppler's Laboratory (as long they've unlocked it). They can swap the level by pressing <code>SELECT</code> on the Dr. Doppler's Laboratory level tile on the <strong>Stage Select screen</strong>. A label will appear that indicates which level is being selected.</p>
+                <hr>
+                <a href="#changes-zsaber"><h2 id="changes-zsaber">Z-Saber</h2></a>
+                <p>Shoryuken received quite a lot of design decisions to make it more engaging... to me at least. The move now deals damage based on your current HP, this means it can't exactly one-shot bosses anymore. However, it does keep its ability to completely bypass weaknesses.</p>
+                <hr>
+                <a href="#changes-dialogs"><h2 id="changes-dialogs">Skipped dialogs</h2></a>
+                <p>Gotta go fast.</p>
+            </section>
+            <section id="links">
+                <a href="#links"><h1>Linked systems</h1></a>
+                <p>This game implementation features some Link protocols that allows interacting with other players in interesting ways.</p>
+                <hr>
+                <a href="#links-energylink"><h2 id="links-energylink">EnergyLink</h2></a>
+                <p>EnergyLink is a protocol featured in several games that allows players to deposit <em>Energy</em> in a communal pool. Mega Man X players can use said energy to request healing or weapon energy and can contribute to the pool by collecting pickup items (1-Ups, HP refills, weapon energy refills).</p>
+                <p>Players can know how much energy is currently stored in the pool by reading a label in the <strong>SNIClient</strong> window. This information is also displayed on the Pause Menu.</p>
+                <p>To interact with the EnergyLink pool, players have two options:</p>
+                <ul>
+                    <li>Press <code>SELECT</code> on the <strong>X Buster</strong> weapon on the Pause Menu to refill HP, alternatively, press <code>SELECT</code> when highlighting the desired weapon to refill. This action will attempt to refill those to their fullest.</li>
+                    <li>By using a set of commands in <strong>SNIClient</strong>:
+                        <ul>
+                            <li><code>/heal &lt;amount&gt;</code> will heal you by that much HP.</li>
+                            <li><code>/refill &lt;amount&gt;</code> will refill the currently selected weapon by that much energy.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <a href="#links-deathlink"><h2 id="links-deathlink">DeathLink</h2></a>
+                <p>Any time a player dies, everyone dies! Can be highly chaotic.</p>
+            </section>
         </div>
     </div>
     </body>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://thelx5.github.io/dkc/setup.html">
-<meta property="og:title" content="Setup for Donkey Kong Country Randomizer - lx5's works">
-<meta property="og:description" content="Setup page for Donkey Kong Country Randomizer, also has additional info about optional tools.">
+<meta property="og:url" content="https://thelx5.github.io/dkc3/setup.html">
+<meta property="og:title" content="Setup for Donkey Kong Toluca - lx5's works">
+<meta property="og:description" content="Setup page for Donkey Kong Toluca, also has additional info about optional tools.">
 <meta name="theme-color" content="#ffdb0f">
-<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/dkc/icon.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/dkc3/icon.png">
 <html>
     <head>
-        <title>Setup for Donkey Kong Country Randomizer - lx5's works</title>
+        <title>Setup for Donkey Kong Toluca - lx5's works</title>
         <link rel="stylesheet" href="../rando-style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +21,10 @@
     </head>
     <body>
     <div class="container">
-        <section>
-            <h1>Donkey Kong Country</h1>
-            <p>A Donkey Kong Country randomizer for Archipelago.</p>
-            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc-v1.2.3" style="text-decoration: underline;">v1.2.3</a></p>
+        <section id="header">
+            <h1>Donkey Kong Toluca</h1>
+            <p>A fresh new take on Donkey Kong Country 3 for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/toluca-v1.0.2" style="text-decoration: underline;">v1.0.2</a></p>
         </section>
     </div>
     <div class="ap-flex">
@@ -40,7 +40,6 @@
                         <li><a href="#setup-snes9x-rr" style="text-decoration: underline;">Snes9x-rr</a></li>
                         <li><a href="#setup-bsnes-plus" style="text-decoration: underline;">BSNES-Plus</a></li>
                     </ul>
-                    <li><a href="#manager" style="text-decoration: underline;">Manager</a></li>
                     <li><a href="#trackers" style="text-decoration: underline;">Trackers</a></li>
                     <li><a href="#optional" style="text-decoration: underline;">Optional Software</a></li>
                 </ul>
@@ -52,7 +51,7 @@
         <div class="container">
             <section id="setup">
                 <a href="#setup"><h1>Setup</h1></a>
-                <p>DKC AP requires a similar setup found in other SNES games in Archipelago, you can follow one of those guides or keep reading this one.</p>
+                <p>Toluca requires a similar setup found in other SNES games in Archipelago, you can follow one of those guides or keep reading this one.</p>
                 <hr>
                 <a href="#setup-required-software"><h2 id="setup-required-software">Required Software</h2></a>
                 <ul>
@@ -67,8 +66,8 @@
                             <p>Any emulator or method not listed here is NOT endorsed by the developer, you may have varied results in those.</p>
                         </ul>
                     </li>
-                    <li>Your Donkey Kong Country v1.0 (US) ROM file from the original cartridge. Archipelago or I can't provide these.
-                        <ul>MD5: <code>30c5f292ff4cbbfcc00fd8fa96c2de3b</code></ul>
+                    <li>Your Donkey Kong Country 3 (US) ROM file from the original cartridge. Archipelago or I can't provide these.
+                        <ul>MD5: <code>120abf304f0c40fe059f6a192ed4f947</code></ul>
                     </li>
                 </ul>
                 <hr>
@@ -80,7 +79,7 @@
                     <li>Use <code>ArchipelagoGenerate.exe</code> to generate the game.</li>
                     <li>Upload the generated game (in the output folder) on the website at <a href="https://archipelago.gg/uploads" style="text-decoration: underline;">https://archipelago.gg/uploads</a> and create a new room.</li>
                     <li>Download the patch file from the session page</li>
-                    <li>Open the <code>.apdkc</code> file with <code>ArchipelagoLauncher.exe</code>, it should create a ROM file and open SNI Client.</li>
+                    <li>Open the <code>.apdktoluca</code> file with <code>ArchipelagoLauncher.exe</code>, it should create a ROM file and open SNI Client.</li>
                 </ol>
                 <hr>
                 <a href="#setup-snes9x-nwa"><h2 id="setup-snes9x-nwa">snes9x-nwa</h2></a>
@@ -133,17 +132,11 @@
                 </ol>
                 <p><b>WARNING:</b> Never, never, <b>NEVER</b> restart the game with one of the emulator buttons, it's better to close off the emulator and rerun it.</p>
             </section>
-            <section id="manager">
-                <a href="#manager"><h1>Manager</h1></a>
-                <p>This APWorld comes with a manager that allows you to edit some features from an already generated game. Players can find this software in <code>ArchipelagoLauncher.exe</code> under the <b>Adjuster</b> menu.</p>
-                <p>Do note that any change requires loading a <code>.apdkc</code> patch first.</p>
-                <div class="centered-image"><img src="adjuster.png"></div>
-            </section>
             <section id="trackers">
                 <a href="#optional-software"><h1>Trackers</h1></a>
                 <ul>
                     <li><a href="https://github.com/FarisTheAncient/Archipelago/releases" style="text-decoration: underline;">Universal Tracker</a></li>
-                    <li><a href="https://github.com/pwkfisher/ap-dkc-tracker/releases/" style="text-decoration: underline;">PopTracker pack made by MasakariPLZ</a></li>
+                    <li><a href="https://github.com/pwkfisher/ap-dktoluca-tracker/releases/" style="text-decoration: underline;">PopTracker pack made by MasakariPLZ</a></li>
                 </ul>
                 <hr>
                 <a href="#trackers-universal"><h2 id="trackers-universal">Universal Tracker</h2></a>
@@ -198,12 +191,8 @@
             <section id="optional">
                 <a href="#optional"><h1>Optional Software</h1></a>
                 <hr>
-                <h2 id="optional-color"><a href="#optional-color">Color selector</a></h2>
-                <h3><a href="https://thelx5.github.io/ColorSelector/DKC/" style="text-decoration: underline;">Page</a></h3>
-                <p>This web tool allows players to create custom palettes for Donkey and Diddy.</p>
-                <hr>
                 <h2 id="optional-atlas"><a href="#optional-atlas">DKC Atlas</a></h2>
-                <h3><a href="http://www.dkc-atlas.com/maps/dkc/" style="text-decoration: underline;">Page</a></h3>
+                <h3><a href="http://www.dkc-atlas.com/maps/dkc3/" style="text-decoration: underline;">Page</a></h3>
                 <p>Handy page that shows every level in the game in a web browser.</p>
             </section>
         </div>

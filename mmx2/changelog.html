@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/mmx2/changelog.html">
+<meta property="og:title" content="Changelog for Mega Man X2 Randomizer - lx5's works">
+<meta property="og:description" content="May contain changes">
+<meta name="theme-color" content="#0f27ff">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/mmx2/icon.png">
+<html>
+    <head>
+        <title>Changelog for Mega Man X2 Randomizer - lx5's works</title>
+        <link rel="stylesheet" href="../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("selected.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <section id="header">
+            <h1>Mega Man X2</h1>
+            <p>A Mega Man X2 randomizer for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/mmx2-v2.0.1" style="text-decoration: underline;">v2.0.1</a></p>
+        </section>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <section id="index">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#2.0.1" style="text-decoration: underline;">v2.0.1</a></li>
+                    <li><a href="#2.0.0" style="text-decoration: underline;">v2.0.0</a></li>
+                    <li><a href="#1.2.1" style="text-decoration: underline;">v1.2.1</a></li>
+                    <li><a href="#1.2.0" style="text-decoration: underline;">v1.2.0</a></li>
+                    <li><a href="#1.1.1" style="text-decoration: underline;">v1.1.1</a></li>
+                </ul>
+            </section>
+            <section id="index-back">
+                <a href="index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </section>
+        </div>
+        <div class="container">
+            <section id="2.0.1">
+                <h1><a href="#2.0.1">2.0.1</a></h1>
+                <ul>
+                    <li>Added some extra data to <code>slot_data</code> for the PopTracker pack update</li>
+                    <li>Added missing hint information for bosses</li>
+                    <li>Fixed a bug where players couldn't pause after getting a refill/heart tank during a cutscene</li>
+                    <li>Fixed the save data not being properly initialized under certain scenarios</li>
+                    <li>Fixed a crash when trying to pause while having less than 8 HP</li>
+                    <li>Potentially fixed crashes with bosses not having super strict weakness settings</li>
+                    <li>Fixed an oversight with <code>Speed Burner (Underwater)</code> weakness requiring <code>Silk Shot</code> as a logical rule</li>
+                    <li><code>/explain</code> now tells you which Silk Shot flavor was rolled</li>
+                    <li>Prevented EnergyLink client errors</li>
+                </ul>
+            </section>
+
+            <section id="2.0.0">
+                <h1><a href="#2.0.0">2.0.0</a></h1>
+                <ul>
+                    <li>Full FxPak support</li>
+                    <li>100% local saves
+                        <ul>
+                            <li>Bye bye <code>/resync</code></li>
+                        </ul>
+                    </li>
+                    <li>Added DamageLink support</li>
+                    <li>Added a Manager launcher program
+                        <ul>
+                            <li>Can disable Energy/Damage/Death Links on a given patch</li>
+                            <li>Several YAML options are now present in the Manager
+                                <ul>
+                                    <li>Default button configuration</li>
+                                    <li>X4 Dash Jumps Toggle</li>
+                                    <li>Shoryuken input method</li>
+                                    <li>Palettes</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Removed lives as an AP item and as a system in the game</li>
+                    <li>Player's max HP is now capped to 64 (up from 56)</li>
+                    <li>Reworked HP bars so they don't wrap around the screen
+                        <ul>
+                            <li>A HP Pickup icon will appear below the HP bar during normal gameplay when it exceeds 32 HP</li>
+                            <li>Pause HP bar no longer wraps around the screen</li>
+                            <li>Reused lives counter to show a numeric HP counter</li>
+                        </ul>
+                    </li>
+                    <li>Added several new chip items:
+                        <ul>
+                            <li><strong><code>Rapid Five Chip</code> (MMX5)</strong>: Increases the amount of buster shots on screen to 5</li>
+                            <li><strong><code>Speed Shot Chip</code> (MMX5)</strong>: Increases lemons horizontal speed by 50%</li>
+                            <li><strong><code>Buster Plus Chip</code> (MMX5)</strong>: Increases Buster damage by 1</li>
+                            <li><strong><code>Weapon Plus Chip</code> (MMX6)</strong>: Increases Weapon damage by 1</li>
+                            <li><strong><code>D-Converter Chip</code> (MMX6)</strong>: Refills the active weapon when taking damage</li>
+                            <li><strong><code>D-Barrier Chip</code> (MMX6)</strong>: Doubles the I-frames after getting hit</li>
+                            <li><strong><code>Item Plus Chip</code> (MMX7)</strong>: Increases item drop rates by roughly 33%</li>
+                            <li><strong><code>Spike Walker Chip</code> (MMX8)</strong>: Halves speed when sliding down a wall</li>
+                        </ul>
+                    </li>
+                    <li>Dashed lemons now appear green instead of yellow/orange</li>
+                    <li>All weapons are now refilled upon dying</li>
+                    <li>Players now go directly to the Game Clear screen once Sigma is defeated (removes credits sequence)</li>
+                    <li>Players are now redirected to X-Hunter Base 4 when all conditions are met</li>
+                    <li>Bosses have a minimum of 2 HP across all HP rando modes instead of 1 HP</li>
+                    <li>Boss Weakness Plando now accepts multiple weaknesses at once</li>
+                    <li>Added Boss HP Plando</li>
+                    <li>Tweaked Boss Weakness Shuffle
+                        <ul>
+                            <li>Added Swapped and Chaotic Triple options</li>
+                            <li>Renamed Shuffled to Simple</li>
+                        </ul>
+                    </li>
+                    <li>X-Hunter Base tweaks
+                        <ul>
+                            <li>No longer can be opened with Weapons, Armor Upgrades, Heart Tanks or Sub Tanks</li>
+                        </ul>
+                    </li>
+                    <li>Optimized X-Hunter Base Opening logic code from the ROM side (should experience slightly less lag overall)
+                        <ul>
+                            <li>This forces you to watch the Progress Screen in order to process X-Hunter Base unlocking criteria</li>
+                        </ul>
+                    </li>
+                    <li>Adjusted Serges' fights (toggable from the Manager)
+                        <ul>
+                            <li>[Serges I] Serges can take damage at any point</li>
+                            <li>[Serges I] Removed shield/No longer taunts</li>
+                            <li>[Serges I] No longer gets stunned by weapons</li>
+                            <li>[Serges II] Removed immunity from Serges' capsule</li>
+                            <li>[Serges II] Actual hurtbox enlarged so it's easier to hit</li>
+                        </ul>
+                    </li>
+                    <li>Fixed some uncommon crashes on the pause menu with a full arsenal</li>
+                </ul>
+            </section>
+
+            <section id="1.2.1">
+                <h1><a href="#1.2.1">1.2.1</a></h1>
+                <ul>
+                    <li><del>Stole</del> Copied Mega Man 1/2/3's way to extract ROMs from the X Legacy Collection executable file</li>
+                    <li>Added skip balancing tag to X-Hunter and Sigma stages</li>
+                </ul>
+            </section>
+
+            <section id="1.2.0">
+                <h1><a href="#1.2.0">1.2.0</a></h1>
+                <ul>
+                    <li>Added <code>Quick Charge Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Allows to quickly charge up weapons when obtained (+50% charge speed)</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Speedster Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases walking speed by 50%</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Super Recover Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases recovery from HP/Energy pickups by 25%. Doesn't affect Sub Tanks. Affects EnergyLink.</li>
+                        </ul>
+                    </li>
+                    <li>Silk Shot is now less likely to appear as a weakness</li>
+                    <li>Every pickup location now has a proper item name (finally)</li>
+                    <li>Removed <code>logic_helmet_checkpoints</code> option.
+                        <ul>
+                            <li>You're now forced to use the feature to get into later parts of certain stages</li>
+                        </ul>
+                    </li>
+                    <li>You're now allowed to quickly change weapons after the Zero fight
+                        <ul>
+                            <li>May also fix being unable to pause after said fight...</li>
+                        </ul>
+                    </li>
+                    <li>There's no additional heart tanks into the pool</li>
+                </ul>
+            </section>
+
+            <section id="1.1.1">
+                <h1><a href="#1.1.1">1.1.1</a></h1>
+                <ul>
+                    <li>Fixed UT support not properly tracking a lot of settings</li>
+                    <li>Fixed Zero's cutscene hanging the game</li>
+                    <li>G.Crush and I.Tracer are now properly backed up in the server</li>
+                    <li>Fixed X-Hunter Base levels unlocking checkpoints for the next base level</li>
+                </ul>
+            </section>
+
+            <section id="1.1.0">
+                <h1><a href="#1.1.0">1.1.0</a></h1>
+                <ul>
+                    <li>It's now possible to change the palette colors for X's armor
+                        <ul>
+                            <li>There's a bunch of presets which makes the generated yaml huge</li>
+                            <li>You can also write your own custom colors</li>
+                        </ul>
+                    </li>
+                    <li>Bosses can have up to 16 weakness slots instead of 8
+                        <ul>
+                            <li>This mostly affects RAM-based trackers. The starting RAM offset stays the same.</li>
+                        </ul>
+                    </li>
+                    <li>Strict weakness setting that allows upgraded buster to deal damage now considers upgraded buster in logic</li>
+                    <li>Removed every text box in the game
+                        <ul>
+                            <li>Speedrun goes brrrr (produces funny results)</li>
+                        </ul>
+                    </li>
+                    <li>Refill request via the game itself now has a timeout (1 second)
+                        <ul>
+                            <li>This should reduce or remove the amount of times the game stops receiving inputs on the pause menu</li>
+                        </ul>
+                    </li>
+                    <li>Fix Crystal Snail HP Pickup 4 not considering in logic being able to defeat a X-Hunter</li>
+                </ul>
+            </section>
+
+            <section id="1.0.1">
+                <h1><a href="#1.0.1">1.0.1</a></h1>
+                <ul>
+                    <li>Added an option to consider the "Use Any Checkpoint" feature from helmet upgrades in logic</li>
+                    <li>Removed demos after getting a capsule
+                        <ul>
+                            <li>Fixes a crash when capsules tried to play a demo with changed controls</li>
+                        </ul>
+                    </li>
+                    <li>SNI no longer gets blasted with write requests when synchronizing the reached locations</li>
+                    <li>Made the client wait until DataStorage has acknowledged the keys used for data tracking</li>
+                    <li>Lowered amount of progression items required for X-Hunter's Base</li>
+                    <li>Made every boss immune to crystal hunter when the weakness strictness is disabled</li>
+                    <li>Fixed X-Hunter Base not being properly saved</li>
+                    <li>Fixed <code>/resync</code> and <code>/trade</code> commands not being registered as commands</li>
+                </ul>
+            </section>
+
+            <section id="1.0.0">
+                <h1><a href="#1.0.0">1.0.0</a></h1>
+                <ul>
+                    <li>Initial version</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    </body>
+</html>

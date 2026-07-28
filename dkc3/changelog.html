@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/dkc3/setup.html">
+<meta property="og:title" content="Changelog for Donkey Kong Toluca - lx5's works">
+<meta property="og:description" content="May contain changes">
+<meta name="theme-color" content="#ffdb0f">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/dkc3/icon.png">
+<html>
+    <head>
+        <title>Setup for Donkey Kong Toluca - lx5's works</title>
+        <link rel="stylesheet" href="../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("selected.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <section id="header">
+            <h1>Donkey Kong Toluca</h1>
+            <p>A fresh new take on Donkey Kong Country 3 for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/toluca-v1.0.2" style="text-decoration: underline;">v1.0.2</a></p>
+        </section>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <section id="index">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#1.0.2" style="text-decoration: underline;">v1.0.2</a></li>
+                    <li><a href="#1.0.1" style="text-decoration: underline;">v1.0.1</a></li>
+                    <li><a href="#1.0.0" style="text-decoration: underline;">v1.0.0</a></li>
+                    <li><a href="#0.2.3" style="text-decoration: underline;">v0.2.3</a></li>
+                    <li><a href="#0.2.2" style="text-decoration: underline;">v0.2.2</a></li>
+                </ul>
+            </section>
+            <section id="index-back">
+                <a href="index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </section>
+        </div>
+        <div class="container">
+            <section id="1.0.2">
+                <h1><a href="#1.0.2">1.0.2</a></h1>
+                <ul>
+                    <li>Bonus Coins in-game are now capped at 5</li>
+                    <li>Demo playbacks are now disabled</li>
+                    <li>An attempt was made to fix the miscolored "CLEAR" label in some scenarios</li>
+                    <li>Rule macros can now be used with UT's <code>/explain</code></li>
+                </ul>
+            </section>
+
+            <section id="1.0.1">
+                <h1><a href="#1.0.1">1.0.1</a></h1>
+                <ul>
+                    <li>Changed some client messages to actually tell they're from Toluca instead of DKC2</li>
+                    <li>Reverted the change that disallowed cogs from being added into the pool
+                        <ul>
+                            <li>They need to exist as an alternate way to enter Krematoa levels without Bonus Coins (makes GitHub test happier)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.0.0">
+                <h1><a href="#1.0.0">1.0.0</a></h1>
+                <ul>
+                    <li>New options to allow unlocking <code>Progressive Vehicle</code> items other than multiworld items
+                        <ul>
+                            <li>Via Banana Bird count</li>
+                            <li>Via worlds unlocked</li>
+                        </ul>
+                    </li>
+                    <li>Swanky's Sideshow games can be valid locations (beat each 3 per world)
+                        <ul>
+                            <li>This also removes the bear coin cost to enter a game</li>
+                        </ul>
+                    </li>
+                    <li>KONG letters progress is saved per level upon collecting them</li>
+                    <li>Bear Brothers' trade sequence can be shuffled
+                        <ul>
+                            <li>Adds 3 locations to the Banana Bird as locations option</li>
+                            <li>Removes giving Barnacle a shell as a requirement for the rare flower to appear on the map</li>
+                            <li>Rare flower no longer checks for Razor Ridge completion, only Barbos</li>
+                            <li>Mirror item in Bazaar expects you to reach either Cove or Mekanos to consider it in logic (no one wants to farm coins)</li>
+                        </ul>
+                    </li>
+                    <li>Added a label to every world that informs what's the current progress on level clears and how many are required to fight the world's boss</li>
+                    <li>Added an option to swap Kaos Kore and Knautilus levels
+                        <ul>
+                            <li>Goal option is updated to reflect that the goal is now either Kastle KAOS or Knautilus instead of KAOS Kore or Krematoa</li>
+                        </ul>
+                    </li>
+                    <li>Implemented more <code>cog_placement</code> options:
+                        <ul>
+                            <li><code>krematoa_level_clear</code>: Places them at level ends in Krematoa</li>
+                            <li><code>krematoa_anywhere</code>: Places them anywhere in Krematoa. Includes Extra Cogs.</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to have additional Banana Birds, Cogs and Bonus Coins in the item pool</li>
+                    <li>Added the ability to change the Kongs' palettes</li>
+                    <li>Generator no longer places Cogs if Knautilus isn't a valid goal</li>
+                    <li>Allow setting to 0 the required level clears per world</li>
+                    <li>Fixed an issue with levels on Krematoa trying to get alternate palettes after Knautilus surfaces</li>
+                    <li>Level ID is now sent via Data Storage (for PopTracker auto tabbing)</li>
+                    <li>A few logic changes</li>
+                </ul>
+            </section>
+
+            <section id="0.2.3">
+                <h1><a href="#0.2.3">0.2.3</a></h1>
+                <ul>
+                    <li>Fixes UT support.</li>
+                </ul>
+            </section>
+
+            <section id="0.2.2">
+                <h1><a href="#0.2.2">0.2.2</a></h1>
+                <ul>
+                    <li>Makes tests happier and allows loading on custom webhosts. Also now works on Python 3.11 if that's relevant for anyone (lol)</li>
+                </ul>
+            </section>
+
+            <section id="0.2.1">
+                <h1><a href="#0.2.1">0.2.1</a></h1>
+                <ul>
+                    <li>A few logic changes</li>
+                </ul>
+            </section>
+
+            <section id="0.2.0">
+                <h1><a href="#0.2.0">0.2.0</a></h1>
+                <ul>
+                    <li>Implemented level shuffle</li>
+                    <li>Enhanced the save/load procedure in both client and ROM
+                        <ul>
+                            <li>Fixes missing items that are received before opening a save</li>
+                            <li>Fixes banana radar being unlocked from the start</li>
+                        </ul>
+                    </li>
+                    <li>Extra hit indicator is now shown on boss battles and bonuses</li>
+                    <li>Extra hit now works with lightnings, Bleak and Toboggan</li>
+                    <li>Backup DK Barrels now require pressing <code>SELECT</code> when converted or riding an animal</li>
+                    <li>Added a new option that allows you to pre-set a new default save file name</li>
+                    <li>Made it so excluded level clears have no logical weight to unlock world bosses
+                        <ul>
+                            <li>You can still clear those levels to access the boss out of logic</li>
+                        </ul>
+                    </li>
+                    <li>Kong-fused Cliffs no longer ignores not having Climb</li>
+                    <li>Fixed Carry being given upon exiting a Bonus that had an invisible collectible nearby and the radar was active</li>
+                    <li>Fixed some visual glitches related to locked items not properly despawning certain sprites</li>
+                    <li>Added a missing banana bunch in Buzzer Barrage</li>
+                    <li>Swapped Stampede Sprint bonuses</li>
+                    <li>Added collect support</li>
+                    <li>Updated a few area names</li>
+                    <li>Several logic changes</li>
+                </ul>
+            </section>
+
+            <section id="0.1.1">
+                <h1><a href="#0.1.1">0.1.1</a></h1>
+                <ul>
+                    <li>Added an item that reveals the position of any collectible with a fast spinning banana on their position (Banana Radar)</li>
+                    <li>Fixed Boss Battles still having a DK Barrel at the start when only having one Kong unlocked</li>
+                    <li>Potentially fixed logic for entering boss battles</li>
+                    <li>Fixed Stampede Sprint having wrong bonus offsets</li>
+                    <li>Some logic updates &amp; fixes</li>
+                </ul>
+            </section>
+
+            <section id="0.1.0">
+                <h1><a href="#0.1.0">0.1.0</a></h1>
+                <ul>
+                    <li>Initial version for my Donkey Kong Country 3 Archipelago Randomizer.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    </body>
+</html>

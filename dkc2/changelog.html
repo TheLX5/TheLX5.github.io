@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://thelx5.github.io/dkc2/changelog.html">
+<meta property="og:url" content="https://thelx5.github.io/dkc2/setup.html">
 <meta property="og:title" content="Changelog for Donkey Kong Country 2 Randomizer - lx5's works">
 <meta property="og:description" content="May contain changes">
 <meta name="theme-color" content="#ffdb0f">
-<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/icons/dkc2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/dkc2/icon.png">
 <html>
     <head>
-        <title>Changelog for Donkey Kong Country 2 Randomizer - lx5's works</title>
+        <title>Setup for Donkey Kong Country 2 Randomizer - lx5's works</title>
         <link rel="stylesheet" href="../rando-style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,35 +15,480 @@
         <meta charset="utf-8"/>
         <style type="text/css">
             body {
-                background-image: url("../selected-dkc.png");
+                background-image: url("selected.png");
             }
         </style>
     </head>
     <body>
     <div class="container">
-        <div class="main-content">
-            <h1>Donkey Kong Country</h1>
-            <p>A Donkey Kong Country randomizer for Archipelago.</p>
-            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc2-v3.1.2" style="text-decoration: underline;">v3.1.2</a></p>
-        </div>
+        <section id="header">
+            <h1>Donkey Kong Country 2</h1>
+            <p>A Donkey Kong Country 2 randomizer for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc2-v3.1.4" style="text-decoration: underline;">v3.1.4</a></p>
+        </section>
     </div>
     <div class="ap-flex">
         <div class="ap-index">
-            <div class="main-content">
+            <section id="index">
                 <h1>Index</h1>
                 <ul>
+                    <li><a href="#3.1.4" style="text-decoration: underline;">v3.1.4</a></li>
+                    <li><a href="#3.1.3" style="text-decoration: underline;">v3.1.3</a></li>
+                    <li><a href="#3.1.2" style="text-decoration: underline;">v3.1.2</a></li>
+                    <li><a href="#3.1.1" style="text-decoration: underline;">v3.1.1</a></li>
                     <li><a href="#3.1.0" style="text-decoration: underline;">v3.1.0</a></li>
                 </ul>
-            </div>
-            <div class="main-content">
+            </section>
+            <section id="index-back">
                 <a href="index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
-            </div>
+            </section>
         </div>
         <div class="container">
-            <div class="main-content">
-                <a href="#3.1.0"><h1 id="3.1.0">v3.1.0</h1></a>
-                <p>wip</p>
-            </div>
+            <section id="3.1.4">
+                <h1><a href="#3.1.4">3.1.4</a></h1>
+                <ul>
+                    <li>Updated Lost World Rock item placement code so it sucks less</li>
+                    <li>Changed some rules to use macros, macros can be used with UT's <code>/explain</code></li>
+                    <li>Trivia error message updated to tell the player they're missing the trivia apworld more clearly</li>
+                    <li>Updated loose logic
+                        <ul>
+                            <li>Everything about Klobber Karnage</li>
+                            <li>KONG and Clear in Krockhead Klamber no longer require Kannons</li>
+                            <li>Banana Coin 1 &amp; 2 in Web Woods can require Cartwheel to reach</li>
+                            <li>Green Balloon 1 in Web Woods uses the expert logic</li>
+                        </ul>
+                    </li>
+                    <li>Updated expert logic
+                        <ul>
+                            <li>Mainbrace Mayhem Bonus 1 &amp; Banana Bunch 1 no longer requires Hover or Cartwheel when using Diddy</li>
+                            <li>Banana Coin 1 &amp; 2 in Web Woods uses loose logic</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="3.1.3">
+                <h1><a href="#3.1.3">3.1.3</a></h1>
+                <ul>
+                    <li>Fixed logic related to Clapper and Diddy on Loose and Expert difficulties</li>
+                </ul>
+            </section>
+
+            <section id="3.1.2">
+                <h1><a href="#3.1.2">3.1.2</a></h1>
+                <ul>
+                    <li>Fixed KONG checks being sent in levels with uninitialized SRAM</li>
+                    <li>Fixed DamageLink handling causing incoming DeathLink and TrapLink signals crash the client</li>
+                    <li>Adjusted Windy Well logic (Loose)</li>
+                </ul>
+            </section>
+
+            <section id="3.1.1">
+                <h1><a href="#3.1.1">3.1.1</a></h1>
+                <ul>
+                    <li>Implemented DamageLink (named SharedDamage for tagging purposes)
+                        <ul>
+                            <li>Whenever players take a hit they send a Damage signal to others</li>
+                            <li>Can be toggled in the Manager</li>
+                            <li>Currently DKC2 handles it like this:
+                                <ul>
+                                    <li>Other DKC2 players get hurt when the cumulative damage gets to 80</li>
+                                    <li>Sends a 80 damage signal when the player gets hurt in any way, including extra hits</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Apparently the *Link options in the manager did absolutely nothing, that's now fixed</li>
+                    <li>Replaced bundled docs' text with links to my WIP webpage.</li>
+                </ul>
+            </section>
+
+            <section id="3.1.0">
+                <h1><a href="#3.1.0">3.1.0</a></h1>
+                <ul>
+                    <li>FxPak: Ensures everything works properly (Mainly for QUsb2Snes users)</li>
+                    <li>Implemented Rule Builder (bumps AP version to 0.6.7 minimum)
+                        <ul>
+                            <li><del>Stolen from Astalon</del> tl;dr better UT <code>/explain</code> and <code>/get_logical_path</code> support</li>
+                        </ul>
+                    </li>
+                    <li>KONG letter progress is saved between levels loads</li>
+                    <li>Added an Adjuster/Manager tool
+                        <ul>
+                            <li>The UX is very questionable, but it should work mostly fine</li>
+                        </ul>
+                    </li>
+                    <li>Added an adjuster option that allows you to guarantee DK Coins and G Letters in goals (Global)</li>
+                    <li>Added an adjuster option that allows you to fully randomize which rewards are available at goals (Global)</li>
+                    <li>Added a counter in each world that tells you how many level clears or McMuffins are required</li>
+                    <li>Moved all of the Swanky Trivia options to the adjuster, they work in a global basis instead per YAML</li>
+                    <li>Moved the trivia database to an independent APWorld</li>
+                    <li>Removed custom trivia support from the APWorld (sorry if anyone was actually using this)</li>
+                    <li>DeathLink: Deaths should no longer be sent when dying in a level and proceed to get into a "shop" level immediately after</li>
+                    <li>Client: It's now possible to request several barrels at once with <code>/request</code></li>
+                    <li>Squawks now allows using backup barrels</li>
+                    <li>Some changes to the death/hurt table, players can now die in several new kong states</li>
+                    <li>Disabled being able to select Files 2 and 3 in the File Select menu</li>
+                    <li>Cranky hints no longer consider events</li>
+                    <li>Fixed a Cranky text variation that ended up displaying part of the next hint on the last line</li>
+                    <li>Fixed Kongs phasing through Air Balloons when hit with an extra hit active</li>
+                    <li>Fixed Kackle stopping when hitting the player when they only have one Kong unlocked and they have an extra hit active</li>
+                    <li>Fixed K. Rool ignoring extra hits when hitting with his blunderbuss</li>
+                </ul>
+            </section>
+
+            <section id="3.0.4">
+                <h1><a href="#3.0.4">3.0.4</a></h1>
+                <ul>
+                    <li>Updated the trivia database</li>
+                    <li>Clapper's Cavern DK Coin logic is now consistent with Bonus 1 in Strict and Loose logic levels</li>
+                    <li>If the game is under high stress the game will fail to properly load the message text graphics</li>
+                    <li>The <code>Backup DK Barrel</code> counter may wrap around the screen without the current Kong</li>
+                </ul>
+            </section>
+
+            <section id="3.0.3">
+                <h1><a href="#3.0.3">3.0.3</a></h1>
+                <ul>
+                    <li>Banana Coins are now saved into the save file</li>
+                    <li>Collected locations (regardless if they're from <code>!collect</code> or not) no longer create in-game messages</li>
+                    <li>Added a manifest file for AP 0.7.0+ support</li>
+                    <li>Actual good attempt at fixing the SFX crash caused by obtaining a Backup DK Barrel via KONG letters</li>
+                    <li>Klubba no longer resets the Banana Coin counter to 1 after "paying" him the toll he asks for</li>
+                    <li>If the game is under high stress the game will fail to properly load the message text graphics</li>
+                    <li>The <code>Backup DK Barrel</code> counter may wrap around the screen without the current Kong</li>
+                </ul>
+            </section>
+
+            <section id="3.0.2">
+                <h1><a href="#3.0.2">3.0.2</a></h1>
+                <ul>
+                    <li>Level clears per world are sent to DataStorage</li>
+                    <li>Fixes Lost World goal not bein able to be generated</li>
+                    <li>Attempt to fix a sound crash related to KONG letters granting a <code>Backup DK Barrel</code></li>
+                    <li>Castle Crush sometimes doesn't properly load messages</li>
+                    <li>Banana Coins may randomly reset to 0 in rare situations</li>
+                </ul>
+            </section>
+
+            <section id="3.0.1">
+                <h1><a href="#3.0.1">3.0.1</a></h1>
+                <ul>
+                    <li>Reworked SFX queue between SNIClient and the game</li>
+                    <li>Not having a valid directory for custom trivia no longer crashes the patching process</li>
+                </ul>
+            </section>
+
+            <section id="3.0.0">
+                <h1><a href="#3.0.0">3.0.0</a></h1>
+                <ul>
+                    <li>A message is shown at the bottom of the screen when you receive or send items
+                        <ul>
+                            <li>This also adds a few extra options regarding which kind of messages you receive on screen, including filters for certain item classifications</li>
+                            <li>This is a somewhat experimental feature which may lead to some occassional visual bug under certain scenarios</li>
+                        </ul>
+                    </li>
+                    <li>There's an item tracker in game now, you can summon it while being on a map with <code>L</code> or <code>R</code>
+                        <ul>
+                            <li>It uses the message system to queue several messages that inform you about the items you have at the moment, not ideal but works fine</li>
+                        </ul>
+                    </li>
+                    <li>Boss levels can be locked behind level clears in their respective worlds</li>
+                    <li>You're now able to alter the behavior of collecting a colored balloon, all KONG letters or 100 bananas to either grant extra lives or extra <code>Backup DK Barrel</code>s (you can now obtain <code>Backup DK Barrel</code>s when EnergyLink is disabled)
+                        <ul>
+                            <li>At the map, use the <code>SELECT</code> button to toggle between reward types</li>
+                            <li>There's a small icon in the bottom right corner. If Diddy the reward will be extra lives, if Dixie the reward will be extra <code>Backup DK Barrel</code>s</li>
+                        </ul>
+                    </li>
+                    <li>There's a way to visualize in-game how many <code>Backup DK Barrel</code> items are left. A counter will appear on top of the player when they:
+                        <ul>
+                            <li>Enter a level</li>
+                            <li>Use a <code>Backup DK Barrel</code></li>
+                            <li>Gain a <code>Backup DK Barrel</code></li>
+                            <li>Get hurt</li>
+                        </ul>
+                    </li>
+                    <li>It's now possible to run your own custom trivia database alongside the one provided in the apworld</li>
+                    <li>Added options to change the Animal Buddies palettes</li>
+                    <li>Added the current version to the Title Screen</li>
+                    <li>Replaced the original credits text with text related to the people involved in the randomizer</li>
+                    <li>A Diddy icon is shown instead of a Banana when you have an extra hit active</li>
+                    <li>Getting hit while being protected by an Extra Hit will get rid of the current <code>Reverse Trap</code></li>
+                    <li>Getting hit while being protected by an Extra Hit now plays the Kong getting hurt sound effect</li>
+                    <li>Renamed <code>player_palettes</code> and <code>player_palette_filters</code> options to <code>palettes</code> and <code>palette_filters</code> respectively to properly match their new purpose</li>
+                    <li>Altered the default options to have a better "new player" experience</li>
+                    <li>Reduced Swanky challenges cost, they now cost a single Banana Coin to try
+                        <ul>
+                            <li>Swanky @ Galleon has all of his challenges available for free</li>
+                        </ul>
+                    </li>
+                    <li>You can no longer visit Cranky with <code>L</code> + <code>R</code> during the map</li>
+                    <li>Reduced the chance of generating Banana Coins as filler items</li>
+                    <li>Made <code>Backup DK Barrel</code>s appear more often as filler items</li>
+                    <li>Updated the TrapLink database</li>
+                    <li>Updated the trivia database
+                        <ul>
+                            <li>We have over 600 questions now!</li>
+                        </ul>
+                    </li>
+                    <li>Using Start Inventory From Pool (and possibly Plando as well) no longer has chance of picking UT's glitched item
+                        <ul>
+                            <li>It's forced to replace items with Backup DK Barrels</li>
+                        </ul>
+                    </li>
+                    <li>Losing multiple Extra Hits inside hot/toxic water no longer spams hit detection VFX like crazy</li>
+                    <li>Fixed being able to interact with Clapper on Lava Lagoon when it was submerged in liquid without unlocking him first</li>
+                    <li>Jungle Jinx no longer loses most of its sounds effects when a <code>Backup DK Barrel</code> is requested or an Extra Hit is lost</li>
+                </ul>
+            </section>
+
+            <section id="2.3.0">
+                <h1><a href="#2.3.0">2.3.0</a></h1>
+                <ul>
+                    <li>Calling a <code>Backup DK Barrel</code> while you have the maximum number of Kongs alive will grant the player a protection layer which lasts for a single hit.
+                        <ul>
+                            <li>Persists between levels (and probably on/off cycles as well)</li>
+                            <li>This is indicated by a static banana on the bottom left corner of the screen.</li>
+                        </ul>
+                    </li>
+                    <li>Added support for Universal Tracker's Glitched Logic ™️</li>
+                    <li>Calling a <code>Backup DK Barrel</code> while riding/being Squitter will now require pressing <code>Select</code> instead of <code>L</code> or <code>R</code></li>
+                    <li>[Raspberryfloof] Better color adjustment via the palette filter option</li>
+                    <li>[Raspberryfloof] Allow generating 0 extra <code>Lost World Rocks</code></li>
+                    <li>Glimmer's Galleon no longer has entities disappearing</li>
+                    <li>Some logic fixes for Screech's Sprint in Strict logic</li>
+                </ul>
+            </section>
+
+            <section id="2.2.0">
+                <h1><a href="#2.2.0">2.2.0</a></h1>
+                <ul>
+                    <li>New option: <code>lost_world_rock_placement</code>
+                        <ul>
+                            <li>Allows you to determine how Lost World Rock items will be placed on the multiworld.
+                                <ul>
+                                    <li><strong>anywhere</strong>: Lets AP decide where to put the items</li>
+                                    <li><strong>lost_world_level_clear</strong>: Forced in Level Clears found in Lost World (Local) This option always creates 5 rocks. Extra lost world rocks aren't created.</li>
+                                    <li><strong>lost_world_anywhere</strong>: Forced in anywhere in Lost World (local)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>The client now exposes the current amount of <code>Backup DK Barrels</code> in a label</li>
+                    <li>Universal Tracker's tracking no longer requires a YAML file to properly track the game</li>
+                    <li>Renamed <code>/barrel</code> to <code>/request</code></li>
+                    <li>Updated expert logic</li>
+                    <li>Added <code>Animal Antics</code> as a location group</li>
+                </ul>
+            </section>
+
+            <section id="2.1.2">
+                <h1><a href="#2.1.2">2.1.2</a></h1>
+                <ul>
+                    <li>Updated the trivia database
+                        <ul>
+                            <li>We have 540 questions now</li>
+                        </ul>
+                    </li>
+                    <li>Added more supported TrapLink traps
+                        <ul>
+                            <li>Accepts <code>Ghost</code> as <code>TNT Barrel Trap</code></li>
+                            <li>Accepts <code>Fire Trap</code> as <code>TNT Barrel Trap</code></li>
+                            <li>Accepts <code>Posession Trap</code> as <code>Damage Trap</code></li>
+                        </ul>
+                    </li>
+                    <li>Fixed Animal Antics not allowing players to use Backup Barrels</li>
+                    <li>Fixed the Red Balloon in Animal Antics not being sent</li>
+                    <li>Fixed a typo</li>
+                </ul>
+            </section>
+
+            <section id="2.1.1">
+                <h1><a href="#2.1.1">2.1.1</a></h1>
+                <ul>
+                    <li>Added more supported TrapLink traps
+                        <ul>
+                            <li>Accepts <code>Banana Trap</code> as <code>Ice Trap</code></li>
+                            <li>Accepts <code>Bomb</code> as <code>TNT Barrel Trap</code></li>
+                            <li>Accepts <code>Stun Trap</code> as <code>Freeze Trap</code></li>
+                            <li>Accepts <code>Gooey Bag</code> as <code>TNT Barrel Trap</code></li>
+                        </ul>
+                    </li>
+                    <li>Various logic adjustments &amp; fixes</li>
+                </ul>
+            </section>
+
+            <section id="2.1.0">
+                <h1><a href="#2.1.0">2.1.0</a></h1>
+                <ul>
+                    <li>Added TrapLink support</li>
+                    <li>Added new traps:
+                        <ul>
+                            <li>TNT Barrel Trap
+                                <ul>
+                                    <li>Spawns an active TNT barrel above the players</li>
+                                </ul>
+                            </li>
+                            <li>Ice Trap
+                                <ul>
+                                    <li>Makes the level slippery</li>
+                                </ul>
+                            </li>
+                            <li>Honey Trap
+                                <ul>
+                                    <li>Makes the level sticky (goes off after jumping 20 times)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><code>Instant DK Barrels</code> aren't instant anymore, they're now <code>Backup DK Barrels</code>. You have to press <code>L</code> or <code>R</code> in order to summon a DK Barrel (only works if you have a single Kong alive and have both Kongs unlocked)</li>
+                    <li>Made DK Barrels and 1-Up Balloons appear slightly less often in the item pool</li>
+                    <li>Added more player palettes</li>
+                    <li>Changed how levels.bin is handled so it's slightly harder to determine the level shuffle order from peeking at the patch file</li>
+                    <li>Updated the trivia database</li>
+                    <li>Various logic adjustments &amp; fixes</li>
+                    <li>Fixed Kore being open after receiving a Lost World Rock while owning Lost World Access (Cauldron)</li>
+                </ul>
+            </section>
+
+            <section id="2.0.0">
+                <h1><a href="#2.0.0">2.0.0</a></h1>
+                <ul>
+                    <li>Diddy and Dixie's palettes can now be changed with presets or completely custom colors</li>
+                    <li>Added an auxiliary system for applying palette filters into the selected presets or custom colors to darken or brigthen them</li>
+                    <li>Colored balloons can be valid locations</li>
+                    <li>Banana coins can be valid locations</li>
+                    <li>Banana bunches can be valid locations</li>
+                    <li>Added a new option to put additional Lost World Rocks in the pool</li>
+                    <li>Added a new item that spawns a DK Barrel on top of the playable character (if there's one Kong on screen and both of them are unlocked)</li>
+                    <li>The client now sends a message for trackers when the game changes maps (for autotabbing in PopTracker wink wink)</li>
+                    <li>Added EnergyLink support
+                        <ul>
+                            <li>Every 10 bananas collected in game generate a single energy banana in the pool</li>
+                            <li>You can exchange these new bananas for DK Barrels</li>
+                            <li>There's a new item that allows you to extract energy from bananas more efficiently (which is also banana powered 🍌)</li>
+                            <li>EXCHANGING BANANAS FOR DK BARRELS IS AP 0.6.0 EXCLUSIVE. Depositing bananas is fine on any version.
+                                <ul>
+                                    <li>I'm making use of a recently merged PR, so you can only deposit bananas unless you run from source or somehow can run the latest AP commit or cherry pick <a href="https://github.com/ArchipelagoMW/Archipelago/pull/3093">this PR</a> and merge it in your local copy</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>A kloak got one of its projectiles changed in order to accomodate to the new locations</li>
+                    <li>Rambi in Red-Hot Ride now gives a Banana Coin instead of a Bundle of Bananas</li>
+                    <li>Parrot Chute Panic's No Animal Sign now converts Squawks into the O letter</li>
+                    <li>Arctic Abyss' No Animal Signs now converts Enguarde into a Red Balloon</li>
+                    <li>Glimmer's Galleon no longer blinds players when Glimmer turns around</li>
+                    <li>You now have immediate access to Gangplank Galleon without needing to connect to the server</li>
+                    <li>Optimized the trap handling code, it now makes the game run a lot smoothly (almost like the base game)</li>
+                    <li>Added a cap of 99 currency-like items in the client</li>
+                    <li>Lowered the max question amount per quiz to 6</li>
+                    <li>Updated the trivia database</li>
+                    <li>Saves are now properly linked to the received item list</li>
+                    <li>Wrinkly no longer crashes with certain hints</li>
+                    <li>Wrinkly and Cranky no longer have a corrupt menu</li>
+                    <li>Various logic adjustments &amp; fixes</li>
+                </ul>
+            </section>
+
+            <section id="1.0.1">
+                <h1><a href="#1.0.1">1.0.1</a></h1>
+                <ul>
+                    <li>Fixed excluded topics trying to remove topics that don't exist in the session</li>
+                    <li>Fixed flying krock having issues with 0 tokens</li>
+                    <li>Fixed failed generations on <code>strict</code> logic</li>
+                    <li>Fixed Kore not being properly unlocked when Carry wasn't shuffled</li>
+                </ul>
+            </section>
+
+            <section id="1.0.0">
+                <h1><a href="#1.0.0">1.0.0</a></h1>
+                <ul>
+                    <li>Added hints related to the items in your world at Monkey Museum
+                        <ul>
+                            <li>They cost DK Coins, you can obtain those as items in AP, not the game itself</li>
+                        </ul>
+                    </li>
+                    <li>Added hints related to your items in the session at Kong Kollege
+                        <ul>
+                            <li>They cost Kremkoins, you can obtain those items in AP, not the game itself</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to add Swanky's trivia as valid locations</li>
+                    <li>Swanky's trivia is now randomized with questions from the base game, the games present in the session and extra optional topics/games</li>
+                    <li>It's possible to change how many questions are there per quiz at Swanky's Bonus Bonanza</li>
+                    <li>Added a new McGuffin (Boss Tokens) for tracking defeated bosses</li>
+                    <li>The Flying Krock can now be locked behind Boss Tokens instead of a multiworld item
+                        <ul>
+                            <li>This is configurable via an option</li>
+                        </ul>
+                    </li>
+                    <li>Added some flavor text to the note at Pirate Panic which tells the player which goal they have</li>
+                    <li>Added an option to not add DK Coins as valid locations</li>
+                    <li>Added an option to not add KONG letters as valid locations</li>
+                    <li>Locked worlds now play a <code>Incorrect</code> sound effect in the main map</li>
+                    <li>DeathLink support</li>
+                    <li>Two new traps: <code>Damage Trap</code>, <code>Instant Death Trap</code>
+                        <ul>
+                            <li>Those will be hidden and turned off on the main page and template generation because they're not <em>great</em> traps in concept, but it took litlle effort to add them so anyone feeling masochistic can enable them (they're included on the .yaml file in the github page)</li>
+                        </ul>
+                    </li>
+                    <li>Collect no longer collects bosses</li>
+                    <li>Wrinkly no longer asks for any currency to save the game</li>
+                    <li><code>1-Up</code> got renamed to <code>1-Up Balloon</code></li>
+                    <li>Shortened <code>Lost World Access</code> item names (<code>Lost World Access (Crocodile Cauldron)</code> -&gt; <code>Lost World Access (Cauldron)</code>)</li>
+                    <li>US 1.0 version is no longer accepted by the patching process
+                        <ul>
+                            <li>It'll be available soon:tm: (or maybe never lol, too lazy to create two different patches)</li>
+                        </ul>
+                    </li>
+                    <li>The gameplay demo is now disabled</li>
+                    <li>The 75 kremkoin cheat code can no longer be enabled</li>
+                    <li>French language option can't be selected anymore
+                        <ul>
+                            <li><a href="https://discord.com/channels/731205301247803413/1214608557077700720/1322354163404767303">https://discord.com/channels/731205301247803413/1214608557077700720/1322354163404767303</a></li>
+                        </ul>
+                    </li>
+                    <li>The default logic option was changed to <code>strict</code>
+                        <ul>
+                            <li>The previous default option (<code>loose</code>) allowed some hard seeds to happen which was not ideal, this one will let people go out of logic faster while they learn the implementation</li>
+                        </ul>
+                    </li>
+                    <li>Collect actually works this time</li>
+                    <li>Fixed an issue where <code>Kong Barrels</code>, <code>Warp Barrels</code> and <code>Controllable Barrels</code> were not part of the offline start inventory</li>
+                    <li>Fixed an issue related to losing access to Dixie upon completing Krocodile Kore</li>
+                    <li>Fixed Klobber Karnage's bonus barrel</li>
+                    <li>Fixed Stronghold Showdown not being able to be played after visiting it once</li>
+                    <li>Fixed being able to receive traps in Stronghold Showdown</li>
+                    <li>Fixed received items not making a sound in the main map</li>
+                    <li>Various logic adjustments &amp; fixes</li>
+                </ul>
+            </section>
+
+            <section id="0.1.1">
+                <h1><a href="#0.1.1">0.1.1</a></h1>
+                <ul>
+                    <li>Collect support
+                        <ul>
+                            <li>Not that it really matters... but eh</li>
+                        </ul>
+                    </li>
+                    <li>Added entrance data to hints so you know where in the game those levels are</li>
+                    <li>Beating a boss and entering the same submap again won't cause kongs to go out of bounds</li>
+                    <li>Getting a trap during the bonus animation no longer softlocks the game</li>
+                    <li>Fixed Klobber Karnage's bonus barrel not working if you didn't have <code>Barrel Kannons</code></li>
+                    <li>Fixed some checks not working (something along the lines of levels changing their current ID)</li>
+                    <li>Fixed a typo somewhere</li>
+                    <li>Various logic adjustments</li>
+                </ul>
+            </section>
+
+            <section id="0.1.0">
+                <h1><a href="#0.1.0">0.1.0</a></h1>
+                <ul>
+                    <li>Initial release</li>
+                </ul>
+            </section>
         </div>
     </div>
     </body>

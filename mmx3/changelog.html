@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/mmx3/changelog.html">
+<meta property="og:title" content="Mega Man X3 Randomizer - lx5's works">
+<meta property="og:description" content="Changelog for Mega Man X3 Randomizer">
+<meta name="theme-color" content="#0f27ff">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/mmx3/icon.png">
+<html>
+    <head>
+        <title>Mega Man X3 Randomizer - lx5's works</title>
+        <link rel="stylesheet" href="../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("../selected-mmx.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <section id="header">
+            <h1>Mega Man X3</h1>
+            <p>A Mega Man X3 randomizer for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/mmx3-v1.5.2" style="text-decoration: underline;">v1.5.2</a></p>
+        </section>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <section id="index">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#1.5.2" style="text-decoration: underline;">1.5.2</a></li>
+                    <li><a href="#1.5.1" style="text-decoration: underline;">1.5.1</a></li>
+                    <li><a href="#1.5.0" style="text-decoration: underline;">1.5.0</a></li>
+                    <li><a href="#1.4.0" style="text-decoration: underline;">1.4.0</a></li>
+                    <li><a href="#1.3.1" style="text-decoration: underline;">1.3.1</a></li>
+                </ul>
+            </section>
+            <section id="index-back">
+                <a href="index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </section>
+        </div>
+        <div class="container">
+            <section id="1.5.2">
+                <h1><a href="#1.5.2">1.5.2</a></h1>
+                <ul>
+                    <li><del>Stole</del> Copied Mega Man 1/2/3's way to extract ROMs from the X Legacy Collection executable file</li>
+                    <li>Fixed XML file failing to be appropriately copied to the patch/ROM location</li>
+                    <li>Added a missing file in the Names directory</li>
+                </ul>
+            </section>
+
+            <section id="1.5.1">
+                <h1><a href="#1.5.1">1.5.1</a></h1>
+                <ul>
+                    <li>Dr. Doppler Lab's access item now skips balancing</li>
+                    <li>Attempt to fix an issue with Doppler &amp; Vile stages not opening as they should when requirements are met</li>
+                    <li>Attempt to fix an issue with colorization for Doppler &amp; Vile requirements during the stats screen</li>
+                </ul>
+            </section>
+
+            <section id="1.5.0">
+                <h1><a href="#1.5.0">1.5.0</a></h1>
+                <ul>
+                    <li>Added <code>Quick Charge Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Allows to quickly charge up weapons when obtained (+50% charge speed)</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Speedster Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases walking speed by 50%</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Super Recover Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases recovery from HP/Energy pickups by 25%. Doesn't affect Sub Tanks. Affects EnergyLink.</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Rapid Five Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases the amount of buster shots on screen to 5.</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Speed Shot Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases X's buster shots (lemons) horizontal speed by 50%.</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Buster Plus Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases Buster (lemon) damage by 1.</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Weapon Plus Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases Weapon damage by 1.</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Weapon Plus Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases item drop rates by roughly 33%.</li>
+                        </ul>
+                    </li>
+                    <li>Added proper Universal Tracker support</li>
+                    <li>Removed Volt Catfish Tweaks</li>
+                    <li>Removed <code>logic_helmet_checkpoints</code> option.
+                        <ul>
+                            <li>You're now forced to use the feature to get into later parts of certain stages</li>
+                        </ul>
+                    </li>
+                    <li>Fixed Vile always being unlocked with one less medal than Doppler</li>
+                </ul>
+            </section>
+
+            <section id="1.4.0">
+                <h1><a href="#1.4.0">1.4.0</a></h1>
+                <ul>
+                    <li>It's now possible to change the palette colors for X's armor
+                        <ul>
+                            <li>There's a bunch of presets which makes the generated yaml huge</li>
+                            <li>You can also write your own custom colors</li>
+                        </ul>
+                    </li>
+                    <li>Volt Catfish has Enemy Tweaks available</li>
+                    <li>Some bosses now changes its behavior at a random HP threshold when random boss HP is active
+                        <ul>
+                            <li>Applies to:
+                                <ul>
+                                    <li>Volt Catfish</li>
+                                    <li>Toxic Seahorse</li>
+                                    <li>Gravity Beetle</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Bosses can have up to 16 weakness slots instead of 8
+                        <ul>
+                            <li>This mostly affects RAM-based trackers. The starting RAM offset stays the same.</li>
+                        </ul>
+                    </li>
+                    <li>Strict weakness setting that allows upgraded busters to deal damage now considers upgraded busters in logic
+                        <ul>
+                            <li>Hints and spoiler look absolutely ugly now</li>
+                        </ul>
+                    </li>
+                    <li>Removed every text box in the game
+                        <ul>
+                            <li>Speedrun goes brrrr (produces funny results)</li>
+                        </ul>
+                    </li>
+                    <li>Upgrade capsules no longer play back the movement demo</li>
+                    <li>Refill request via the game itself now has a timeout (1 second)
+                        <ul>
+                            <li>This should reduce or remove the amount of times the game stops receiving inputs on the pause menu</li>
+                        </ul>
+                    </li>
+                    <li>Fixed level 1 charge shot dealing damage when allowing the upgraded buster deal damage to bosses</li>
+                    <li>Byte now requires Bit to be defeated in order to be considered in logic
+                        <ul>
+                            <li>It already did ask for Bit, but not in every case</li>
+                        </ul>
+                    </li>
+                    <li>Fixed a generation crash with Vile in Lab 2 when he had more than 8 different weapons in logic</li>
+                    <li>Maybe fixed Lab 3 rematch capsules for real this time
+                        <ul>
+                            <li>Can't replicate it, so let's pray it works for real this time</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.3.1">
+                <h1><a href="#1.3.1">1.3.1</a></h1>
+                <ul>
+                    <li>Added an option to consider the "Use Any Checkpoint" feature from helmet upgrades in logic</li>
+                    <li>SNI no longer gets blasted with write requests when synchronizing the reached locations</li>
+                    <li>Made the client wait until DataStorage has acknowledged the keys used for data tracking</li>
+                    <li>Lowered amount of progression items required for Dr. Doppler's Lab</li>
+                    <li>Lab 4 doesn't ask <em>only</em> for Lab 3 completion if all labs are unlocked</li>
+                    <li>Byte now requires Bit to be defeated in order to be considered in logic</li>
+                    <li>Vile in Lab 2 now properly checks for both boss weaknesses</li>
+                    <li>Lab 1's completion now checks if one boss can be defeated instead of both</li>
+                </ul>
+            </section>
+
+            <section id="1.3.0">
+                <h1><a href="#1.3.0">1.3.0</a></h1>
+                <ul>
+                    <li>Received items are saved between sessions
+                        <ul>
+                            <li>Loading the saved data happens at the first load of the stage select screen or the intro stage</li>
+                            <li>Saving happens at any time the players receive an item</li>
+                            <li>You can delete the save to force a resync of items with <code>/resync</code> during the title screen
+                                <ul>
+                                    <li>Doesn't mess with locations reached or other stats</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Players can visit any previously reached checkpoints at any time during the stage select
+                        <ul>
+                            <li>Helmet upgrade still gives players access to all checkpoints in a level</li>
+                            <li>Checkpoints reached are synchronized with the server</li>
+                        </ul>
+                    </li>
+                    <li>Added a results screen after the credits sequence
+                        <ul>
+                            <li>Tracked stats:
+                                <ul>
+                                    <li>Death count</li>
+                                    <li>Damage dealt/taken</li>
+                                    <li>Checks reached</li>
+                                    <li>Upgrades/Weapons/Maverick Medals obtained</li>
+                                    <li>Clear time
+                                        <ul>
+                                            <li>May not be running at all times or running when it's not supposed to (during loading screens, lag frames, etc). Treat it as a fun side thing as it's not likely to receive any updates to enhance its accuracy.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Stats have a ranking system, have fun figuring them out :P</li>
+                            <li>All the stats are synchronized with the server
+                                <ul>
+                                    <li>Not entirely sure if players can abuse fast forward/rewind/save states for better stats, but all of those are synchronized with the server and the biggest value is always used. Maybe if players are fast enough with their (cheating) tools they may be able to fool the system... but it's a for fun feature so who cares lol</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Added a post-stage result screen
+                        <ul>
+                            <li>Tracked stats:
+                                <ul>
+                                    <li>Checks reached
+                                        <ul>
+                                            <li>Heart Tanks, Sub Tanks and Capsules have separate trackers</li>
+                                            <li>Pickupsanity separated from the stage check count</li>
+                                        </ul>
+                                    </li>
+                                    <li>Time spent on the stage</li>
+                                    <li>Total results from the game (without ranks)
+                                        <ul>
+                                            <li>Some of these have a color indicator if it has met the setting in the yaml</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Players can now request HP and Weapon Energy refills during the pause menu by pressing <code>SELECT</code> on the desired item they want to refill to its fullest
+                        <ul>
+                            <li>The X.Buster option will request HP (and is the only way to request it)</li>
+                        </ul>
+                    </li>
+                    <li>Players can now receive heals, refills and 1-Ups during the pause menu</li>
+                    <li>Current Energy Pool is now exposed on the pause menu</li>
+                    <li>Lives are now capped at 99
+                        <ul>
+                            <li>This also affects the option in the yaml</li>
+                            <li>They're also saved into the server</li>
+                        </ul>
+                    </li>
+                    <li>The holographic maps contain a lot of extra locations of interest
+                        <ul>
+                            <li>It now shows Pickups &amp; Bosses</li>
+                            <li>Every kind of location has a new icon/color tied to them</li>
+                            <li>May fail to show X's correct position from time to time... no idea why</li>
+                        </ul>
+                    </li>
+                    <li>The holographic maps are now able to be summoned at any time while pressing <code>SELECT</code>
+                        <ul>
+                            <li>The maps no longer appear on level start, making the game flow much faster</li>
+                            <li>Anytime is a bit of a stretch because there's a handful situations where holographic maps are forbidden due to them corrupting graphics</li>
+                        </ul>
+                    </li>
+                    <li>Intro stage can be visited at any time by selecting the X sign on the stage select screen</li>
+                    <li>The Chimera Ride Armor always appears on Blast Hornet's stage</li>
+                    <li>Boss' HP bar is scaled to match their actual Max HP
+                        <ul>
+                            <li>Some bosses recycle their HP bars in second phases, those won't be adjusted appropriately</li>
+                        </ul>
+                    </li>
+                    <li>Proper Universal Tracker support</li>
+                    <li>ROM after being patched is now 3MiB</li>
+                    <li>Lowered the maximum amount some progression items for opening the Fortress</li>
+                    <li>Autoheal is removed
+                        <ul>
+                            <li>Too unreliable, too disruptive, had some bugs I couldn't figure out how to fix</li>
+                        </ul>
+                    </li>
+                    <li>Removed <code>/pool</code> and <code>/autoheal</code> client commands</li>
+                    <li>Removed maverick intros</li>
+                    <li>Removed cutscenes after certain events in the middle of the game
+                        <ul>
+                            <li>Intro and credits are untouched</li>
+                        </ul>
+                    </li>
+                    <li>Bosses can now properly be rematched at their stages as often as players would like</li>
+                    <li>Game now switches to the game logo presentation after the Capcom logo</li>
+                    <li>Made Vile's item count requirement be always lower than Doppler's</li>
+                    <li>Switching checkpoints on the stage select with L/R now has more sense
+                        <ul>
+                            <li>Pressing L will decrement the checkpoint counter while R will increment it</li>
+                        </ul>
+                    </li>
+                    <li>Maverick Medals are now granted alongside the Boss Defeated check</li>
+                    <li>Maverick Medals will be automatically granted if a Boss Defeated check is detected</li>
+                    <li>Fixed a big logic issue regarding weaknesses where it'll ask for every single weakness at the same time instead of checking if only one is actually valid</li>
+                    <li>Fixed Vile in Lab 2 not having appropriate access rules with random weaknesses</li>
+                    <li>Fixed a generation failure when at least one person in the multiworld has 0 rematches and the rest don't</li>
+                    <li>Fixed rare cases where pausing the game is forbidden after getting an item</li>
+                    <li>Fixed logic issue with Volt Catfish's Weapon Energy pickups</li>
+                    <li>Fixed EnergyLink's heal and refills giving more HP or Weapon Energy than there was in the pool</li>
+                    <li>Fixed a logic issue with the <code>Doppler Lab Levels Bundle Unlock</code> option where it only counted Dr. Doppler as the only connection to Lab 4</li>
+                    <li>Fixed some cases where collecting a pickup and getting a HP refill during the first refill is playing its animation can lock up the game
+                        <ul>
+                            <li>Not entirely sure if it's fixed, but eh, hard to test</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.2.1">
+                <h1><a href="#1.2.1">1.2.1</a></h1>
+                <ul>
+                    <li>Performing a long jump now gives the actual dash wall jump speed</li>
+                    <li>Boss rematches are now handled on the game rather than the client
+                        <ul>
+                            <li>Should fix rematches not registering and not being able to fast forward</li>
+                            <li>You still need to get nearby the Energy Cyllinder on the middle of the room to unlock the door</li>
+                        </ul>
+                    </li>
+                    <li>Better Archipelago 0.5.0 support</li>
+                    <li>Potential fix for not being able to collect items/locations after a soft reset in emulators
+                        <ul>
+                            <li>Aimed towards Maverick Medals not being collected appropriately</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.2.0">
+                <h1><a href="#1.2.0">1.2.0</a></h1>
+                <ul>
+                    <li>Added an optional ability that allows X to <strong>perform longer jumps</strong> by holding down the dash button
+                        <ul>
+                            <li>Movement feels similar to X4, though in this implementation it has lower horizontal speed as it doesn't use the Wall Jump speed (2.9375px/s instead of ~3.5px/s). Felt less overpowered (still is) and works better with the SNES' screen crunch.</li>
+                            <li>Can be opted in via a yaml setting (<code>long_jumps</code>)</li>
+                        </ul>
+                    </li>
+                    <li>It's now possible to plando boss weaknesses via <code>boss_weakness_plando</code></li>
+                    <li>Added a new client command to toggle displaying EnergyLink deposit activity (<code>/details</code>)
+                        <ul>
+                            <li>Active by default unless you use <a href="https://github.com/ArchipelagoMW/Archipelago/pull/3093">#3093</a></li>
+                        </ul>
+                    </li>
+                    <li>You can now customize the default controls via a yaml option</li>
+                    <li>Added support for <a href="https://github.com/ArchipelagoMW/Archipelago/pull/3093">#3093</a></li>
+                    <li>Receiving a boss access code now plays the SFX at the same time the item is received instead of having a noticeable delay</li>
+                    <li>Demo from the title screen no longer plays, allowing players to sit comfortably on the title screen before starting a run
+                        <ul>
+                            <li>Also removed the narrative from the start, jumps straight into showing the logo animation</li>
+                        </ul>
+                    </li>
+                    <li>Receiving a helmet mid level no longer messes up the checkpoint count</li>
+                    <li>Removed an oversight that allowed every MMX3 slot to have two guaranteed levels on sphere 1 (one from going to the map, one early in the multiworld)</li>
+                </ul>
+            </section>
+
+            <section id="1.1.2">
+                <h1><a href="#1.1.2">1.1.2</a></h1>
+                <ul>
+                    <li>Client now exposes via DataStorage the current level</li>
+                    <li>Z-Saber now deals damage based on the current HP
+                        <ul>
+                            <li>Melee deals 100% HP as DMG, Beam deals 50% HP as DMG, Beam's DoT deals 4x2 DMG (fixed amount)
+                                <ul>
+                                    <li>Ranged beam is better on low HP runs, melee attack is better on high HP runs</li>
+                                </ul>
+                            </li>
+                            <li>Stricter weakness settings halves this damage</li>
+                        </ul>
+                    </li>
+                    <li>Volt Kurageil can be damaged via <code>Acid Burst</code></li>
+                    <li>Hell Crusher, Hotareeca, Shurikein and Worm Seeker-R now have <code>Buster</code> as its <code>vanilla</code> weakness
+                        <ul>
+                            <li>Mostly for no logic purposes as their original weaknesses are different</li>
+                            <li>Also matches Thunder Slimer design from X1</li>
+                        </ul>
+                    </li>
+                    <li>Hell Crusher can no longer have <code>Charged Tornado Fang</code> as a weakness</li>
+                    <li>Kaiser Sigma can no longer have <code>Charged Frost Shield</code> as a weakness</li>
+                    <li>Hell Crusher no longer uses Neon Tiger's weakness</li>
+                    <li>Pausing the game when the max HP is 1 no longer crashes the game</li>
+                </ul>
+            </section>
+
+            <section id="1.1.1">
+                <h1><a href="#1.1.1">1.1.1</a></h1>
+                <ul>
+                    <li>Do not create hints and locations for rematches if they're disabled</li>
+                    <li>Do not create additional Heart Tanks and Sub Tanks if their numbers are less than 8</li>
+                </ul>
+            </section>
+
+            <section id="1.1.0">
+                <h1><a href="#1.1.0">1.1.0</a></h1>
+                <ul>
+                    <li>Added bosses weaknessess to hints on their locations
+                        <ul>
+                            <li>Makes use of the <code>Entrance</code> field so it'll show up even on the multiworld tracker</li>
+                        </ul>
+                    </li>
+                    <li>Added option groups to the webhost settings page
+                        <ul>
+                            <li>Also rewrote some tooltips to look nicer on webhost.</li>
+                        </ul>
+                    </li>
+                    <li>Removed Z-Saber optional logic</li>
+                    <li>Added an option to remove Z-Saber from the pool</li>
+                    <li>Reworked Dr. Doppler's Lab and Vile's Stage settings so they use a list of items you want to track to get access to them
+                        <ul>
+                            <li><code>all</code> and <code>multiworld</code> options have been removed since they're now redundant</li>
+                        </ul>
+                    </li>
+                    <li>Made Charged Triad Thunder's lag frames reduction to be global</li>
+                    <li>Weaknesses are now exposed via <code>slot_data</code> and the game's RAM (this also applies to the original weaknesses)</li>
+                    <li>Removed <code>Weapon Refill</code> items from the pool
+                        <ul>
+                            <li>Can still cheat them via <code>/send</code></li>
+                        </ul>
+                    </li>
+                    <li>Made weaknesses get written to the spoiler log even if the vanilla weaknesses are being used</li>
+                    <li>Fixed boss weaknesses' code not actually taking into account the required weapons to properly set logic</li>
+                    <li>Fixed Lab levels not accounting for having access to all three Lab levels if <code>doppler_all_labs</code> is set</li>
+                    <li>Made the /trade command be always available instead of relying on EL being turned on</li>
+                    <li>Migrated <code>start_inventory</code> handling to a supported class</li>
+                    <li>Fixed generation on non strict weakness setting</li>
+                    <li>Disabled being able to receive items while riding a Ride Armor</li>
+                    <li>Fixed weapon energy refills causing unintended behaviors on X</li>
+                </ul>
+            </section>
+
+            <section id="1.0.0">
+                <h1><a href="#1.0.0">1.0.0</a></h1>
+                <ul>
+                    <li>Added boss weakness randomization options
+                        <ul>
+                            <li>Can shuffle every boss weakness</li>
+                            <li>Can also shuffle uncharged/charged versions of weapons via the chaotic sets
+                                <ul>
+                                    <li>The chaotic set makes every weapon charge level a separate weakness instead of keeping them together, meaning that a boss can be weak to Charged Frost Shield but not its uncharged version.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Added boss weakness strictness options
+                        <ul>
+                            <li>Can be set to allow the following:
+                                <ul>
+                                    <li>Not Strict: Anything can damage the boss</li>
+                                    <li>Weakness + Buster: Buster and the boss' weakness can damage the boss</li>
+                                    <li>Weakness + Upgraded Buster: Only upgraded buster shots and its weakness can damage the boss</li>
+                                    <li>Only Weakness: Only the weakness can damage the boss</li>
+                                </ul>
+                            </li>
+                            <li>Z-Saber effectiveness is adjusted on each option (100%, 50%, 37.5%, 25% of its original damage respectively)</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to shuffle every boss' max HP (only applies to those with a HP bar)</li>
+                    <li>Added an option to change how much HP you can start with (1-32 HP)
+                        <ul>
+                            <li>HP can go beyond 32HP, but it might have graphical issues during gameplay/pause menu</li>
+                            <li>Max HP capped at 56 HP due to graphical issues</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to change how much HP each heart tank gives (1-8 HP)</li>
+                    <li>Added a feature to the first helmet upgrade where it will allow the player to teleport to certain checkpoints in any stage they have access to, even if they haven't reached such checkpoints yet</li>
+                    <li>Added an option to unlock Dr. Doppler's Lab levels 1-3 automatically after gaining access to Dr. Doppler's Lab
+                        <ul>
+                            <li>The fourth lab is unlocked after completing every Lab level</li>
+                        </ul>
+                    </li>
+                    <li>Added a way to select which Dr. Doppler's Lab you can enter</li>
+                    <li>Added a way to select if Bit/Byte would appear in a level
+                        <ul>
+                            <li>This is mostly useful for logic, but also lets the player explore more levels they might receive and wish to not be blocked by Bit/Byte waiting in their arena</li>
+                        </ul>
+                    </li>
+                    <li>Both boss doors at Dr. Doppler's Lab 1 are now available at the same time</li>
+                    <li>Added Weapon Energy refills to the item pool
+                        <ul>
+                            <li>Unlike HP and 1-Ups, these don't get saved on a queue and are immediately wasted</li>
+                        </ul>
+                    </li>
+                    <li>Added Weapon Energy refills support to EnergyLink
+                        <ul>
+                            <li>Autorefill for weapons doesn't exist</li>
+                        </ul>
+                    </li>
+                    <li>Changed <code>Progressive Third Armor &lt;piece&gt;</code> names to <code>&lt;piece&gt; Upgrade</code> to match MMX1</li>
+                    <li>Fixed Blast Hornet's capsule not accounting for a leg upgrade</li>
+                </ul>
+            </section>
+
+            <section id="0.2.5">
+                <h1><a href="#0.2.5">0.2.5</a></h1>
+                <ul>
+                    <li>Added an option to disable X's ability to charge shots
+                        <ul>
+                            <li>This adds an additional Progressive Third Armor Arms item to let X charge shots again</li>
+                        </ul>
+                    </li>
+                    <li>Reworked logic to not expect players to finish a level without beating a boss without its weakness</li>
+                    <li>Forced a Stage Access upon defeating Maoh and going to the stage select screen
+                        <ul>
+                            <li>This won't be applied if you have a Stage Access (excluding Vile and Doppler) in your starting inventory</li>
+                        </ul>
+                    </li>
+                    <li>Made Bit and Byte be forced to appear according to the set value in the options</li>
+                    <li>Allow several options to have 0 as their value</li>
+                    <li>Halved energy deposits to EnergyLink's pool from pickups</li>
+                    <li>Several name changes to match X1's</li>
+                    <li>Fixed Sub Tank and Heart Tank location groups</li>
+                </ul>
+            </section>
+
+            <section id="0.2.4">
+                <h1><a href="#0.2.4">0.2.4</a></h1>
+                <ul>
+                    <li>Bit &amp; Byte access rules no longer use <code>Weapon</code> count instead of <code>Maverick Medal</code> count</li>
+                    <li>Hawk Ride armor access rules now require a leg upgrade
+                        <ul>
+                            <li>It still requires either <code>(Frost Shield &amp; Arm Upgrade) | Frog Armor</code></li>
+                        </ul>
+                    </li>
+                    <li>Neon Tiger's capsule access rules now requires a leg upgrade
+                        <ul>
+                            <li>It still requires <code>Tornado Fang</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="0.2.3">
+                <h1><a href="#0.2.3">0.2.3</a></h1>
+                <ul>
+                    <li>If Dr. Doppler's Lab 3 rematch count is set to 0 those locations aren't considered during generation
+                        <ul>
+                            <li>Setting it to 1 or more it'll enable all locations to be checks</li>
+                        </ul>
+                    </li>
+                    <li>EnergyLink no longer deposits energy into the pool if the user disabled it</li>
+                </ul>
+            </section>
+
+            <section id="0.2.2">
+                <h1><a href="#0.2.2">0.2.2</a></h1>
+                <ul>
+                    <li>Removed debug feature that gave the player infinite HP</li>
+                </ul>
+            </section>
+
+            <section id="0.2.1">
+                <h1><a href="#0.2.1">0.2.1</a></h1>
+                <ul>
+                    <li>Added WIP docs (so unit test don't yell at me every time I commit anything)</li>
+                    <li>Added location groups</li>
+                    <li>Fixed Z-Saber being considered in logic as a Boss Weapon</li>
+                    <li>Changed some location and item names</li>
+                </ul>
+            </section>
+
+            <section id="0.2.0">
+                <h1><a href="#0.2.0">0.2.0</a></h1>
+                <ul>
+                    <li>Support for the US X Legacy Collection ROM</li>
+                    <li>ROM is no longer required for generation (APPP)</li>
+                    <li>Portraits in the stage select menu no longer appear if you don't have said stage</li>
+                    <li>Changed some item names for consistency</li>
+                </ul>
+            </section>
+
+            <section id="0.1.0">
+                <h1><a href="#0.1.0">0.1.0</a></h1>
+                <ul>
+                    <li>Added EnergyLink support
+                        <ul>
+                            <li>Players can now use EL as a big HP pool/Sub Tank</li>
+                            <li>Players can enable auto healing to request HP from the EL pool when your HP is not at max
+                                <ul>
+                                    <li>DO NOT USE REWIND WITH AUTOHEAL, it may request healing a bunch of times and will mess up the pool</li>
+                                    <li>Latency can make auto healing not super reliable at times.</li>
+                                </ul>
+                            </li>
+                            <li>Players can add energy to the EL pool via collecting pickups
+                                <ul>
+                                    <li>Small pickups add 0.5 HP to the pool</li>
+                                    <li>Large pickups add 2 HP to the pool</li>
+                                    <li>1-Ups add 16 HP to the pool</li>
+                                </ul>
+                            </li>
+                            <li>Current (tested) rates:
+                                <ul>
+                                    <li>1:40 with SML2's lives</li>
+                                    <li>1:10 Pokemon's money</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Reworked how to access Vile's stage
+                        <ul>
+                            <li>Uses a similar settings group as Dr. Doppler</li>
+                        </ul>
+                    </li>
+                    <li>Bit and byte now use medals to determine whether they should appear or not
+                        <ul>
+                            <li>This also unlinks them from tracking weapons instead of medals/completed levels which made them feel really inconsistent</li>
+                        </ul>
+                    </li>
+                    <li>Reworked logic
+                        <ul>
+                            <li>Boss Weakness setting now affects ALL valid bosses, even rematches from Doppler 3</li>
+                            <li>Every ride armor is now considered in logic</li>
+                        </ul>
+                    </li>
+                    <li>Dr. Doppler Lab's third stage's rematch count requirements can be adjusted
+                        <ul>
+                            <li>DO NOT USE FAST FORWARD WHEN BEATING A REMATCH BOSS. The server latency can make the in-game check for defeated bosses be delayed and it'll fail to open the door at the end of the capsules room if the boss you just defeated is the last one.
+                                <ul>
+                                    <li>You can workaround this issue by exiting the stage via the pause menu, enter the level again and go to the top middle area of the capsules room, it'll open automatically without having to beat the bosses again.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Players are now guaranted to get at least one (local) Access Code on their first sphere</li>
+                    <li>The map opened by the 1st helmet upgrade at the start of any level now tracks properly the items
+                        <ul>
+                            <li>This also applies to the map menu tracker</li>
+                        </ul>
+                    </li>
+                    <li>There's now a sound effect when you get new items that don't play animations
+                        <ul>
+                            <li>The sound may be delayed from actually receiving the item (item comes first)</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to allow players to keep moving after firing a level 3 charge shot</li>
+                    <li>Some items are now marked as Useful instead of Progression if they're not used in logic with the current options</li>
+                    <li>Better pickup location names</li>
+                    <li>YAML options are now written in English</li>
+                    <li>Fixed incompatibility with emulators being reset</li>
+                    <li>Goal item is now properly sent (also goal now triggers on getting this item)</li>
+                    <li>Fixed DeathLink not working</li>
+                    <li>Fixed Tunnel Rhino's Helmet capsule giving the wrong location</li>
+                    <li>Fixed Neon Tiger's Arm capsule giving the wrong location</li>
+                    <li>Items can no longer be received while getting a HP upgrade, HP refill or going through a gate</li>
+                    <li>Boss access codes are now properly given during the map menu</li>
+                    <li>Vile stage is no longer set as accessible via Toxic Seahorse</li>
+                    <li>Fixed hyper cannon being granted to the player after visiting the Arms Chip Capsule</li>
+                    <li>Fixed capsules giving cosmetic changes if the player doesn't have the required items</li>
+                    <li>Fixed armor parts not applying cosmetic changes automatically</li>
+                    <li>Fixed Dr. Doppler Lab not properly unlocking when using the <code>multiworld</code> option</li>
+                    <li>Fixed crash related to collecting locations</li>
+                    <li>Fixed Mac giving out his location at a wrong time</li>
+                    <li>Fixed Vile (Dr. Doppler) not giving out his location</li>
+                    <li>Fixed Godkarmachine O Inary giving out his location at a wrong time</li>
+                    <li>Fixed Vile access on Crush Crawfish having wrong logic in the ROM</li>
+                    <li>Removed Mosquitus from the locations
+                        <ul>
+                            <li>It's tied to the non destroyed version of the lab.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="0.0.2">
+                <h1><a href="#0.0.2">0.0.2</a></h1>
+                <ul>
+                    <li>Added Z-Saber to the item list</li>
+                    <li>Added a new option to add Z-Saber as a weapon required in several parts of Dr. Doppler Lab
+                        <ul>
+                            <li>Configurations available:
+                                <ul>
+                                    <li>Required for Lab 1 Access</li>
+                                    <li>Required for Lab 2 Access</li>
+                                    <li>Required for Lab 3 Access (default config)</li>
+                                    <li>Required for fighting Dr. Doppler</li>
+                                    <li>Required for Sigma</li>
+                                    <li>Not required</li>
+                                </ul>
+                            </li>
+                            <li>It doesn't block you from entering, it just marked as required</li>
+                        </ul>
+                    </li>
+                    <li>Fixed Weapon Energy Pickup from Vile Stage not working</li>
+                    <li>Fixed crash when the game tried to load a Chip Capsule when you already had said chip</li>
+                    <li>Fixed Tunnel Rhino's Sub Tank also giving out Volt Catfish's Body Capsule</li>
+                    <li>Fixed Zero being able to receive X's upgrades</li>
+                    <li>Fixed X receiving items when you don't have control over him</li>
+                    <li>X no longer receives HP refills if his HP is full</li>
+                    <li>Adjusted junk weights so 1ups and Large HP Refills are more common</li>
+                    <li>Reorganized the list options
+                        <ul>
+                            <li>Also renamed the one related to boss' weakness</li>
+                        </ul>
+                    </li>
+                    <li>Reworked how Boss Weakness logic works
+                        <ul>
+                            <li>It actually works now lol</li>
+                        </ul>
+                    </li>
+                    <li>Removed Chimera Ride Armor requirement in locations where the Frog Ride Armor is required</li>
+                </ul>
+            </section>
+
+            <section id="0.0.1">
+                <h1><a href="#0.0.1">0.0.1</a></h1>
+                <ul>
+                    <li>Initial release. Seems playable.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    </body>
+</html>

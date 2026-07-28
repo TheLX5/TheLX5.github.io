@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/rha/index.html">
+<meta property="og:title" content="Setup for Rhythm Heaven Advance - lx5's works">
+<meta property="og:description" content="Everything about Rhythm Heaven Advance for Archipelago is contained here!">
+<meta name="theme-color" content="#0f27ff">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/icons/rha/icon.png">
+<html>
+    <head>
+        <title>Rhythm Heaven Advance Randomizer - lx5's works</title>
+        <link rel="stylesheet" href="../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("selected.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <section id="header">
+            <h1>Rhythm Heaven Advance</h1>
+            <p>A Rhythm Heaven Advance randomizer for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/rha-v0.1.1" style="text-decoration: underline;">v0.1.1</a></p>
+            <p>Original ROM Hack: <a href="https://rhadvance.github.io" style="text-decoration: underline;">Link</a></p>
+        </section>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <section id="index">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#setup" style="text-decoration: underline;">Setup</a></li>
+                    <ul>
+                        <li><a href="#setup-bizhawk" style="text-decoration: underline;">Bizhawk</a></li>
+                    </ul>
+                    <li><a href="#trackers" style="text-decoration: underline;">Trackers</a></li>
+                </ul>
+            </section>
+            <section id="index-back">
+                <a href="index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </section>
+        </div>
+        <div class="container">
+            <section id="setup">
+                <a href="#setup"><h1>Setup</h1></a>
+                <p>This ROM hack implementation requires Bizhawk Client to run which means the setup is identical to any other Bizhawk Client game.</p>
+
+                <a href="#setup-required-software"><h2 id="setup-required-software">Required Software</h2></a>
+                <ul>
+                    <li><a href="https://github.com/ArchipelagoMW/Archipelago/releases">Archipelago 0.6.7 or newer</a></li>
+                    <li>Software capable of loading and playing GBA ROM files. Anything not listed here is not guaranteed to work.
+                        <ul>
+                            <li><a href="https://tasvideos.org/Bizhawk" style="text-decoration: underline;">Bizhawk</a></li>
+                        </ul>
+                    </li>
+                    <li>A Rhythm Tengoku 1.0 JP ROM from the original cartridge.
+                        <ul>1.0 US MD5: <code>f81f60fdb2fd774c72a170a1805db52e</code></ul>
+                    </li>
+                </ul>
+                <hr>
+                <a href="#setup-how-to-play"><h2 id="setup-how-to-play">How to play</h2></a>
+                <ol>
+                    <li>Place the <code>.apworld</code> in your <code>Archipelago/custom_worlds</code> folder, or double-click the <code>.apworld</code> to do so automatically.</li>
+                    <li>Use <code>ArchipelagoLauncher.exe</code> to open the Launcher, and click on Generate Template Options to create template yamls for your custom <code>.apworlds</code>.</li>
+                    <li>Place the desired player yamls in the <code>Players</code> folder, and customize them as you see fit.</li>
+                    <li>Use <code>ArchipelagoGenerate.exe</code> to generate the game.</li>
+                    <li>Upload the generated game (in the output folder) on the website at <a href="https://archipelago.gg/uploads" style="text-decoration: underline;">https://archipelago.gg/uploads</a> and create a new room.</li>
+                    <li>Download the patch file from the session page</li>
+                    <li>Open the <code>.aprhythmadvance</code> file with <code>ArchipelagoLauncher.exe</code>, it should create a ROM file and open Bizhawk Client.</li>
+                </ol>
+                <hr>
+                <a href="#setup-bizhawk"><h2 id="setup-bizhawk">Bizhawk</h2></a>
+                <ol>
+                    <li>Open the patch</li>
+                    <li>Bizhawk Client should automatically setup everything for you.</li>
+                    <li>Enjoy!</li>
+                </ol>
+            </section>
+            <section id="trackers">
+                <a href="#optional-software"><h1>Trackers</h1></a>
+                <ul>
+                    <li><a href="https://github.com/FarisTheAncient/Archipelago/releases" style="text-decoration: underline;">Universal Tracker</a></li>
+                </ul>
+                <hr>
+                <a href="#trackers-universal"><h2 id="trackers-universal">Universal Tracker</h2></a>
+                <p>Universal Tracker is a custom APWorld that allows players to generate a list of in-logic locations for the current slot, very useful when trying to figure out why is something suddenly appearing as reachable.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th style="text-align: center;">Supported?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Logic tracking</td>
+                            <td style="text-align: center;">✔️</td>
+                        </tr>
+                        <tr>
+                            <td>YAML-less tracking</td>
+                            <td style="text-align: center;">✔️</td>
+                        </tr>
+                        <tr>
+                            <td><code>/explain</code></td>
+                            <td style="text-align: center;">❌</td>
+                        </tr>
+                        <tr>
+                            <td><code>/glp</code></td>
+                            <td style="text-align: center;">❌</td>
+                        </tr>
+                        <tr>
+                            <td>Glitched Logic</td>
+                            <td style="text-align: center;">❌</td>
+                        </tr>
+                        <tr>
+                            <td>Deferred Entrances</td>
+                            <td style="text-align: center;">❌</td>
+                        </tr>
+                        <tr>
+                            <td>Map Tracker Tab</td>
+                            <td style="text-align: center;">❌</td>
+                        </tr>
+                        <tr>
+                            <td>Player location in Map Tracker</td>
+                            <td style="text-align: center;">❌</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    </body>
+</html>

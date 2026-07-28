@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/mmx/changelog.html">
+<meta property="og:title" content="Mega Man X Randomizer - lx5's works">
+<meta property="og:description" content="Changelog for Mega Man X Randomizer">
+<meta name="theme-color" content="#0f27ff">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/mmx/icon.png">
+<html>
+    <head>
+        <title>Changelog for Mega Man X Randomizer - lx5's works</title>
+        <link rel="stylesheet" href="../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("selected.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <section id="header">
+            <h1>Mega Man X</h1>
+            <p>A Mega Man X randomizer for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/mmx-v1.6.2" style="text-decoration: underline;">v1.6.2</a></p>
+        </section>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <section id="index">
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#1.6.2" style="text-decoration: underline;">v1.6.2</a></li>
+                    <li><a href="#1.6.1" style="text-decoration: underline;">v1.6.1</a></li>
+                    <li><a href="#1.6.0" style="text-decoration: underline;">v1.6.0</a></li>
+                    <li><a href="#1.5.0" style="text-decoration: underline;">v1.5.0</a></li>
+                    <li><a href="#1.4.0" style="text-decoration: underline;">v1.4.0</a></li>
+                </ul>
+            </section>
+            <section id="index-back">
+                <a href="index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </section>
+        </div>
+        <div class="container">
+            <section id="1.6.2">
+                <h1><a href="#1.6.2">1.6.2</a></h1>
+                <ul>
+                    <li>Fixed a softlock related receiving items that pause the game for a brief moment</li>
+                    <li>Fixed DamageLink handling causing incoming DeathLink signals crash the client</li>
+                    <li>DeathLink signals are now properly ignored if you're not controlling the player</li>
+                </ul>
+            </section>
+
+            <section id="1.6.1">
+                <h1><a href="#1.6.1">1.6.1</a></h1>
+                <ul>
+                    <li>Implemented DamageLink (named SharedDamage for tagging purposes)
+                        <ul>
+                            <li>Whenever players take a hit they send a Damage signal to others</li>
+                            <li>Currently MMX handles it like this:
+                                <ul>
+                                    <li>Other MMX players get hurt when the cumulative damage gets to 10</li>
+                                </ul>
+                            </li>
+                            <li>Can receive up to 12 HP worth of damage at once</li>
+                            <li>Respects <code>Body Upgrade</code> added defense</li>
+                            <li>Sends 10 damage to players per HP lost</li>
+                        </ul>
+                    </li>
+                    <li>Players no longer receive items or DeathLinks during the level intro (falling from the sky)</li>
+                    <li>Players now go directly to the Game Clear screen once Sigma is defeated (removes credits sequence)</li>
+                    <li>Optimized Sigma Opening logic code from the ROM side (should experience slightly less lag overall)
+                        <ul>
+                            <li>This forces you to watch the Progress Screen in order to process Sigma's Fortress unlocking criteria</li>
+                        </ul>
+                    </li>
+                    <li>Made the intro sequence skip directly to the main menu after the CAPCOM logo</li>
+                    <li>Dashed lemons now appear green instead of yellow/orange</li>
+                    <li><del>Stole</del> Copied Mega Man 1/2/3's way to extract ROMs from the X Legacy Collection executable file</li>
+                </ul>
+            </section>
+
+            <section id="1.6.0">
+                <h1><a href="#1.6.0">1.6.0</a></h1>
+                <ul>
+                    <li>Added <code>Rapid Five Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases the amount of buster shots on screen to 5.</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Speed Shot Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases X's buster shots (lemons) horizontal speed by 50%.</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Buster Plus Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases Buster damage by 1.</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Weapon Plus Chip</code> item from Mega Man X6
+                        <ul>
+                            <li>Increases Weapon damage by 1.</li>
+                        </ul>
+                    </li>
+                    <li>The intro level can now be exit via the pause menu</li>
+                    <li>Dialogs are now skipped</li>
+                    <li>Reduced the Body Capsule boss' HP by half (now has 32 HP)</li>
+                    <li>Obtaining a heart tank during a level no longer blocks you out from unpausing the game</li>
+                    <li>Real consoles/flashcarts now work fine</li>
+                    <li>Fixed autotracking for PopTracker</li>
+                </ul>
+            </section>
+
+            <section id="1.5.0">
+                <h1><a href="#1.5.0">1.5.0</a></h1>
+                <ul>
+                    <li>Added <code>Quick Charge Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Allows to quickly charge up weapons when obtained (+50% charge speed)</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Speedster Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases walking speed by 50%</li>
+                        </ul>
+                    </li>
+                    <li>Added <code>Super Recover Chip</code> item from Mega Man X5
+                        <ul>
+                            <li>Increases recovery from HP/Energy pickups by 25%. Doesn't affect Sub Tanks. Affects EnergyLink.</li>
+                        </ul>
+                    </li>
+                    <li>Client was rewritten to be more stable
+                        <ul>
+                            <li>May decrease "lost upgrade in transit" scenarios</li>
+                        </ul>
+                    </li>
+                    <li>Removed <code>logic_helmet_checkpoints</code> option.
+                        <ul>
+                            <li>You're now forced to use the feature to get into later parts of certain stages</li>
+                        </ul>
+                    </li>
+                    <li>Removed boss tweaks
+                        <ul>
+                            <li>They will come back in a different form</li>
+                        </ul>
+                    </li>
+                    <li><code>Sigma Fortress #3</code> no longer says that it contains Heart Tanks, Sub Tanks or Upgrades inside on the progress screen</li>
+                </ul>
+            </section>
+
+            <section id="1.4.0">
+                <h1><a href="#1.4.0">1.4.0</a></h1>
+                <ul>
+                    <li>It's now possible to change the palette colors for X's armor
+                        <ul>
+                            <li>There's a bunch of presets which makes the generated yaml huge</li>
+                            <li>You can also write your own custom colors</li>
+                        </ul>
+                    </li>
+                    <li>Bosses can have up to 16 weakness slots instead of 8
+                        <ul>
+                            <li>This mostly affects RAM-based trackers. The starting RAM offset was moved to 7FEC00.</li>
+                        </ul>
+                    </li>
+                    <li>Strict weakness setting that allows upgraded busters to deal damage now considers upgraded busters in logic
+                        <ul>
+                            <li>Hints and spoiler look absolutely ugly now</li>
+                        </ul>
+                    </li>
+                    <li>Refill request via the game itself now has a timeout (1 second)
+                        <ul>
+                            <li>This should reduce or remove the amount of times the game stops receiving inputs on the pause menu</li>
+                        </ul>
+                    </li>
+                    <li>Can no longer receive items during the ending sequence</li>
+                    <li>Can't exit the intro with the pause menu. A reset is required.
+                        <ul>
+                            <li>Intro in this game is slightly different than the ones from X3 & X2... might be my disassembly the one that's wrong</li>
+                        </ul>
+                    </li>
+                    <li>Healing during the pause menu screen at the Sigma fight will show a duplicated X</li>
+                    <li>Collected heart tanks aren't acknowledged by the progress screen after a reboot</li>
+                </ul>
+            </section>
+
+            <section id="1.3.1">
+                <h1><a href="#1.3.1">1.3.1</a></h1>
+                <ul>
+                    <li>Added an option to consider the "Use Any Checkpoint" feature from helmet upgrades in logic</li>
+                    <li>SNI no longer gets blasted with write requests when synchronizing the reached locations</li>
+                    <li>Made the client wait until DataStorage has acknowledged the keys used for data tracking</li>
+                    <li>Lowered amount of progression items required for Sigma's Fortress</li>
+                </ul>
+            </section>
+
+            <section id="1.3.0">
+                <h1><a href="#1.3.0">1.3.0</a></h1>
+                <ul>
+                    <li>Received items are saved between sessions
+                        <ul>
+                            <li>Loading the saved data happens at the first load of the stage select screen or the intro stage</li>
+                            <li>Saving happens at any time the players receive an item</li>
+                            <li>You can delete the save to force a resync of items with <code>/resync</code> during the title screen
+                                <ul>
+                                    <li>Doesn't mess with locations reached or other stats</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Players can visit any previously reached checkpoints at any time during the stage select
+                        <ul>
+                            <li>Helmet upgrade still gives players access to all checkpoints in a level</li>
+                            <li>Checkpoints reached are synchronized with the server</li>
+                        </ul>
+                    </li>
+                    <li>Added a results screen after the credits sequence
+                        <ul>
+                            <li>Tracked stats:
+                                <ul>
+                                    <li>Death count</li>
+                                    <li>Damage dealt/taken</li>
+                                    <li>Checks reached</li>
+                                    <li>Upgrades/Weapons/Maverick Medals obtained</li>
+                                    <li>Clear time
+                                        <ul>
+                                            <li>May not be running at all times or running when it's not supposed to (during loading screens, lag frames, etc). Treat it as a fun side thing as it's not likely to receive any updates to enhance its accuracy.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Stats have a ranking system, have fun figuring them out :P</li>
+                            <li>All the stats are synchronized with the server
+                                <ul>
+                                    <li>Not entirely sure if players can abuse fast forward/rewind/save states for better stats, but all of those are synchronized with the server and the biggest value is always used. Maybe if players are fast enough with their (cheating) tools they may be able to fool the system... but it's a for fun feature so who cares lol</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Added a post-stage result screen
+                        <ul>
+                            <li>Tracked stats:
+                                <ul>
+                                    <li>Checks reached
+                                        <ul>
+                                            <li>Heart Tanks, Sub Tanks and Capsules have separate trackers</li>
+                                            <li>Pickupsanity separated from the stage check count</li>
+                                        </ul>
+                                    </li>
+                                    <li>Time spent on the stage</li>
+                                    <li>Total results from the game (without ranks)
+                                        <ul>
+                                            <li>Some of these have a color indicator if it has met the setting in the yaml</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Players can now request HP and Weapon Energy refills during the pause menu by pressing <code>SELECT</code> on the desired item they want to refill to its fullest
+                        <ul>
+                            <li>The X.Buster option will request HP (and is the only way to request it)</li>
+                        </ul>
+                    </li>
+                    <li>Players can now receive heals, refills and 1-Ups during the pause menu</li>
+                    <li>Current Energy Pool is now exposed on the pause menu</li>
+                    <li>Lives are now capped at 99
+                        <ul>
+                            <li>This also affects the option in the yaml</li>
+                            <li>They're also saved into the server</li>
+                        </ul>
+                    </li>
+                    <li>Boss' HP bar is scaled to match their actual Max HP</li>
+                    <li>Proper Universal Tracker support</li>
+                    <li>ROM after being patched is now 2MiB</li>
+                    <li>Lowered the maximum amount some progression items for opening the Fortress</li>
+                    <li>Autoheal is removed
+                        <ul>
+                            <li>Too unreliable, too disruptive, had some bugs I couldn't figure out how to fix</li>
+                        </ul>
+                    </li>
+                    <li>Removed <code>/pool</code> and <code>/autoheal</code> client commands</li>
+                    <li>Removed maverick intros</li>
+                    <li>Removed cutscenes after certain events in the middle of the game
+                        <ul>
+                            <li>Intro and credits are untouched</li>
+                        </ul>
+                    </li>
+                    <li>Switching checkpoints on the stage select with L/R now has more sense
+                        <ul>
+                            <li>Pressing L will decrement the checkpoint counter while R will increment it</li>
+                        </ul>
+                    </li>
+                    <li>Maverick Medals will be automatically granted if a Boss Defeated check is detected</li>
+                    <li>Vile on his Ride Armor now shoots his yellow orbs that triggers a cutscene from the start of the encounter</li>
+                    <li>Fixed a big logic issue regarding weaknesses where it'll ask for every single weakness at the same time instead of checking if only one is actually valid</li>
+                    <li>Fixed EnergyLink's heal and refills giving more HP or Weapon Energy than there was in the pool</li>
+                    <li>Fixed a logic issue with the <code>Fortress Levels Bundle Unlock</code> option where it only counted D-Rex as the only connection to Fortress 4</li>
+                    <li>Fixed some cases where collecting a pickup and getting a HP refill during the first refill is playing its animation can lock up the game
+                        <ul>
+                            <li>Not entirely sure if it's fixed, but eh, hard to test</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.2.0">
+                <h1><a href="#1.2.0">1.2.0</a></h1>
+                <ul>
+                    <li>It's now possible to alter the behavior of enemies in the game (Enemy Tweaks)
+                        <ul>
+                            <li>This is a beta feature that's going to be developed over time</li>
+                            <li>Tweakable enemies also can be properly stunned by the respective weapons they're weak to</li>
+                            <li>Initial tweakable enemies:
+                                <ul>
+                                    <li>Chill Penguin</li>
+                                    <li>Spark Mandrill</li>
+                                    <li>Armored Armadillo</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Performing a long jump now gives the actual dash wall jump speed</li>
+                    <li>Proper Archipelago 0.5.0 support</li>
+                    <li>Added back option groups</li>
+                    <li>Potential fix for not being able to collect items/locations after a soft reset in emulators
+                        <ul>
+                            <li>Aimed towards Maverick Medals not being collected appropriately</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.1.0">
+                <h1><a href="#1.1.0">1.1.0</a></h1>
+                <ul>
+                    <li>Added an optional <strong>Legs Upgrade</strong> that grants the user the <strong>Air Dash</strong> from X2
+                        <ul>
+                            <li>Thanks <strong>Justin3009</strong> for allowing me to backport the patch to v1.0 and adjust it to AP</li>
+                            <li>Can be opted in via a yaml setting (<code>air_dash</code>)</li>
+                        </ul>
+                    </li>
+                    <li>Added an optional ability that allows X to <strong>perform longer jumps</strong> by holding down the dash button after getting a <strong>Legs Upgrade</strong>
+                        <ul>
+                            <li>Movement feels similar to X4, though in this implementation it has lower horizontal speed as it doesn't use the Wall Jump speed (2.9375px/s instead of ~3.5px/s). Felt less overpowered (still is) and works better with the SNES' screen crunch.</li>
+                            <li>Can be opted in via a yaml setting (<code>long_jumps</code>)</li>
+                        </ul>
+                    </li>
+                    <li>It's now possible to plando boss weaknesses via <code>boss_weakness_plando</code></li>
+                    <li>Native MSU-1 chip support
+                        <ul>
+                            <li>Usage is exactly the same as the old MSU-1 patch with the same IDs, please follow instructions on that patch to get it working it here. Do not install any of those IPS files into your AP ROM</li>
+                            <li>Can fall back gracefully to original songs in case some songs are missing. It may be broken with incomplete soundtracks in some untested scenarios</li>
+                        </ul>
+                    </li>
+                    <li>Added a new client command to toggle displaying EnergyLink deposit activity (<code>/details</code>)
+                        <ul>
+                            <li>Active by default unless you use <a href="https://github.com/ArchipelagoMW/Archipelago/pull/3093">#3093</a></li>
+                        </ul>
+                    </li>
+                    <li>You can now customize the default controls via a yaml option</li>
+                    <li>Added support for <a href="https://github.com/ArchipelagoMW/Archipelago/pull/3093">#3093</a></li>
+                    <li>Performing a wall jump while holding down the Dash button now allows you to always perform a dashed wall jump
+                        <ul>
+                            <li>Thanks <strong>Justin3009</strong> for allowing me to backport the patch to v1.0 and adjust it to AP</li>
+                            <li>Can be opted in via a yaml setting (<code>better_walljump</code>)</li>
+                        </ul>
+                    </li>
+                    <li>Receiving a boss access code now plays the SFX at the same time the item is received instead of having a noticeable delay</li>
+                    <li>Having a <strong>Legs Upgrade</strong> in <code>start_inventory_from_pool</code> disables <code>early_legs</code> effect
+                        <ul>
+                            <li>I was getting bugs after adding an additional <strong>Legs Upgrade</strong> and this fixed it</li>
+                        </ul>
+                    </li>
+                    <li>Demo from the title screen no longer plays, allowing players to sit comfortably on the title screen before starting a run</li>
+                    <li><code>Bosses</code> location group no longer has rematches from Sigma's Fortress
+                        <ul>
+                            <li>Matches X3.</li>
+                        </ul>
+                    </li>
+                    <li>Receiving a helmet mid level no longer messes up the checkpoint count</li>
+                    <li>The extra <strong>Arms Upgrade</strong> from the <code>jammed_buster</code> option now counts towards the count for <code>sigma_upgrade_count</code></li>
+                    <li>Removed an oversight that allowed every MMX slot to have two guaranteed levels on sphere 1 (one from vile, one early in the multiworld)</li>
+                </ul>
+            </section>
+
+            <section id="1.0.2">
+                <h1><a href="#1.0.2">1.0.2</a></h1>
+                <ul>
+                    <li>Client now exposes via DataStorage the current level</li>
+                    <li>Added <code>Charged Shotgun Ice</code> to Rangda Bangda's weakness exclusion list</li>
+                    <li>Added <code>Charged Shotgun Ice</code> to Sting Chameleon's weakness exclusion list</li>
+                    <li>Lowered <code>Charged Rolling Shield</code> damage as a weakness (7 -&gt; 6)</li>
+                    <li>Fixed "Allow Weakness + Upgraded Buster" setting not properly working with level 3 charged shot</li>
+                    <li>Fixed Thunder Slimer having Armadillo's weakness until damage was properly dealt</li>
+                    <li>Disabled Rangda Bangda and D-Rex from participating in the randomized boss HP option
+                        <ul>
+                            <li>They didn't play nicely with high values</li>
+                        </ul>
+                    </li>
+                    <li>Fixed being able to go to Sigma 4 after beating Sigma 3 without beating Sigma 1 and 2</li>
+                    <li>Hadouken no longer deletes HP in a few frames</li>
+                    <li>Fixed Thunder Slimer not showing its weaknesses via hints</li>
+                </ul>
+            </section>
+
+            <section id="1.0.1">
+                <h1><a href="#1.0.1">1.0.1</a></h1>
+                <ul>
+                    <li>Using a Heart Tank number other than 8 will no longer create double the Heart Tanks</li>
+                </ul>
+            </section>
+
+            <section id="1.0.0">
+                <h1><a href="#1.0.0">1.0.0</a></h1>
+                <ul>
+                    <li>Added boss weakness randomization options
+                        <ul>
+                            <li>Can shuffle every boss weakness</li>
+                            <li>Can also shuffle uncharged/charged versions of weapons via the chaotic sets
+                                <ul>
+                                    <li>The chaotic set makes every weapon charge level a separate weakness instead of keeping them together, meaning that a boss can be weak to Charged Frost Shield but not its uncharged version.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Added boss weakness strictness options
+                        <ul>
+                            <li>Can be set to allow the following:
+                                <ul>
+                                    <li>Not Strict: Anything can damage the boss</li>
+                                    <li>Weakness + Buster: Buster and the boss' weakness can damage the boss</li>
+                                    <li>Weakness + Upgraded Buster: Only upgraded buster shots and its weakness can damage the boss</li>
+                                    <li>Only Weakness: Only the weakness can damage the boss</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Added Hadouken as an Item
+                        <ul>
+                            <li>Can be disabled from being in the pool</li>
+                            <li>It will deal the current HP as damage, unless a stricter setting is enabled which will halve the damage.</li>
+                            <li>No longer requires full HP, full armor and fully upgraded HP to be casted</li>
+                            <li>It will show X on his full upgraded armor during the cast animation</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to shuffle every boss' max HP (only applies to those with a HP bar)</li>
+                    <li>Added an option to change how much HP you can start with (1-32 HP)
+                        <ul>
+                            <li>HP can go beyond 32HP, but it might have graphical issues during gameplay/pause menu</li>
+                            <li>Max HP capped at 56 HP due to graphical issues</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to change how much HP each heart tank gives (1-8 HP)</li>
+                    <li>Added a feature to the helmet upgrade where it will allow the player to teleport to certain checkpoints in any stage they have access to, even if they haven't reached such checkpoints yet</li>
+                    <li>Added an option to unlock Sigma's Fortress levels 1-3 automatically after gaining access to Sigma's Fortress
+                        <ul>
+                            <li>The fourth lab is unlocked after completing every Fortress level</li>
+                        </ul>
+                    </li>
+                    <li>Added a way to select which Sigma's Fortress you can enter</li>
+                    <li>Added Weapon Energy refills support to EnergyLink
+                        <ul>
+                            <li>Autorefill for weapons doesn't exist</li>
+                        </ul>
+                    </li>
+                    <li>Added a way to trade HP for Weapon Energy</li>
+                    <li>Reworked Sigma's Fortress setting so they use a list of items you want to track to get access to it
+                        <ul>
+                            <li><code>all</code> and <code>multiworld</code> options have been removed since they're now redundant</li>
+                        </ul>
+                    </li>
+                    <li>Added option groups to the webhost settings page
+                        <ul>
+                            <li>Also rewrote some tooltips to look nicer on webhost.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="0.1.4">
+                <h1><a href="#0.1.4">0.1.4</a></h1>
+                <ul>
+                    <li>Added an option to disable X's ability to charge shots
+                        <ul>
+                            <li>This adds an additional Arms Upgrade item to let X charge shots again</li>
+                            <li>Thanks Silvris for the code &amp; pointers for this one</li>
+                        </ul>
+                    </li>
+                    <li>Removed all the anti-tamper &amp; anti-piracy measures
+                        <ul>
+                            <li>Thanks Silvris for the pointers for this one</li>
+                        </ul>
+                    </li>
+                    <li>Fixed Flame Mammoth's stage not correctly tracking Chill Penguin's defeat</li>
+                </ul>
+            </section>
+
+            <section id="0.1.3">
+                <h1><a href="#0.1.3">0.1.3</a></h1>
+                <ul>
+                    <li>Made the Stage Access item pool code smarter when using <code>start_inventory</code> or <code>start_inventory_from_pool</code></li>
+                    <li>Added a missing location in Storm Eagle</li>
+                </ul>
+            </section>
+
+            <section id="0.1.2">
+                <h1><a href="#0.1.2">0.1.2</a></h1>
+                <ul>
+                    <li>Added an option to allow more than one condition in Sigma's Fortress unlock</li>
+                    <li>Allowed Sigma's options to be set to 0 in order to be marked as fulfilled</li>
+                    <li>Fixed Sub Tank locations not working after having 4 Sub Tanks</li>
+                </ul>
+            </section>
+
+            <section id="0.1.1">
+                <h1><a href="#0.1.1">0.1.1</a></h1>
+                <ul>
+                    <li>Fixed Storm Eagle's capsule not giving a check</li>
+                </ul>
+            </section>
+
+            <section id="0.1.0">
+                <h1><a href="#0.1.0">0.1.0</a></h1>
+                <ul>
+                    <li>Initial release</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    </body>
+</html>

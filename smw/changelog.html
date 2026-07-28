@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelx5.github.io/smw/index.html">
+<meta property="og:title" content="Changelog for Spicy Mycena Waffles - lx5's works">
+<meta property="og:description" content="May contain changes">
+<meta name="theme-color" content="#ff0101">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/smw/icon.png">
+<html>
+    <head>
+        <title>Changelog for Spicy Mycena Waffles - lx5's works</title>
+        <link rel="stylesheet" href="../rando-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato&display=swap" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            body {
+                background-image: url("selected.png");
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <section>
+            <h1>Spicy Mycena Waffles</h1>
+            <p>This is my fork of Super Mario World's Archipelago Randomizer which aims to provide a different experience.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/waffles-v1.3.10" style="text-decoration: underline;">v1.3.10</a></p>
+        </section>
+    </div>
+    <div class="ap-flex">
+        <div class="ap-index">
+            <section>
+                <h1>Index</h1>
+                <ul>
+                    <li><a href="#1.3.10" style="text-decoration: underline;">1.3.10</a></li>
+                    <li><a href="#1.3.9" style="text-decoration: underline;">1.3.9</a></li>
+                    <li><a href="#1.3.8" style="text-decoration: underline;">1.3.8</a></li>
+                    <li><a href="#1.3.7" style="text-decoration: underline;">1.3.7</a></li>
+                    <li><a href="#1.3.6" style="text-decoration: underline;">1.3.6</a></li>
+                </ul>
+            </section>
+            <section>
+                <a href="index.html" style="text-decoration: underline;"><p>Back to main page</p></a>
+            </section>
+        </div>
+        <div class="container">
+            <section id="1.3.10">
+                <h1><a href="#1.3.10">1.3.10</a></h1>
+                <ul>
+                    <li>Luigi Physics
+                        <ul>
+                            <li>Option to enable the feature is now visible</li>
+                            <li>Allows you to play with SMA2's Luigi Physics (floaty, somewhat slow)</li>
+                            <li>DOES NOT ALTER LOGIC IN ANY FORM. And never will. Feel free to get out of logic.</li>
+                            <li>Fixed getting stuck in castle cutscenes</li>
+                        </ul>
+                    </li>
+                    <li>Removed castle destruction cutscenes</li>
+                    <li>Fixed the rare case where two exits can lead to the same entrance</li>
+                    <li>Special World Clear item is now considered "deprioritized"</li>
+                    <li>Too lazy to update the credits version number</li>
+                </ul>
+            </section>
+
+            <section id="1.3.9">
+                <h1><a href="#1.3.9">1.3.9</a></h1>
+                <ul>
+                    <li>Fixed Star World 5 level tile not being excluded from swapped exits when it should always be excluded</li>
+                    <li>Fixed failed generations with transitions are off and teleports shuffle are on</li>
+                    <li>Fixed rare cases where teleport/transition shuffle will map two entrances to the same exit</li>
+                    <li>Enemy Shuffle updates
+                        <ul>
+                            <li>Larry's Castle second room no longer allows Pokeys, Green Boucing Koopas, Mega Moles or Dino Torches</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.3.8">
+                <h1><a href="#1.3.8">1.3.8</a></h1>
+                <ul>
+                    <li>Fixed <code>swap_donut_gh_exits</code></li>
+                </ul>
+            </section>
+
+            <section id="1.3.7">
+                <h1><a href="#1.3.7">1.3.7</a></h1>
+                <ul>
+                    <li>Banned center Star tile in Star World to have its potential destination on the same map</li>
+                    <li>Updated logic
+                        <ul>
+                            <li>Ludwig Castle now properly requires Run for the last room location</li>
+                            <li>Fixed DP2 secret exit</li>
+                            <li>DP1 no longer assumes Enemy Shuffle seeds</li>
+                            <li>Fixed Yellow Yoshi availability only considering P-Switch</li>
+                            <li>Mondo now properly requires Swim on its exit rules</li>
+                            <li>VS3 midway point now requires Swim to match the rest of the level</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.3.6">
+                <h1><a href="#1.3.6">1.3.6</a></h1>
+                <ul>
+                    <li>Fixed a crash related to DamageLink and Yoshi</li>
+                    <li>Fixed Yoshi ignoring extra hearts when receiving DamageLink signals</li>
+                    <li>Fixed DamageLink handling causing incoming DeathLink and TrapLink signals crash the client</li>
+                    <li>DeathLink signals are now ignored if you're not controlling the player</li>
+                </ul>
+            </section>
+
+            <section id="1.3.5">
+                <h1><a href="#1.3.5">1.3.5</a></h1>
+                <ul>
+                    <li>Implemented DamageLink (named SharedDamage for tagging purposes)
+                        <ul>
+                            <li>Whenever players take a hit they send a Damage signal to others</li>
+                            <li>Can be toggled in the Manager</li>
+                            <li>Currently Waffles handles it like this:
+                                <ul>
+                                    <li>Other Waffles players get hurt when the cumulative damage gets to 80</li>
+                                    <li>Sends a 80 damage signal when the player loses a powerup, loses a heart or dies</li>
+                                    <li>Sends a 20 damage signal when the player loses Yoshi</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Removed RingLink handling from the code (didn't work on Waffles)</li>
+                    <li>Made Universal Tracker aware of the Decoupled options</li>
+                </ul>
+            </section>
+
+            <section id="1.3.4">
+                <h1><a href="#1.3.4">1.3.4</a></h1>
+                <ul>
+                    <li>Potentially fixed "Out of Logic" level clears in Universal Tracker
+                        <ul>
+                            <li>Please use <code>"default"</code> setting for deferred entrances in Universal Tracker!</li>
+                        </ul>
+                    </li>
+                    <li>Fixed fireballs not bouncing on the ground</li>
+                    <li>Fixed FoI4 secret exit access rule</li>
+                </ul>
+            </section>
+
+            <section id="1.3.3">
+                <h1><a href="#1.3.3">1.3.3</a></h1>
+                <ul>
+                    <li>Fixed a broken rule</li>
+                    <li>Updated Manager window with the correct name</li>
+                </ul>
+            </section>
+
+            <section id="1.3.2">
+                <h1><a href="#1.3.2">1.3.2</a></h1>
+                <ul>
+                    <li>Implemented DeathLink
+                        <ul>
+                            <li>Stars can nullify one death signal at a time</li>
+                            <li>Hearts can also nullify one death signal if desired</li>
+                        </ul>
+                    </li>
+                    <li>DeathLink, EnergyLink and TrapLink can now be toggled in the Manager at any time</li>
+                    <li>Potentially fixes Yoshi House's goal forcing a ton of eggs being panic swap targeted</li>
+                    <li>Fixes alternate logic being all messed up in Universal Tracker</li>
+                    <li>Fixes some unusual cases where exits will be reported as reachable out of logic in UT</li>
+                    <li>Fixes boos hurting Mario while ducking or when having an active star and riding Yoshi</li>
+                    <li>Fixes locations other than exits having wrong classifications on levels with swapped exits</li>
+                    <li>Run no longer displays an A in the in-game tracker</li>
+                    <li>Goal location is now an event</li>
+                    <li>Removed <code>swap_level_exits</code> option, it stopped mattering a long time ago</li>
+                    <li>Alternate Logic no longer has every setting on by default</li>
+                    <li>Enemy Shuffle updates:
+                        <ul>
+                            <li>FoI4 now guarantees a bouncing koopa after the midway point</li>
+                            <li>VoB2 no longer has Dino Rhinos on the first room</li>
+                            <li>VoB2 no longer has bouncing american footballs in the third room</li>
+                            <li>DS1 now has fishes after exiting the secondary room</li>
+                        </ul>
+                    </li>
+                    <li>Several logic updates I forgot to document</li>
+                </ul>
+            </section>
+
+            <section id="1.3.1">
+                <h1><a href="#1.3.1">1.3.1</a></h1>
+                <ul>
+                    <li>Fixed Blue Yoshi requirements being met by only being able to find a red/green Yoshi</li>
+                </ul>
+            </section>
+
+            <section id="1.3.0">
+                <h1><a href="#1.3.0">1.3.0</a></h1>
+                <ul>
+                    <li>Implemented Rule Builder™️ (bumps AP requirement to 0.6.7)</li>
+                    <li>Added a new option that allows people to run very specific alternate logic</li>
+                    <li>Added PopTracker pack support to Universal Tracker</li>
+                    <li>Universal Tracker now properly tracks levels completed out of logic, showing them with Glitched Logic™️</li>
+                    <li>UT's deferred entrances behavior changed:
+                        <ul>
+                            <li><code>"off"</code> will not track anything as expected</li>
+                            <li><code>"default"</code> will only track levels completed out of logic</li>
+                            <li><code>"on"</code> will hide future levels, avoiding spoiling level shuffle and will also track levels completed out of logic</li>
+                        </ul>
+                    </li>
+                    <li>Prog+Useful fillers should no longer show up as Filler on Blocks</li>
+                    <li>Client is now forced to wait for server connection before attempting to send any data to the server</li>
+                    <li>Switch Palaces are no longer collect-able</li>
+                    <li>Logic updates:
+                        <ul>
+                            <li>CI1 now considers Yoshi to pass the Muncher obstacle</li>
+                            <li>CSA no longer requires run to be completed</li>
+                            <li>Outrageous now has proper logic its locations other than the goal</li>
+                            <li>Outrageous is no longer considered a valid level to get a Yoshi</li>
+                            <li>VD4 now has proper logic for coin block #8</li>
+                            <li>Funky now has proper logic for getting a Yoshi</li>
+                            <li>Funky now has proper logic for getting the flying question block</li>
+                            <li>FoI4 requires Yoshi or Run to reach the secret exit room</li>
+                            <li>CI5 added carry | feather requirement to the 1up mushroom block</li>
+                            <li>DP2 secret exit no longer considers a lone Yoshi to be enough to reach it</li>
+                            <li>SW5 vine block requires flying to reach it</li>
+                            <li>BB1 is now considered in logic without Red Switch Palace if Enemy Shuffle is off</li>
+                            <li>FoI2 is now considered in logic without Stars if Enemy Shuffle is off</li>
+                        </ul>
+                    </li>
+                    <li>Enemy shuffle adjustments:
+                        <ul>
+                            <li>VoB2: Removed Spike Tops and Rip Van Fish from the last room</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.2.8">
+                <h1><a href="#1.2.8">1.2.8</a></h1>
+                <ul>
+                    <li>Prohibited Butter Bridge 2 to appear early when logic isn't set to <code>hard</code></li>
+                    <li>Generator now provides a fully vanilla map if it can't solve your current map transition and teleport settings after 10 attempts (10 swaps per attempt)</li>
+                    <li>Logic for locations that required Yoshi has been updated so they can require any Yoshi color</li>
+                    <li>Logic for obtaining a Red Yoshi in SW1 has been updated to require Spin Jump (not that this particular Yoshi color is very relevant in sessions)</li>
+                    <li>Logic for Forest of Illusion 3 now expects the same rules for blocks, normal exit and room visits</li>
+                    <li>Enemy Shuffle: Limited enemy variety in Sunken Ghost Ship</li>
+                    <li>Enemy Shuffle: Banned Volcano Lotuses and most of the Chuck family at the end of Valley of Bowser 2</li>
+                    <li>Level Shuffle off users are now bonked when trying to change their starting world (it's forced to Yoshi's Island)</li>
+                    <li>Unbonk minimal accesibility users (Thanks Mysteryem)</li>
+                    <li>Fixed missing indirect conditions (Thanks Eijebong)</li>
+                </ul>
+            </section>
+
+            <section id="1.2.7">
+                <h1><a href="#1.2.7">1.2.7</a></h1>
+                <ul>
+                    <li>Added a Midway Point tracker (item &amp; location) at the top of the map</li>
+                    <li>Added a Prize Block coin counter to levels with one of those</li>
+                    <li>Made Wall Run Anywhere and Fast Swimming rely on <code>L</code> or <code>R</code> to function
+                        <ul>
+                            <li>This can be toggled on the adjuster. It's off by default and can be saved to persist across sessions.</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to make Yoshi's Tongue be unlocked with two items
+                        <ul>
+                            <li><code>Progressive Yoshi</code> becomes <code>Yoshi</code> when this option is disabled. Enabled by default.</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to make Wall Run Anywhere be unlocked with two items
+                        <ul>
+                            <li><code>Progressive Run</code> becomes <code>Run</code> when this option is disabled. Enabled by default.</li>
+                        </ul>
+                    </li>
+                    <li>Added an option to make Fast Swimming be unlocked with two items
+                        <ul>
+                            <li><code>Progressive Swim</code> becomes <code>Swim</code> when this option is disabled. Enabled by default.</li>
+                        </ul>
+                    </li>
+                    <li>Fixed Top Secret Area not being considered as a level with a Green Yoshi</li>
+                    <li>Fixed an issue with Wall Run Anywhere not working properly at the edges of VD1</li>
+                    <li>Fixed Midway Points having glitchy graphics</li>
+                    <li>Enemy Shuffle adjustments
+                        <ul>
+                            <li>Bowser Statues no longer appear in SW1</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.2.6">
+                <h1><a href="#1.2.6">1.2.6</a></h1>
+                <ul>
+                    <li><del>Stole</del> Ported Core SMW feature that saves visited levels in memory for tracking purposes</li>
+                    <li>VD2 with carryless exit should no longer cause the generation to fail</li>
+                    <li>Makes fuzzer happier
+                        <ul>
+                            <li>Fixed failed generations with level shuffle set to off and enabling swapped/carryless exits</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="1.2.5">
+                <h1><a href="#1.2.5">1.2.5</a></h1>
+                <ul>
+                    <li>Adds Start Inventory from Pool</li>
+                    <li>Actually bump the ROM version number this time</li>
+                </ul>
+            </section>
+
+            <section id="1.2.4">
+                <h1><a href="#1.2.4">1.2.4</a></h1>
+                <ul>
+                    <li>Early double exit levels will have a higher chance to roll a carryless exit</li>
+                    <li>Early double exit levels will have a lower chance to roll a swapped level exit</li>
+                    <li>VD2 carryless secret exit and dragon coins now expects carry to move around P-Switches</li>
+                    <li>Adjusted FoI3 logic to be consistent in every single check
+                        <ul>
+                            <li>Also adds a Glitched™ logic case where it expects zero items to reach the normal exit</li>
+                        </ul>
+                    </li>
+                    <li>Forced carry requirement for most of Outrageous' checks</li>
+                    <li>Fixed graphics packs not being properly applied if the legacy setting wasn't available</li>
+                </ul>
+            </section>
+
+            <section id="1.2.3">
+                <h1><a href="#1.2.3">1.2.3</a></h1>
+                <ul>
+                    <li>VD1 now has proper logic</li>
+                </ul>
+            </section>
+
+            <section id="1.2.2">
+                <h1><a href="#1.2.2">1.2.2</a></h1>
+                <ul>
+                    <li>Universal Tracker now works as expected</li>
+                </ul>
+            </section>
+
+            <section id="1.2.1">
+                <h1><a href="#1.2.1">1.2.1</a></h1>
+                <ul>
+                    <li>Fixed a logic bug where Yoshi was always considered available on starting locations other than Yoshi's Island</li>
+                    <li>Fixed a logic bug that didn't consider cape flying for Star World 5 - Normal Exit</li>
+                    <li>Fixed clients crashing when stepping into Front Door or Back Door</li>
+                    <li>Added support for Map Palettes when creating Graphics Packs from MM102's Aseprite script</li>
+                    <li>Fixed FoI3 carryless rule not considering a way to get into the Orb</li>
+                    <li>Changed an options default value</li>
+                    <li>Made test happier</li>
+                </ul>
+            </section>
+
+            <section id="1.2.0">
+                <h1><a href="#1.2.0">1.2.0</a></h1>
+                <ul>
+                    <li>BUMPED MINIMUM AP VERSION TO 0.6.5. WE'RE USING <code>SnesReader</code>!!!!</li>
+                    <li>Starting location shuffle
+                        <ul>
+                            <li>No longer restricted to Yoshi's Island as a starting area</li>
+                        </ul>
+                    </li>
+                    <li>Players can now warp to the starting location (the tile, not the actual level) from anywhere by pressing <code>L+R</code> while standing on a level tile in the map</li>
+                    <li>Carryless Secret Exits
+                        <ul>
+                            <li>Keyholes are replaced with Goal Orbs at random</li>
+                        </ul>
+                    </li>
+                    <li>Adjusted level map tiles depending on which level the location has
+                        <ul>
+                            <li>Also listens to the level exit shuffle setting and will inform the player via a different level tile on the map</li>
+                        </ul>
+                    </li>
+                    <li>Added a basic Manager/Adjuster which can edit a few things on an already generated seed
+                        <ul>
+                            <li>Enable, disable or change the Enemy Shuffle seed</li>
+                            <li>Set local and global Graphics Packs
+                                <ul>
+                                    <li>Local pack will override the global one</li>
+                                    <li>Global packs will always be loaded, similar to LTTP's adjuster</li>
+                                </ul>
+                            </li>
+                            <li>Export a template Graphics Pack from a Waffles ROM</li>
+                            <li>Create a new Graphics Pack from a folder</li>
+                            <li>More to come at a later date</li>
+                        </ul>
+                    </li>
+                    <li>Initial Deferred Entrances™ support for Universal Tracker
+                        <ul>
+                            <li>It basically doesn't spoil the entire location list at once and tells players which levels they've not visited at all</li>
+                            <li>Toggleable from Universal Tracker's settings in <code>host.yaml</code></li>
+                        </ul>
+                    </li>
+                    <li>New Glitched™ logic for some locations has been implemented for Universal Tracker</li>
+                    <li>Beaten castles no longer require <code>L+R</code> to enter, players can enter them with <code>B</code> or <code>A</code></li>
+                    <li>Removed RNG element from American Footballs</li>
+                    <li>Consistent names for Star World locations</li>
+                    <li>Some Enemy Shuffle and logic adjustments</li>
+                    <li>Boss Rooms no longer make the player fall of the platform if the P-Switch is active</li>
+                    <li>Forest of Illusion 2 is no longer permanently marked as Glitched™ on Universal Tracker</li>
+                    <li>Some blocks aren't automatically sent upon loading a level</li>
+                    <li>Stars no longer keep playing the song if they haven't been unlocked</li>
+                    <li>Blocks are now detected properly as locations for FxPak users</li>
+                    <li>Character GFX packs now properly show the actual name with palettes in the HUD</li>
+                </ul>
+            </section>
+
+            <section id="1.1.2">
+                <h1><a href="#1.1.2">1.1.2</a></h1>
+                <ul>
+                    <li>Music engine no longer crashes on some emulators when the Directional Coins stop their music without a P-Switch active
+                        <ul>
+                            <li>As a side effect, the P-Switch effect will be carried over pipes and doors</li>
+                        </ul>
+                    </li>
+                    <li>Hearts and Repellents no longer have a disabled sign on top of them</li>
+                    <li>Some logic adjustments</li>
+                </ul>
+            </section>
+
+            <section id="1.1.1">
+                <h1><a href="#1.1.1">1.1.1</a></h1>
+                <ul>
+                    <li>Disabled save prompts (for real)</li>
+                    <li>Universal Tracker now properly tracks Glitched™ logic for swapped level exits (for real)</li>
+                    <li>Some logic adjustments</li>
+                    <li>Small Enemy Shuffle backend adjustments</li>
+                </ul>
+            </section>
+
+            <section id="1.1.0">
+                <h1><a href="#1.1.0">1.1.0</a></h1>
+                <ul>
+                    <li>Visiting rooms can grant a check</li>
+                    <li>Added an item (<code>Trap Repellent</code>) which blocks incoming traps in a level</li>
+                    <li>It's now possible to select which abilities or items will be added to the item pool or will be in the player's inventory at generation</li>
+                    <li>Midway Points are now colored according to the item's classification they have</li>
+                    <li>Altered Universal Tracker's behavior for Glitched™ logic, it always assumes Hard logic instead of the very next logic level</li>
+                    <li>Several Enemy Shuffle adjustments to placements feel more fair</li>
+                    <li>Universal Tracker now properly tracks Glitched™ logic for swapped level exits</li>
+                    <li>Fixed Goals not being properly colored when level exits are swapped</li>
+                    <li>Fixed fireballs in boss arenas (and possibly other places)</li>
+                    <li>Fixed Star Blocks not being properly colored when they're valid locations and haven't been collected</li>
+                    <li>Some logic adjustments</li>
+                </ul>
+            </section>
+
+            <section id="1.0.0">
+                <h1><a href="#1.0.0">1.0.0</a></h1>
+                <ul>
+                    <li>Initial release</li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>

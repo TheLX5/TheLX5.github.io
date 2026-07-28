@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://thelx5.github.io/dkc/setup.html">
-<meta property="og:title" content="Setup for Donkey Kong Country Randomizer - lx5's works">
-<meta property="og:description" content="Setup page for Donkey Kong Country Randomizer, also has additional info about optional tools.">
-<meta name="theme-color" content="#ffdb0f">
-<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/dkc/icon.png">
+<meta property="og:url" content="https://thelx5.github.io/mmx/setup.html">
+<meta property="og:title" content="Setup for Mega Man X3 Randomizer - lx5's works">
+<meta property="og:description" content="Setup page for Mega Man X3 Randomizer, also has additional info about optional tools.">
+<meta name="theme-color" content="#0f27ff">
+<meta property="og:image" content="https://raw.githubusercontent.com/TheLX5/TheLX5.github.io/master/mmx3/icon.png">
 <html>
     <head>
-        <title>Setup for Donkey Kong Country Randomizer - lx5's works</title>
+        <title>Mega Man X3 Randomizer - lx5's works</title>
         <link rel="stylesheet" href="../rando-style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,16 +15,16 @@
         <meta charset="utf-8"/>
         <style type="text/css">
             body {
-                background-image: url("selected.png");
+                background-image: url("../selected-mmx.png");
             }
         </style>
     </head>
     <body>
     <div class="container">
-        <section>
-            <h1>Donkey Kong Country</h1>
-            <p>A Donkey Kong Country randomizer for Archipelago.</p>
-            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/dkc-v1.2.3" style="text-decoration: underline;">v1.2.3</a></p>
+        <section id="header">
+            <h1>Mega Man X3</h1>
+            <p>A Mega Man X3 randomizer for Archipelago.</p>
+            <p>Latest release: <a href="https://github.com/TheLX5/Archipelago/releases/tag/mmx3-v1.5.2" style="text-decoration: underline;">v1.5.2</a></p>
         </section>
     </div>
     <div class="ap-flex">
@@ -36,13 +36,10 @@
                     <ul>
                         <li><a href="#setup-snes9x-nwa" style="text-decoration: underline;">Snes9x-nwa</a></li>
                         <li><a href="#setup-bizhawk" style="text-decoration: underline;">Bizhawk</a></li>
-                        <li><a href="#setup-fxpak" style="text-decoration: underline;">FxPak</a></li>
                         <li><a href="#setup-snes9x-rr" style="text-decoration: underline;">Snes9x-rr</a></li>
                         <li><a href="#setup-bsnes-plus" style="text-decoration: underline;">BSNES-Plus</a></li>
                     </ul>
-                    <li><a href="#manager" style="text-decoration: underline;">Manager</a></li>
                     <li><a href="#trackers" style="text-decoration: underline;">Trackers</a></li>
-                    <li><a href="#optional" style="text-decoration: underline;">Optional Software</a></li>
                 </ul>
             </section>
             <section id="index-back">
@@ -52,48 +49,48 @@
         <div class="container">
             <section id="setup">
                 <a href="#setup"><h1>Setup</h1></a>
-                <p>DKC AP requires a similar setup found in other SNES games in Archipelago, you can follow one of those guides or keep reading this one.</p>
-                <hr>
+                <p>This game is very similar to any other SNES game in Archipelago, you can follow any of these guides or keep reading this one. Your choice.</p>
+
                 <a href="#setup-required-software"><h2 id="setup-required-software">Required Software</h2></a>
                 <ul>
-                    <li><a href="https://github.com/ArchipelagoMW/Archipelago/releases" style="text-decoration: underline;">Archipelago 0.6.7 or newer</a></li>
-                    <li>Software or hardware capable of loading and playing SNES ROM files:
+                    <li><a href="https://github.com/ArchipelagoMW/Archipelago/releases">Archipelago 0.6.7 or newer</a></li>
+                    <li>Software or hardware capable of loading and playing SNES ROM files. Anything not listed here is not guaranteed to work.
                         <ul>
                             <li><a href="https://github.com/Skarsnik/snes9x-emunwa/releases" style="text-decoration: underline;">snes9x-nwa</a> (Recommended!)</li>
-                            <li><a href="https://github.com/gocha/snes9x-rr/releases" style="text-decoration: underline;">snes9x-rr</a></li>
                             <li><a href="https://tasvideos.org/Bizhawk" style="text-decoration: underline;">Bizhawk</a></li>
+                            <li><a href="https://github.com/gocha/snes9x-rr/releases" style="text-decoration: underline;">snes9x-rr</a></li>
                             <li><a href="https://github.com/black-sliver/bsnes-plus" style="text-decoration: underline;">BSNES-plus</a> (Do not reset within the emulator, it'll lead to RAM corruption)</li>
-                            <li><a href="https://retrorgb.com/fxpakpro.html" style="text-decoration: underline;">FxPak</a></li>
-                            <p>Any emulator or method not listed here is NOT endorsed by the developer, you may have varied results in those.</p>
                         </ul>
                     </li>
-                    <li>Your Donkey Kong Country v1.0 (US) ROM file from the original cartridge. Archipelago or I can't provide these.
-                        <ul>MD5: <code>30c5f292ff4cbbfcc00fd8fa96c2de3b</code></ul>
+                    <li>A Mega Man X 1.0 US ROM from the original cartridge or the <a href="https://store.steampowered.com/app/743890/Mega_Man_X_Legacy_Collection/">Mega Man X Legacy Collection</a> <code>.exe</code> file
+                        <ul>1.0 US MD5: <code>cfe8c11f0dce19e4fa5f3fd75775e47c</code></ul>
                     </li>
                 </ul>
                 <hr>
                 <a href="#setup-how-to-play"><h2 id="setup-how-to-play">How to play</h2></a>
                 <ol>
                     <li>Place the <code>.apworld</code> in your <code>Archipelago/custom_worlds</code> folder, or double-click the <code>.apworld</code> to do so automatically.</li>
-                    <li>Use <code>ArchipelagoLauncher.exe</code> to open the Launcher, and click on Generate Template Options to create template yamls for your custom <code>.apworld</code> files.</li>
+                    <li>Use <code>ArchipelagoLauncher.exe</code> to open the Launcher, and click on Generate Template Options to create template yamls for your custom <code>.apworlds</code>.</li>
                     <li>Place the desired player yamls in the <code>Players</code> folder, and customize them as you see fit.</li>
                     <li>Use <code>ArchipelagoGenerate.exe</code> to generate the game.</li>
                     <li>Upload the generated game (in the output folder) on the website at <a href="https://archipelago.gg/uploads" style="text-decoration: underline;">https://archipelago.gg/uploads</a> and create a new room.</li>
                     <li>Download the patch file from the session page</li>
-                    <li>Open the <code>.apdkc</code> file with <code>ArchipelagoLauncher.exe</code>, it should create a ROM file and open SNI Client.</li>
+                    <li>Open the <code>.apmmx3</code> file with <code>ArchipelagoLauncher.exe</code>, it should create a ROM file and open SNI Client.</li>
                 </ol>
                 <hr>
                 <a href="#setup-snes9x-nwa"><h2 id="setup-snes9x-nwa">snes9x-nwa</h2></a>
                 <ol>
-                    <li>Click on the Network Menu and check <b>Enable Emu Network Control</b>. This step is only required once.</li>
-                    <div class="centered-image"><img src="../nwa.png"></div>
+                    <li>Click on the Network Menu and check <b>Enable Emu Network Control</b></li>
+                    <figure>
+                        <img src="../nwa.png">
+                    </figure>
                     <li>Load your ROM file if it hasn't already been loaded.</li>
                     <li>The emulator should automatically connect while SNI is running.</b></li>
                 </ol>
                 <hr>
                 <a href="#setup-bizhawk"><h2 id="setup-bizhawk">Bizhawk</h2></a>
                 <ol>
-                    <li>Ensure the BSNES core is loaded.</li>
+                    <li>Ensure the Snes9x core is loaded. BSNES core will NOT work.</li>
                     <li>Load your ROM file if it hasn't already been loaded. If you changed your core preference after loading the ROM, don't forget to reload it (default hotkey: <code>Ctrl+R</code>).</li>
                     <li>Drag+drop the <code>Connector.lua</code> file that you downloaded above onto the main EmuHawk window.
                         <ul>
@@ -101,18 +98,7 @@
                             <li>You could instead open the Lua Console manually, click <code>Script 〉 Open Script</code>, and navigate to <code>Connector.lua</code> with the file picker.</li>
                         </ul>
                     </li>
-                    <p><b>NOTE:</b> If the BSNES core doesn't work, try using the Snes9x core or another emulator.</p>
                 </ol>
-                <hr>
-                <a href="#setup-fxpak"><h2 id="setup-fxpak">FxPak</h2></a>
-                <ol>
-                    <li>Open the patch file <em>at least</em> once with SNIClient (or the Launcher) to generate the ROM file.</li>
-                    <li>Ensure SNI is running on the background. It's open for you when launching a SNIClient game.</li>
-                    <li>Transfer the ROM file to your FxPak. Using <code>manage_files.exe</code> inside of the <code>SNI</code> folder in your Archipelago install is recommended.</li>
-                    <li>Boot the game.</li>
-                    <li>Connect with SNIClient to the server. SNIClient should connect to the FxPak automatically as long SNI is running on the background.</li>
-                </ol>
-                <p><strong>NOTE</strong>: If you want to reset or swap games, ensure you're disconnected from the Server first! Otherwise SNI will tell SNIClient some dirty lies about the state of the game and may clear locations for you, or worse, goal the game.</p>
                 <hr>
                 <a href="#setup-snes9x-rr"><h2 id="setup-snes9x-rr">snes9x-rr</h2></a>
                 <ol>
@@ -126,24 +112,19 @@
                     <li>If you see an error while loading the script that states <code>socket.dll missing</code> or similar, navigate to the folder of the lua you are using in your file explorer and copy the <code>socket.dll</code> to the base folder of your snes9x install.</li>
                 </ol>
                 <hr>
-                <a href="#setup-bsnes-plus"><h2 id="setup-bsnes-plus">bsnes-plus</h2></a>
+                <a href="#setup-bsnes-plus"><h2 id="setup-bsnes-plus">BSNES-Plus</h2></a>
                 <ol>
                     <li>Load your ROM file if it hasn't already been loaded.</li>
-                    <li>The emulator should automatically connect while SNI is running.</b></li>
+                    <li>The emulator should automatically connect while SNI is running.</li>
                 </ol>
-                <p><b>WARNING:</b> Never, never, <b>NEVER</b> restart the game with one of the emulator buttons, it's better to close off the emulator and rerun it.</p>
-            </section>
-            <section id="manager">
-                <a href="#manager"><h1>Manager</h1></a>
-                <p>This APWorld comes with a manager that allows you to edit some features from an already generated game. Players can find this software in <code>ArchipelagoLauncher.exe</code> under the <b>Adjuster</b> menu.</p>
-                <p>Do note that any change requires loading a <code>.apdkc</code> patch first.</p>
-                <div class="centered-image"><img src="adjuster.png"></div>
+                <p><strong>NOTE</strong>: Do not reset with the emulator options! It'll completely garble the game RAM and tell SNIClient some dirty lies about the state of the game, which can result on sending out a bunch of locations or goaling the game.</p>
             </section>
             <section id="trackers">
                 <a href="#optional-software"><h1>Trackers</h1></a>
                 <ul>
                     <li><a href="https://github.com/FarisTheAncient/Archipelago/releases" style="text-decoration: underline;">Universal Tracker</a></li>
-                    <li><a href="https://github.com/pwkfisher/ap-dkc-tracker/releases/" style="text-decoration: underline;">PopTracker pack made by MasakariPLZ</a></li>
+                    <li><a href="https://github.com/Michpem/megamanx3-ap-poptracker/releases" style="text-decoration: underline;">PopTracker pack made by MeridianBC/Michpem</a></li>
+                    <li><a href="https://github.com/Coltaho/emulator_lua_scripts" style="text-decoration: underline;">Item tracker for Bizhawk made by Coltaho</a></li>
                 </ul>
                 <hr>
                 <a href="#trackers-universal"><h2 id="trackers-universal">Universal Tracker</h2></a>
@@ -162,19 +143,19 @@
                         </tr>
                         <tr>
                             <td>YAML-less tracking</td>
-                            <td style="text-align: center;">✔️</td>
+                            <td style="text-align: center;">❌</td>
                         </tr>
                         <tr>
                             <td><code>/explain</code></td>
-                            <td style="text-align: center;">✔️</td>
+                            <td style="text-align: center;">❌</td>
                         </tr>
                         <tr>
                             <td><code>/glp</code></td>
-                            <td style="text-align: center;">✔️</td>
+                            <td style="text-align: center;">❌</td>
                         </tr>
                         <tr>
                             <td>Glitched Logic</td>
-                            <td style="text-align: center;">✔️</td>
+                            <td style="text-align: center;">❌</td>
                         </tr>
                         <tr>
                             <td>Deferred Entrances</td>
@@ -190,21 +171,6 @@
                         </tr>
                     </tbody>
                 </table>
-                <ul>
-                    <li><code>/explain "location name"</code>: It outputs the logic rules for a specific location, showing which item combinations will make it appear in logic.</li>
-                    <li><code>/glp "location name"</code>: Shows a list that explains how to reach to a certain location in the game.</li>
-                </ul>
-            </section>
-            <section id="optional">
-                <a href="#optional"><h1>Optional Software</h1></a>
-                <hr>
-                <h2 id="optional-color"><a href="#optional-color">Color selector</a></h2>
-                <h3><a href="https://thelx5.github.io/ColorSelector/DKC/" style="text-decoration: underline;">Page</a></h3>
-                <p>This web tool allows players to create custom palettes for Donkey and Diddy.</p>
-                <hr>
-                <h2 id="optional-atlas"><a href="#optional-atlas">DKC Atlas</a></h2>
-                <h3><a href="http://www.dkc-atlas.com/maps/dkc/" style="text-decoration: underline;">Page</a></h3>
-                <p>Handy page that shows every level in the game in a web browser.</p>
             </section>
         </div>
     </div>
