@@ -138,6 +138,13 @@ section {
     background-color: rgba(210, 1, 238, 0.25);
 }
 
+.ap-item.rhythmheaven {
+    background-color: rgba(223, 13, 230, 0.075);
+}
+.ap-item.rhythmheaven:hover {
+    background-color: rgba(210, 1, 238, 0.25);
+}
+
 .ap-item.soon {
     background-color: rgba(71, 71, 71, 0.075);
 }
